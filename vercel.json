@@ -3,7 +3,7 @@
   "rewrites": [
     {
       "source": "/",
-      "destination": "/venda.html"
+      "destination": "/index.html"
     },
     {
       "source": "/ebook",
