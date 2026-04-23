@@ -1,0 +1,1151 @@
+<!DOCTYPE html>
+<html lang="es">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>La Biblia de la Cerámica Fría - Edición de Lujo</title>
+    <script src="https://cdn.tailwindcss.com"></script>
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Inter:wght@300;400;500;600;700&family=Playfair+Display:ital,wght@0,400;0,600;0,700;0,800;1,400;1,700&display=swap" rel="stylesheet">
+
+    <script>
+        tailwind.config = {
+            theme: {
+                extend: {
+                    fontFamily: {
+                        sans: ['Inter', 'sans-serif'],
+                        serif: ['Playfair Display', 'serif'],
+                    },
+                    colors: {
+                        clay: {
+                            50: '#faf8f5',
+                            100: '#f0ebe1',
+                            200: '#e1d5c1',
+                            300: '#d2c2a9',
+                            400: '#bca68a',
+                            800: '#5c4e3c',
+                            900: '#4a3f31',
+                        },
+                        terracotta: '#c97a63',
+                        gold: '#b8926a',
+                        slate: '#2c3e50'
+                    },
+                    spacing: {
+                        'page': '297mm',
+                    }
+                }
+            }
+        }
+    </script>
+
+    <style>
+        @media print {
+            @page {
+                size: A4;
+                margin: 0;
+            }
+
+            * {
+                -webkit-print-color-adjust: exact !important;
+                print-color-adjust: exact !important;
+            }
+
+            body, html {
+                background: white !important;
+                margin: 0 !important;
+                padding: 0 !important;
+                width: 210mm !important;
+            }
+
+            .no-print { display: none !important; }
+            .page-break { display: none !important; }
+
+            /* RESET DE ESPAÇAMENTO EDITORIAL
+               As classes py-32 e px-20 do Tailwind são exageradas para papel.
+               Aqui forçamos valores que cabem em uma folha A4. */
+            .book-container {
+                width: 210mm !important;
+                max-width: 210mm !important;
+                margin: 0 !important;
+                padding: 0 !important;
+                box-shadow: none !important;
+                overflow: visible !important;
+            }
+
+            section, header {
+                break-before: page;
+                page-break-before: always;
+                width: 210mm !important;
+                /* Reduzimos o respiro vertical para caber mais conteúdo por folha */
+                padding-top: 15mm !important;
+                padding-bottom: 15mm !important;
+                padding-left: 20mm !important;
+                padding-right: 20mm !important;
+                min-height: 297mm;
+                box-sizing: border-box !important;
+            }
+
+            /* Ajuste de escala para títulos e textos no papel */
+            h1 { font-size: 32pt !important; line-height: 1.1 !important; }
+            h2 { font-size: 24pt !important; margin-top: 10mm !important; }
+            h3 { font-size: 18pt !important; margin-top: 8mm !important; }
+            
+            .editorial-dropcap::first-letter {
+                font-size: 3.5rem !important;
+                margin-top: 0.5rem !important;
+            }
+
+            p, li {
+                font-size: 11pt !important;
+                line-height: 1.5 !important;
+                margin-bottom: 4mm !important;
+            }
+
+            /* Ajuste de gaps do Tailwind que quebram o PDF */
+            .gap-16 { gap: 1.5rem !important; }
+            .gap-20 { gap: 2rem !important; }
+            .py-32 { padding-top: 2rem !important; padding-bottom: 2rem !important; }
+
+            img {
+                max-width: 100% !important;
+                max-height: 120mm !important; /* Limita altura para não roubar a página toda */
+                object-fit: contain !important;
+                margin: 5mm auto !important;
+                break-inside: avoid;
+            }
+
+            .tip-box, .quote-block {
+                padding: 1rem !important;
+                margin: 1rem 0 !important;
+                break-inside: avoid;
+            }
+
+            .grid {
+                display: block !important; /* Em print, grids complexos podem falhar; blocos simples são mais seguros */
+            }
+            .grid > div {
+                margin-bottom: 5mm !important;
+                break-inside: avoid;
+            }
+        }
+
+
+
+
+
+
+
+        body {
+            background-color: #f3f4f6;
+            scroll-behavior: smooth;
+        }
+
+        .editorial-dropcap::first-letter {
+            font-family: 'Playfair Display', serif;
+            font-size: 4.5rem;
+            float: left;
+            line-height: 1;
+            padding-right: 0.75rem;
+            color: #c97a63;
+            font-weight: 800;
+        }
+
+        .chapter-title {
+            position: relative;
+            padding-bottom: 2rem;
+            margin-bottom: 3rem;
+        }
+
+        .chapter-title::after {
+            content: '';
+            position: absolute;
+            bottom: 0;
+            left: 0;
+            width: 100px;
+            height: 4px;
+            background-color: #c97a63;
+        }
+
+        .prose-custom p {
+            margin-bottom: 1.5rem;
+            line-height: 1.9;
+            font-weight: 300;
+            text-align: justify;
+        }
+
+        .prose-custom h3 {
+            font-family: 'Playfair Display', serif;
+            font-size: 1.75rem;
+            color: #4a3f31;
+            margin-top: 2.5rem;
+            margin-bottom: 1rem;
+            font-weight: 700;
+        }
+
+        .prose-custom h4 {
+            font-family: 'Inter', sans-serif;
+            font-size: 1rem;
+            color: #c97a63;
+            text-transform: uppercase;
+            letter-spacing: 0.1em;
+            font-weight: 700;
+            margin-top: 2rem;
+            margin-bottom: 0.75rem;
+        }
+
+        .tip-box {
+            border-left: 6px solid #c97a63;
+            background-color: #fcfaf8;
+            padding: 2rem;
+            margin: 3rem 0;
+            box-shadow: 0 4px 6px -1px rgba(0, 0, 0, 0.05);
+        }
+
+        .quote-block {
+            font-family: 'Playfair Display', serif;
+            font-style: italic;
+            font-size: 1.5rem;
+            color: #5c4e3c;
+            border-top: 1px solid #e1d5c1;
+            border-bottom: 1px solid #e1d5c1;
+            padding: 2rem 0;
+            margin: 3rem 0;
+            text-align: center;
+        }
+
+        .anatomy-label {
+            position: relative;
+        }
+        .anatomy-label::before {
+            content: '';
+            position: absolute;
+            left: -20px;
+            top: 50%;
+            width: 15px;
+            height: 1px;
+            background-color: #c97a63;
+        }
+    </style>
+</head>
+
+<body class="text-clay-900 antialiased font-sans">
+
+    <!-- Botão de download -->
+    <button id="downloadBtn" onclick="showPrintGuide()" class="no-print fixed bottom-8 right-8 bg-clay-900 text-white px-8 py-4 rounded-full shadow-2xl hover:bg-terracotta transition-all z-50 flex items-center gap-3 font-semibold uppercase tracking-widest text-xs">
+        <svg xmlns="http://www.w3.org/2000/svg" width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M6 9V2h12v7"></path><path d="M6 18H4a2 2 0 0 1-2-2v-5a2 2 0 0 1 2-2h16a2 2 0 0 1 2 2v5a2 2 0 0 1-2 2h-2"></path><rect x="6" y="14" width="12" height="8"></rect></svg>
+        Descargar Ebook PDF
+    </button>
+
+    <!-- Modal de instruções de impressão -->
+    <div id="printModal" class="no-print" style="display:none; position:fixed; inset:0; z-index:9999; background:rgba(0,0,0,0.75); align-items:center; justify-content:center;">
+        <div style="background:#fff; max-width:480px; width:90%; border-radius:4px; padding:40px; font-family:'Inter',sans-serif; box-shadow:0 25px 60px rgba(0,0,0,0.4);">
+            <p style="font-size:10px; letter-spacing:0.3em; text-transform:uppercase; color:#c97a63; font-weight:700; margin:0 0 12px">Exportar como PDF</p>
+            <h2 style="font-family:'Playfair Display',serif; font-size:28px; font-weight:800; margin:0 0 24px; color:#1c1917; line-height:1.2">Configure o diálogo de<br>impressão assim:</h2>
+
+            <div style="display:flex; flex-direction:column; gap:12px; margin-bottom:28px;">
+                <div style="display:flex; align-items:center; gap:14px; padding:14px; background:#faf8f5; border-left:3px solid #c97a63;">
+                    <span style="font-size:22px;">📄</span>
+                    <div><strong style="display:block; font-size:13px; color:#1c1917;">Destino</strong><span style="font-size:12px; color:#78716c;">Salvar como PDF</span></div>
+                </div>
+                <div style="display:flex; align-items:center; gap:14px; padding:14px; background:#faf8f5; border-left:3px solid #c97a63;">
+                    <span style="font-size:22px;">📐</span>
+                    <div><strong style="display:block; font-size:13px; color:#1c1917;">Tamanho do papel</strong><span style="font-size:12px; color:#78716c;">A4</span></div>
+                </div>
+                <div style="display:flex; align-items:center; gap:14px; padding:14px; background:#faf8f5; border-left:3px solid #c97a63;">
+                    <span style="font-size:22px;">📏</span>
+                    <div><strong style="display:block; font-size:13px; color:#1c1917;">Margens</strong><span style="font-size:12px; color:#78716c;">Nenhuma (None)</span></div>
+                </div>
+                <div style="display:flex; align-items:center; gap:14px; padding:14px; background:#faf8f5; border-left:3px solid #c97a63;">
+                    <span style="font-size:22px;">🎨</span>
+                    <div><strong style="display:block; font-size:13px; color:#1c1917;">Opções</strong><span style="font-size:12px; color:#78716c;">✅ Gráficos de fundo (Background graphics)</span></div>
+                </div>
+                <div style="display:flex; align-items:center; gap:14px; padding:14px; background:#faf8f5; border-left:3px solid #c97a63;">
+                    <span style="font-size:22px;">🔍</span>
+                    <div><strong style="display:block; font-size:13px; color:#1c1917;">Escala</strong><span style="font-size:12px; color:#78716c;">100% (não "Ajustar à página")</span></div>
+                </div>
+            </div>
+
+            <div style="display:flex; gap:12px;">
+                <button onclick="startPrint()" style="flex:1; background:#1c1917; color:#fff; border:none; padding:16px; font-size:11px; font-weight:700; letter-spacing:0.2em; text-transform:uppercase; cursor:pointer; font-family:'Inter',sans-serif;">
+                    Abrir Diálogo de Impressão →
+                </button>
+                <button onclick="document.getElementById('printModal').style.display='none'" style="background:transparent; border:1px solid #d4c9be; padding:16px 20px; cursor:pointer; color:#78716c; font-size:11px; font-family:'Inter',sans-serif;">
+                    Cancelar
+                </button>
+            </div>
+        </div>
+    </div>
+
+
+    <div class="max-w-[210mm] mx-auto bg-white shadow-2xl book-container relative overflow-hidden">
+        
+        <!-- ================= 00. PORTADA DE LUJO ================= -->
+        <header class="relative w-full h-[297mm] flex flex-col items-center justify-center text-center overflow-hidden">
+            <div class="absolute inset-0 z-0">
+                <img src="ceramica_gallery_1776964199433.png" class="w-full h-full object-cover">
+                <div class="absolute inset-0 bg-clay-900/70 mix-blend-multiply"></div>
+            </div>
+
+            <div class="relative z-10 px-12 py-20 bg-white/95 backdrop-blur-xl max-w-2xl mx-auto border-[1px] border-clay-100 shadow-2xl">
+                <div class="mb-8 flex items-center justify-center gap-4">
+                    <div class="h-px w-12 bg-terracotta"></div>
+                    <span class="text-terracotta font-sans tracking-[0.4em] text-xs uppercase font-bold">Edición de Coleccionista</span>
+                    <div class="h-px w-12 bg-terracotta"></div>
+                </div>
+                <h1 class="font-serif text-7xl md:text-8xl text-clay-900 mb-6 leading-[1.1] font-extrabold tracking-tight">La Biblia de la <br><span class="italic text-terracotta">Cerámica Fría</span></h1>
+                <p class="font-serif text-2xl text-clay-800 italic mb-10">El manual definitivo para el artesano moderno.</p>
+                <div class="w-32 h-1.5 bg-terracotta mx-auto mb-10"></div>
+                <p class="font-sans text-clay-400 text-sm uppercase tracking-[0.2em] mb-4">Arquitectura • Técnica • Estética • Negocio</p>
+                <p class="font-sans text-clay-800 text-lg font-light max-w-md mx-auto leading-relaxed">
+                    Aprende a transformar la tierra en arte, sin hornos y con resultados de galería.
+                </p>
+            </div>
+            
+            <div class="absolute bottom-16 left-0 right-0 z-10 text-white font-sans tracking-[0.5em] text-[10px] uppercase opacity-60">
+                Publicado por el Gremio de Artesanos Lentos • MMXXVI
+            </div>
+        </header>
+
+        <div class="page-break"></div>
+
+        <!-- ================= ÍNDICE DETALLADO ================= -->
+        <section class="p-[25mm] bg-clay-50 min-h-[297mm] flex flex-col">
+            <div class="flex justify-between items-baseline mb-16 border-b-2 border-clay-900 pb-4">
+                <h2 class="font-serif text-5xl text-clay-900 italic font-bold">Sumario</h2>
+                <span class="font-sans text-clay-300 text-sm tracking-widest uppercase">Índice Completo</span>
+            </div>
+            
+            <div class="grid grid-cols-1 md:grid-cols-2 gap-x-20 gap-y-6 flex-grow">
+                <div class="space-y-4">
+                    <h3 class="font-serif text-xl text-terracotta border-b border-terracotta/20 pb-2 mb-4">I. El Fundamento Espiritual</h3>
+                    <ul class="space-y-4">
+                        <li class="flex justify-between group cursor-pointer">
+                            <a href="#ch1" class="font-sans text-sm font-semibold group-hover:text-terracotta transition-all uppercase tracking-wider">01. La Pausa Creativa</a>
+                            <span class="font-serif italic text-clay-300">04</span>
+                        </li>
+                        <li class="flex justify-between group cursor-pointer">
+                            <a href="#ch2" class="font-sans text-sm font-semibold group-hover:text-terracotta transition-all uppercase tracking-wider">02. El Laboratorio Químico</a>
+                            <span class="font-serif italic text-clay-300">12</span>
+                        </li>
+                        <li class="flex justify-between group cursor-pointer">
+                            <a href="#ch3" class="font-sans text-sm font-semibold group-hover:text-terracotta transition-all uppercase tracking-wider">03. Física del Modelado</a>
+                            <span class="font-serif italic text-clay-300">24</span>
+                        </li>
+                    </ul>
+
+                    <h3 class="font-serif text-xl text-terracotta border-b border-terracotta/20 pb-2 mt-10 mb-4">II. La Técnica Maestra</h3>
+                    <ul class="space-y-4">
+                        <li class="flex justify-between group cursor-pointer">
+                            <a href="#ch4" class="font-sans text-sm font-semibold group-hover:text-terracotta transition-all uppercase tracking-wider">04. Arquitectura de la Tierra</a>
+                            <span class="font-serif italic text-clay-300">36</span>
+                        </li>
+                        <li class="flex justify-between group cursor-pointer">
+                            <a href="#ch5" class="font-sans text-sm font-semibold group-hover:text-terracotta transition-all uppercase tracking-wider">05. El Código Anti-Grietas</a>
+                            <span class="font-serif italic text-clay-300">48</span>
+                        </li>
+                        <li class="flex justify-between group cursor-pointer">
+                            <a href="#ch6" class="font-sans text-sm font-semibold group-hover:text-terracotta transition-all uppercase tracking-wider">06. El Ritual del Lijado</a>
+                            <span class="font-serif italic text-clay-300">60</span>
+                        </li>
+                        <li class="flex justify-between group cursor-pointer">
+                            <a href="#ch7" class="font-sans text-sm font-semibold group-hover:text-terracotta transition-all uppercase tracking-wider">07. Anatomía y Proporción</a>
+                            <span class="font-serif italic text-clay-300">72</span>
+                        </li>
+                    </ul>
+                    
+                    <h3 class="font-serif text-xl text-terracotta border-b border-terracotta/20 pb-2 mt-10 mb-4">III. Proyectos y Moldes</h3>
+                    <ul class="space-y-4">
+                        <li class="flex justify-between group cursor-pointer">
+                            <a href="#ch8" class="font-sans text-sm font-semibold group-hover:text-terracotta transition-all uppercase tracking-wider">08. Masterclass: El Altar</a>
+                            <span class="font-serif italic text-clay-300">84</span>
+                        </li>
+                        <li class="flex justify-between group cursor-pointer">
+                            <a href="#ch9" class="font-sans text-sm font-semibold group-hover:text-terracotta transition-all uppercase tracking-wider">09. Ingeniería de Moldes</a>
+                            <span class="font-serif italic text-clay-300">96</span>
+                        </li>
+                        <li class="flex justify-between group cursor-pointer">
+                            <a href="#ch10" class="font-sans text-sm font-semibold group-hover:text-terracotta transition-all uppercase tracking-wider">10. Estética Marmolada</a>
+                            <span class="font-serif italic text-clay-300">108</span>
+                        </li>
+                    </ul>
+                </div>
+
+                <div class="space-y-4">
+                    <h3 class="font-serif text-xl text-terracotta border-b border-terracotta/20 pb-2 mb-4">IV. Estética y Acabados</h3>
+                    <ul class="space-y-4">
+                        <li class="flex justify-between group cursor-pointer">
+                            <a href="#ch11" class="font-sans text-sm font-semibold group-hover:text-terracotta transition-all uppercase tracking-wider">11. Armaduras Internas</a>
+                            <span class="font-serif italic text-clay-300">120</span>
+                        </li>
+                        <li class="flex justify-between group cursor-pointer">
+                            <a href="#ch12" class="font-sans text-sm font-semibold group-hover:text-terracotta transition-all uppercase tracking-wider">12. Botánica y Alivio</a>
+                            <span class="font-serif italic text-clay-300">132</span>
+                        </li>
+                        <li class="flex justify-between group cursor-pointer">
+                            <a href="#ch13" class="font-sans text-sm font-semibold group-hover:text-terracotta transition-all uppercase tracking-wider">13. Alquimia de Pátinas</a>
+                            <span class="font-serif italic text-clay-300">144</span>
+                        </li>
+                        <li class="flex justify-between group cursor-pointer">
+                            <a href="#ch14" class="font-sans text-sm font-semibold group-hover:text-terracotta transition-all uppercase tracking-wider">14. Joyería: Alta Gama</a>
+                            <span class="font-serif italic text-clay-300">156</span>
+                        </li>
+                        <li class="flex justify-between group cursor-pointer">
+                            <a href="#ch15" class="font-sans text-sm font-semibold group-hover:text-terracotta transition-all uppercase tracking-wider">15. Mesa Funcional</a>
+                            <span class="font-serif italic text-clay-300">168</span>
+                        </li>
+                    </ul>
+
+                    <h3 class="font-serif text-xl text-terracotta border-b border-terracotta/20 pb-2 mt-10 mb-4">V. El Negocio del Arte</h3>
+                    <ul class="space-y-4">
+                        <li class="flex justify-between group cursor-pointer">
+                            <a href="#ch16" class="font-sans text-sm font-semibold group-hover:text-terracotta transition-all uppercase tracking-wider">16. Fotografía de Producto</a>
+                            <span class="font-serif italic text-clay-300">180</span>
+                        </li>
+                        <li class="flex justify-between group cursor-pointer">
+                            <a href="#ch17" class="font-sans text-sm font-semibold group-hover:text-terracotta transition-all uppercase tracking-wider">17. Branding y Alma</a>
+                            <span class="font-serif italic text-clay-300">192</span>
+                        </li>
+                        <li class="flex justify-between group cursor-pointer">
+                            <a href="#ch18" class="hover:text-terracotta font-sans text-sm font-semibold uppercase tracking-wider">18. Packaging de Lujo</a>
+                            <span class="font-serif italic text-clay-300">204</span>
+                        </li>
+                        <li class="flex justify-between group cursor-pointer">
+                            <a href="#ch19" class="hover:text-terracotta font-sans text-sm font-semibold uppercase tracking-wider">19. Precios e Ingeniería</a>
+                            <span class="font-serif italic text-clay-300">216</span>
+                        </li>
+                        <li class="flex justify-between group cursor-pointer">
+                            <a href="#ch20" class="hover:text-terracotta font-sans text-sm font-semibold uppercase tracking-wider">20. El Estilo Propio</a>
+                            <span class="font-serif italic text-clay-300">228</span>
+                        </li>
+                    </ul>
+
+                    <h3 class="font-serif text-xl text-terracotta border-b border-terracotta/20 pb-2 mt-10 mb-4">VI. Apéndices</h3>
+                    <ul class="space-y-4">
+                        <li class="flex justify-between group cursor-pointer">
+                            <a href="#ch21" class="hover:text-terracotta font-sans text-sm font-semibold uppercase tracking-wider">21. Cuidado y Legado</a>
+                            <span class="font-serif italic text-clay-300">240</span>
+                        </li>
+                        <li class="flex justify-between group cursor-pointer">
+                            <a href="#ch24" class="hover:text-terracotta font-sans text-sm font-semibold uppercase tracking-wider">24. El Manifiesto</a>
+                            <span class="font-serif italic text-clay-300">252</span>
+                        </li>
+                    </ul>
+                </div>
+            </div>
+            
+            <div class="mt-auto pt-10 border-t border-clay-200 flex items-center justify-between">
+                <p class="text-[10px] uppercase tracking-widest text-clay-300">© 2026 La Biblia de la Cerámica Fría. Reservados todos los derechos.</p>
+                <img src="ceramica_gallery_1776964199433.png" class="w-24 h-24 object-cover grayscale opacity-20">
+            </div>
+        </section>
+
+        <div class="page-break"></div>
+
+        <!-- ================= CAPÍTULO 01: LA PAUSA CREATIVA ================= -->
+        <section id="ch1" class="p-[25mm] prose-custom">
+            <h4 class="text-terracotta tracking-[0.3em] text-xs uppercase font-bold mb-4">Sección I: El Fundamento</h4>
+            <h2 class="chapter-title font-serif text-5xl text-clay-900 font-extrabold leading-tight">01. El Arte de la Pausa Creativa</h2>
+            
+            <p class="editorial-dropcap leading-relaxed">Bienvenido a una jornada que trasciende el simple acto de modelar. En un mundo donde el ritmo digital parece no detenerse, la cerámica fría (Air Dry Clay) surge como un refugio de presencia y calma. No se trata solo de crear objetos; se trata de permitirte una pausa creativa, un momento de atención plena donde tus manos, conectadas directamente con tu mente, dan forma a algo tangible, único y eterno.</p>
+            
+            <h3>La Psicología del Barro</h3>
+            <p>Trabajar con arcilla activa regiones de nuestro cerebro que el teclado y la pantalla han dejado inactivas. El contacto táctil reduce los niveles de cortisol y nos sumerge en el estado de "Flow" o flujo. Aquí, el tiempo desaparece. Este libro no es solo un manual de técnicas; es una invitación a reclamar tu derecho a la lentitud.</p>
+
+            <div class="quote-block">
+                "La imperfección es el lenguaje de la naturaleza. Abrazar una grieta es abrazar la vida misma."
+            </div>
+
+            <h3>Filosofía Wabi-Sabi en el Siglo XXI</h3>
+            <p>Nuestra estética se basa en el concepto japonés de Wabi-Sabi: encontrar belleza en la imperfección, la impermanencia y lo incompleto. En la cerámica fría, las huellas dactilares no son errores; son la firma de un ser humano en un mundo saturado de perfección industrial. Aprenderás que la simplicidad no es la ausencia de detalle, sino el grado máximo de sofisticación.</p>
+
+            <div class="tip-box">
+                <h5 class="font-bold text-lg mb-2">Ejercicio de Inicio:</h5>
+                <p class="text-sm italic">Antes de tocar la arcilla por primera vez, cierra los ojos y siente la temperatura de tus manos. El calor que generas es la primera herramienta de modelado que utilizarás.</p>
+            </div>
+
+            <img src="modelado_avanzado_1776964776711.png" class="w-full h-[400px] object-cover mt-12 shadow-2xl sepia-[0.2] brightness-90">
+        </section>
+
+        <div class="page-break"></div>
+
+        <!-- ================= CAPÍTULO 02: EL LABORATORIO QUÍMICO ================= -->
+        <section id="ch2" class="p-[25mm] prose-custom bg-clay-50">
+            <h4 class="text-terracotta tracking-[0.3em] text-xs uppercase font-bold mb-4">Sección I: El Fundamento</h4>
+            <h2 class="chapter-title font-serif text-5xl text-clay-900 font-extrabold leading-tight">02. El Laboratorio de Materiales</h2>
+            
+            <p>Para dominar el arte, debes conocer la ciencia detrás de tu medio. La cerámica fría no es un material monolítico; es una categoría que abarca diversas composiciones químicas que dictan el comportamiento de la pieza durante el modelado y, más importante aún, durante el secado.</p>
+            
+            <div class="grid grid-cols-1 md:grid-cols-2 gap-12 my-12">
+                <div class="bg-white p-8 border-t-4 border-clay-800 shadow-sm">
+                    <h5 class="font-serif text-xl mb-4 font-bold">1. Arcillas de Base Mineral</h5>
+                    <p class="text-sm leading-relaxed mb-4">Marcas como <strong>DAS</strong> o <strong>Jovi</strong>. Compuestas por fibras naturales y minerales. Son pesadas, se sienten como barro real y tienen una contracción moderada (5-8%).</p>
+                    <p class="text-sm text-terracotta font-bold">Uso ideal: Jarrones, platos, esculturas robustas.</p>
+                </div>
+                <div class="bg-white p-8 border-t-4 border-gold shadow-sm">
+                    <h5 class="font-serif text-xl mb-4 font-bold">2. Arcillas Poliméricas/Papel</h5>
+                    <p class="text-sm leading-relaxed mb-4">Marcas como <strong>Hearty</strong> o <strong>Modena</strong>. Extremadamente ligeras, casi etéreas. Mantienen cierta flexibilidad tras el secado y permiten detalles filigranados.</p>
+                    <p class="text-sm text-terracotta font-bold">Uso ideal: Joyería, miniaturas, flores realistas.</p>
+                </div>
+            </div>
+
+            <h3>Herramientas: De la Cocina al Taller</h3>
+            <p>No caigas en la trampa de comprar kits costosos al principio. Tu mejor aliado es el ingenio. Una botella de vino vacía es el mejor rodillo del mundo por su peso y superficie lisa. Un palillo de bambú es una herramienta de detalle superior a muchos estiletes de plástico.</p>
+
+            <img src="materiales_estudio_1776964761214.png" class="w-full h-[350px] object-cover my-12 shadow-xl border-[10px] border-white">
+
+            <h3>La Tabla de Humedad</h3>
+            <p>El enemigo número uno es el aire. Aprenderás a crear una "estación de hidratación" usando una caja hermética y una esponja húmeda, lo que te permitirá trabajar en una misma pieza durante semanas sin que endurezca.</p>
+
+            <div class="tip-box border-gold">
+                <h5 class="font-bold text-lg mb-2">Lista de Esenciales para tu Primera Pieza:</h5>
+                <ul class="list-none space-y-2 text-sm">
+                    <li><span class="text-terracotta mr-2">✦</span> Arcilla blanca de base mineral (500g)</li>
+                    <li><span class="text-terracotta mr-2">✦</span> Agua destilada (evita moho)</li>
+                    <li><span class="text-terracotta mr-2">✦</span> Rodillo de vidrio o acrílico</li>
+                    <li><span class="text-terracotta mr-2">✦</span> Lijas de grano 120, 240 y 400</li>
+                </ul>
+            </div>
+        </section>
+
+        <div class="page-break"></div>
+
+        <!-- ================= CAPÍTULO 03: FÍSICA DO MODELADO ================= -->
+        <section id="ch3" class="p-[25mm] prose-custom">
+            <h4 class="text-terracotta tracking-[0.3em] text-xs uppercase font-bold mb-4">Sección I: El Fundamento</h4>
+            <h2 class="chapter-title font-serif text-5xl text-clay-900 font-extrabold leading-tight">03. La Ciencia del Modelado</h2>
+            
+            <p>Amasar no es solo mezclar. Es un proceso físico de alineación de partículas. En este capítulo exploramos la física detrás de cada movimiento y cómo la memoria del material afecta el resultado final.</p>
+            
+            <h3>La Memoria de la Arcilla</h3>
+            <p>La arcilla tiene "memoria". Si doblas una placa y luego la enderezas, durante el secado la arcilla intentará volver a su posición doblada. Por eso, cada movimiento debe ser deliberado. Aprenderás a "borrar" la memoria del material mediante el amasado circular lento, permitiendo que las fibras se relajen y se distribuyan uniformemente.</p>
+
+            <img src="amasado_arcilla.png" class="w-full h-[450px] object-cover my-12 shadow-2xl">
+
+            <h3>Control de Burbujas: La Técnica del Impacto</h3>
+            <p>Las burbujas de aire son las causantes del 90% de las grietas. Aprenderás la técnica del "Lanzamiento Maestro": golpear la bola de arcilla contra la mesa repetidamente antes de empezar. Esto colapsa las micro-burbujas y crea una masa densa y estructuralmente sana.</p>
+
+            <h3>La Regla de Oro del Grosor Uniforme</h3>
+            <p>La contracción desigual es el fin de cualquier pieza. Si una parte es más gruesa que otra, secará a ritmos diferentes, creando tensiones internas insoportables. Usaremos guías de madera (listones de 5mm) a los lados de nuestro rodillo para asegurar que cada milímetro de nuestra placa sea idéntico.</p>
+
+            <div class="tip-box">
+                <h5 class="font-bold text-lg mb-2">Secreto del Maestro:</h5>
+                <p class="text-sm italic">"Si la arcilla se pega a tus dedos, estás usando demasiada agua. Si se agrieta al doblarla, estás usando muy poca. El punto perfecto es cuando se siente como el lóbulo de tu oreja: suave, flexible y ligeramente fresca."</p>
+            </div>
+        </section>
+
+        <div class="page-break"></div>
+
+        <!-- ================= CAPÍTULO 04: ARQUITECTURA ================= -->
+        <section id="ch4" class="p-[25mm] prose-custom bg-clay-50">
+            <h4 class="text-terracotta tracking-[0.3em] text-xs uppercase font-bold mb-4">Sección II: La Técnica</h4>
+            <h2 class="chapter-title font-serif text-5xl text-clay-900 font-extrabold leading-tight">04. Arquitectura en Cerámica</h2>
+            
+            <p>Construir con cerámica fría es un ejercicio de ingeniería. Sin el soporte del calor extremo que funde el sílice en un horno, nuestra estructura depende enteramente de las uniones mecánicas y la cohesión de las fibras.</p>
+            
+            <h3>La Química de la Barbotina (Score & Slip)</h3>
+            <p>Muchos principiantes simplemente presionan dos piezas juntas. Esto es un error fatal. Al secarse, las piezas se separarán limpiamente. La solución es la <strong>Barbotina de Alta Cohesión</strong>: una mezcla espesa de tu propia arcilla, un poco de agua y una gota de pegamento de carpintero de alta calidad. El rayado (score) debe ser profundo, en ángulos de 45 grados, creando una "llave" física para que el pegamento penetre.</p>
+
+            <div class="grid grid-cols-2 gap-8 my-12">
+                <div class="bg-clay-100 p-6 italic text-sm">
+                    <strong>Pellizco Avanzado:</strong> No pellizques solo con los dedos. Usa la palma de la mano para soportar el peso mientras los dedos afinan las paredes. Esto evita que la base se colapse.
+                </div>
+                <div class="bg-clay-100 p-6 italic text-sm">
+                    <strong>Técnica de la Placa:</strong> Deja que tus placas "reposen" 20 minutos antes de unirlas. Una placa demasiado fresca se deformará; una en estado "cuero" mantendrá su ángulo perfectamente.
+                </div>
+            </div>
+
+            <h3>Soportes de "Sacrificio"</h3>
+            <p>Para crear arcos o formas cóncavas, usaremos soportes internos de papel de seda o espuma. Estos materiales se comprimen ligeramente a medida que la arcilla se encoge, evitando que la pieza se agriete desde el interior por culpa de un soporte rígido.</p>
+
+            <img src="construccion_placas.png" class="w-full h-[300px] object-cover mt-12 grayscale shadow-lg">
+        </section>
+
+        <div class="page-break"></div>
+
+        <!-- ================= CAPÍTULO 05: ANTI-GRIETAS ================= -->
+        <section id="ch5" class="p-[25mm] prose-custom">
+            <h4 class="text-terracotta tracking-[0.3em] text-xs uppercase font-bold mb-4">Sección II: La Técnica</h4>
+            <h2 class="chapter-title font-serif text-5xl text-clay-900 font-extrabold leading-tight">05. Manual Anti-Grietas</h2>
+            
+            <p>Este capítulo es, probablemente, el más importante de este libro. El secado es el "momento de la verdad". Una pieza perfecta puede arruinarse en 24 horas por una gestión incorrecta de la evaporación.</p>
+            
+            <h3>La Termodinámica del Secado</h3>
+            <p>La evaporación ocurre primero en los bordes y puntas. Estas áreas se encogen antes que el centro, tirando de la masa húmeda y provocando fracturas. La clave no es secar, sino <strong>ralentizar el secado</strong>.</p>
+
+            <div class="bg-clay-900 text-white p-10 my-12">
+                <h5 class="font-serif text-2xl mb-6 text-terracotta font-bold italic">El Método de la Carpa (Protocolo Profesional)</h5>
+                <ol class="space-y-6 list-none">
+                    <li class="flex gap-4">
+                        <span class="text-terracotta font-bold">01.</span>
+                        <p class="text-sm">Coloca la pieza sobre una tabla de madera (nunca plástico o metal). La madera absorbe la humedad de la base, permitiendo un secado 360 grados.</p>
+                    </li>
+                    <li class="flex gap-4">
+                        <span class="text-terracotta font-bold">02.</span>
+                        <p class="text-sm">Cubre con una bolsa de plástico grande, pero no la cierres. Crea una "carpa" que mantenga un microclima de alta humedad.</p>
+                    </li>
+                    <li class="flex gap-4">
+                        <span class="text-terracotta font-bold">03.</span>
+                        <p class="text-sm">Cada 12 horas, da la vuelta a la bolsa para eliminar la condensación y permite que entre aire fresco solo durante 5 minutos.</p>
+                    </li>
+                </ol>
+            </div>
+
+            <h3>Rescate de Emergencia: La Cirugía de la Arcilla</h3>
+            <p>Si aparece una grieta capilar, no entres en pánico. Aprenderás a preparar el "Filler de Alta Resistencia": polvo de arcilla seca, agua destilada y un poco de vinagre blanco. El vinagre descompone las partículas de la arcilla permitiendo que la nueva mezcla se fusione molecularmente con la antigua.</p>
+
+            <div class="tip-box border-slate">
+                <h5 class="font-bold text-lg mb-2">Checklist de Secado Seguro:</h5>
+                <ul class="space-y-2 text-sm italic">
+                    <li>✓ Lejos de radiadores o luz solar directa.</li>
+                    <li>✓ Sobre superficie porosa (madera o yeso).</li>
+                    <li>✓ Girar la pieza 180 grados cada mañana.</li>
+                    <li>✓ Paciencia: una pieza grande puede tardar 7 días en secar.</li>
+                </ul>
+            </div>
+        </section>
+
+        <div class="page-break"></div>
+
+        <!-- ================= CAPÍTULO 06: EL RITUAL DEL LIJADO ================= -->
+        <section id="ch6" class="p-[25mm] prose-custom bg-clay-50">
+            <h4 class="text-terracotta tracking-[0.3em] text-xs uppercase font-bold mb-4">Sección II: La Técnica</h4>
+            <h2 class="chapter-title font-serif text-5xl text-clay-900 font-extrabold leading-tight">06. El Secreto del Lijado Maestro</h2>
+            
+            <p>El lijado no es una tarea de limpieza; es una tarea de modelado final. Es aquí donde la pieza adquiere su carácter "profesional" y pierde cualquier rastro de amateurismo.</p>
+            
+            <h3>La Graduación de la Luz</h3>
+            <p>Debes lijar bajo una luz lateral fuerte. Esto revelará cada pequeña protuberancia o depresión. Comenzaremos con grano 120 para corregir la simetría y terminaremos con grano 400 o incluso 600 para un acabado que brilla naturalmente antes de aplicar cualquier barniz.</p>
+
+            <div class="grid grid-cols-1 md:grid-cols-2 gap-10 my-12">
+                <div>
+                    <h5 class="font-serif text-xl mb-4 font-bold">Lijado en Seco vs. Húmedo</h5>
+                    <p class="text-sm">Aunque la cerámica fría no es resistente al agua, algunas arcillas poliméricas permiten un lijado con apenas una gota de agua para evitar el polvo. Para las de base mineral, el lijado siempre será en seco y con mascarilla de alta protección (N95).</p>
+                </div>
+                <div class="bg-clay-200 h-64 overflow-hidden shadow-inner">
+                    <img src="lijado_ceramica.png" class="w-full h-full object-cover mix-blend-overlay">
+                </div>
+            </div>
+
+            <h3>El Truco de la Esponja Mágica</h3>
+            <p>Para las curvas internas donde el papel de lija no llega, usaremos una esponja abrasiva de grano fino. Esto asegura una transición suave en los cuellos de los jarrones y las bases de los cuencos.</p>
+
+            <div class="tip-box border-clay-800">
+                <h5 class="font-bold text-lg mb-2">Consejo de Seguridad:</h5>
+                <p class="text-sm">El polvo de arcilla es extremadamente fino. Lija siempre en exteriores o usa una aspiradora con filtro HEPA conectada cerca de tu área de trabajo. Tus pulmones te lo agradecerán.</p>
+            </div>
+        </section>
+
+        <div class="page-break"></div>
+
+        <!-- ================= CAPÍTULO 07: ANATOMÍA ================= -->
+        <section id="ch7" class="p-[25mm] prose-custom">
+            <h4 class="text-terracotta tracking-[0.3em] text-xs uppercase font-bold mb-4">Sección II: La Técnica</h4>
+            <h2 class="chapter-title font-serif text-5xl text-clay-900 font-extrabold leading-tight">07. Galería y Anatomía de Piezas</h2>
+            
+            <p>Un objeto hermoso no es producto del azar; es producto de la proporción. En este capítulo estudiamos las formas clásicas y cómo adaptarlas al diseño contemporáneo.</p>
+            
+            <h3>La Regla de los Tercios en 3D</h3>
+            <p>Al igual que en la fotografía, una pieza cerámica se siente equilibrada si su "punto de mayor tensión" (el área más ancha) se encuentra en el primer tercio superior o inferior, nunca en el centro exacto. Esto crea dinamismo visual.</p>
+
+            <img src="galeria_proporciones.png" class="w-full h-[500px] object-cover my-12 shadow-2xl">
+
+            <div class="grid grid-cols-3 gap-6 text-center my-12">
+                <div>
+                    <h6 class="font-bold uppercase text-[10px] tracking-widest mb-2 anatomy-label">La Base</h6>
+                    <p class="text-[10px] italic">Debe ser ligeramente cóncava para asegurar estabilidad absoluta en superficies planas.</p>
+                </div>
+                <div>
+                    <h6 class="font-bold uppercase text-[10px] tracking-widest mb-2 anatomy-label">El Vientre</h6>
+                    <p class="text-[10px] italic">Donde reside el volumen y el peso visual de la pieza.</p>
+                </div>
+                <div>
+                    <h6 class="font-bold uppercase text-[10px] tracking-widest mb-2 anatomy-label">El Labio</h6>
+                    <p class="text-[10px] italic">El acabado final. Un labio fino denota maestría; uno grueso transmite rusticidad.</p>
+                </div>
+            </div>
+
+            <h3>Simetría vs. Orgánico: Cómo Decidir</h3>
+            <p>Antes de modelar, decide tu intención: ¿quieres una pieza geométrica o orgánica? Para piezas simétricas, usa una plantilla de papel recortada y girala mientras modelas para comprobar cada ángulo. Para piezas orgánicas, cierra los ojos al pellizcar y guíate solo por el tacto. El cerebro visual tiende a corregir; el tacto tiende a crear.</p>
+
+            <h3>Ejercicio: La Inspección de los 5 Ángulos</h3>
+            <p>Cuando termines cualquier pieza, ponla sobre una mesa y obsérvala desde: <strong>frente, atrás, izquierda, derecha y desde arriba</strong>. Una pieza profesional es equilibrada desde los cinco ángulos. La mayoría de los principiantes solo trabajan desde el frente. Este ejercicio te entrena para pensar en 360 grados.</p>
+        </section>
+
+        <div class="page-break"></div>
+
+        <!-- ================= CAPÍTULO 08: MASTERCLASS EL ALTAR ================= -->
+        <section id="ch8" class="p-[25mm] prose-custom bg-clay-50">
+            <h4 class="text-terracotta tracking-[0.3em] text-xs uppercase font-bold mb-4">Sección III: Proyectos</h4>
+            <h2 class="chapter-title font-serif text-5xl text-clay-900 font-extrabold leading-tight">08. Masterclass: El Altar de Joyas</h2>
+            
+            <p>Este no es un proyecto simple; es una prueba de fuego para todas las habilidades que hemos cultivado hasta ahora. Un Altar de Joyas requiere control de placa, modelado de bordes orgánicos, lijado de precisión y acabado decorativo de lujo.</p>
+            
+            <div class="my-12 relative">
+                <img src="altar_joyas_1776964216699.png" class="w-full h-[400px] object-cover shadow-2xl">
+                <div class="absolute -bottom-6 -right-6 bg-white p-6 shadow-xl max-w-xs border-l-4 border-gold">
+                    <p class="text-xs italic">"Este diseño utiliza una base plana con un labio levantado asimétricamente para crear un efecto de hoja cayendo."</p>
+                </div>
+            </div>
+
+            <h3>Guía de Ejecución Paso a Paso</h3>
+            <ol class="space-y-8 list-none font-light">
+                <li class="flex gap-6">
+                    <span class="text-4xl font-serif italic text-terracotta/40">1.</span>
+                    <div>
+                        <h6 class="font-bold text-lg mb-2">Preparación de la Placa</h6>
+                        <p class="text-sm">Estira una placa de 6mm. Usa una tela de lino debajo para transferir una textura sutil de fibra a la arcilla. Deja reposar 15 minutos.</p>
+                    </div>
+                </li>
+                <li class="flex gap-6">
+                    <span class="text-4xl font-serif italic text-terracotta/40">2.</span>
+                    <div>
+                        <h6 class="font-bold text-lg mb-2">Corte y "Desbaste"</h6>
+                        <p class="text-sm">Usa una plantilla de papel para cortar una forma ovalada irregular. Usa un dedo humedecido para suavizar el borde recién cortado antes de levantarlo.</p>
+                    </div>
+                </li>
+                <li class="flex gap-6">
+                    <span class="text-4xl font-serif italic text-terracotta/40">3.</span>
+                    <div>
+                        <h6 class="font-bold text-lg mb-2">El Levantamiento Orgánico</h6>
+                        <p class="text-sm">Coloca la placa sobre una superficie cóncava suave (un plato de cocina con una toalla encima). Presiona el centro suavemente. Esto forzará a los bordes a levantarse de forma natural.</p>
+                    </div>
+                </li>
+            </ol>
+
+            <div class="tip-box border-clay-900">
+                <h5 class="font-bold text-lg mb-2">Acabado Premium: El Borde de Oro</h5>
+                <p class="text-sm">Una vez la pieza esté seca y sellada con barniz mate, aplica una mezcla de polvos de mica dorada y medio acrílico solo en el borde superior. Esto eleva el valor percibido de la pieza instantáneamente.</p>
+            </div>
+        </section>
+
+        <div class="page-break"></div>
+
+        <!-- ================= CAPÍTULO 09: INGENIERÍA DE MOLDES ================= -->
+        <section id="ch9" class="p-[25mm] prose-custom">
+            <h4 class="text-terracotta tracking-[0.3em] text-xs uppercase font-bold mb-4">Sección III: Proyectos</h4>
+            <h2 class="chapter-title font-serif text-5xl text-clay-900 font-extrabold leading-tight">09. Ingeniería de Moldes Caseros</h2>
+            
+            <p>La reproducción es la clave de la escalabilidad. Si quieres vender tus piezas, no puedes modelar cada unidad desde cero si buscas rentabilidad. Los moldes te permiten mantener la consistencia manteniendo el alma artesanal.</p>
+            
+            <h3>Moldes de Escayola vs. Silicona</h3>
+            <p>La escayola es ideal para arcilla mineral porque absorbe la humedad, facilitando el desmolde. La silicona es perfecta para detalles intrincados y piezas pequeñas. Aprenderás a crear moldes de "una sola cara" usando objetos cotidianos como piedras de río, conchas marinas o texturas de corteza de árbol.</p>
+
+            <img src="moldes_caseros_1776964399655.png" class="w-full h-[400px] object-cover my-12 shadow-lg">
+
+            <h3>Cómo Crear tu Primer Molde de Escayola</h3>
+            <ol class="list-decimal pl-6 space-y-3 font-light text-sm">
+                <li><strong>Elige el objeto a copiar</strong> (un cuenco, una piedra, una concha). Unta la superficie con vaselina como desmoldante.</li>
+                <li><strong>Mezcla la escayola</strong>: 2 partes de escayola por 1 de agua fría. Siempre añade el polvo AL AGUA, nunca al revés. Mezcla sin batir para evitar burbujas.</li>
+                <li><strong>Vierte sobre el objeto</strong> y espera 30 minutos. La escayola calentará mientras endurece — eso es normal.</li>
+                <li><strong>Desmolda con cuidado</strong> y deja curar 24 horas antes de usar. Un molde húmedo rompe la arcilla.</li>
+                <li><strong>Para usar el molde</strong>: extiende una placa de arcilla de 5mm y presiónala dentro. Deja 20 minutos. La escayola absorberá la humedad y la arcilla se despegará sola.</li>
+            </ol>
+
+            <div class="tip-box">
+                <h5 class="font-bold text-lg mb-2">La Técnica del Estampado en 3 Pasos:</h5>
+                <ol class="list-decimal pl-5 space-y-2 text-sm">
+                    <li>Crea un "sello" modelando un relieve en arcilla y déjalo secar completamente (mínimo 72h).</li>
+                    <li>Presiona el sello seco sobre una placa fresca de 6mm con presión uniforme y constante durante 10 segundos.</li>
+                    <li>Retira el sello en un movimiento perpendicular (hacia arriba), nunca en ángulo, para no distorsionar el patrón.</li>
+                </ol>
+            </div>
+        </section>
+
+        <div class="page-break"></div>
+
+        <!-- ================= CAPÍTULO 10: ESTÉTICA MARMOLADA ================= -->
+        <section id="ch10" class="p-[25mm] prose-custom bg-clay-900 text-white">
+            <h4 class="text-clay-300 tracking-[0.3em] text-xs uppercase font-bold mb-4">Sección III: Proyectos</h4>
+            <h2 class="chapter-title font-serif text-5xl text-clay-100 font-extrabold leading-tight border-clay-800">10. Inlays y Estética Marmolada</h2>
+            
+            <p class="text-clay-200">El marmolado es el arte de la imperfección controlada. Inspirado en la técnica japonesa del Nerikomi, utilizamos diferentes colores de arcilla para crear patrones integrados en la estructura misma de la pieza, no solo en la superficie.</p>
+            
+            <h3>Alquimia de Pigmentos</h3>
+            <p class="text-clay-100">Aprenderás a teñir tu propia arcilla blanca usando óxidos metálicos o tintas acrílicas de alta pigmentación. Un exceso de tinte puede alterar la química del secado, por lo que usaremos proporciones exactas para mantener la integridad estructural.</p>
+
+            <div class="quote-block !border-clay-800 !text-clay-100">
+                "Dos colores que se encuentran en el barro son dos historias que se entrelazan para siempre."
+            </div>
+
+            <h3>Técnica del Doblez y Estirado: Paso a Paso</h3>
+            <ol class="list-decimal pl-6 space-y-3 font-light text-sm">
+                <li><strong>Prepara dos bloques</strong> de arcilla de colores distintos. Cada uno del mismo tamaño (unos 100g).</li>
+                <li><strong>Apílalos</strong> uno sobre el otro y aplana levemente con la palma.</li>
+                <li><strong>1er doblez</strong>: dobla la masa por la mitad y aplana. Las vetas serán anchas.</li>
+                <li><strong>2do y 3er doblez</strong>: repite. Las vetas se afinan y se multiplican.</li>
+                <li><strong>Detente aquí</strong> para un efecto mármol clásico. Si continúas más de 6 dobleces, los colores se mezclarán y obtendrás un tono sucio.</li>
+                <li><strong>Estira</strong> la masa con el rodillo hasta tu grosor deseado. Las vetas aparecerán en toda su belleza.</li>
+            </ol>
+
+            <h3>Inlays: Incrustaciones de Color</h3>
+            <p>Para crear un inlay (incrustación), modela pequeñas formas (círculos, líneas, hojas) en arcilla de color contrastante. Presiónala sobre la placa principal húmeda hasta que quede al mismo nivel que la superficie. Una vez seco, lija suavemente para revelar el patrón perfectamente integrado. El lijado es lo que hace que el inlay parezca parte del material y no algo pegado encima.</p>
+        </section>
+
+        <div class="page-break"></div>
+
+        <!-- ================= CAPÍTULO 11: ARMADURAS ================= -->
+        <section id="ch11" class="p-[25mm] prose-custom">
+            <h4 class="text-terracotta tracking-[0.3em] text-xs uppercase font-bold mb-4">Sección IV: Acabados</h4>
+            <h2 class="chapter-title font-serif text-5xl text-clay-900 font-extrabold leading-tight">11. Estructuras con Armaduras Internas</h2>
+            
+            <p>Para piezas que desafían la gravedad (brazos delgados, cuellos largos, figuras altas), la arcilla por sí sola fallará. Necesitamos un esqueleto que soporte la carga mientras el material está húmedo y que le proporcione resistencia una vez seco.</p>
+            
+            <h3>Cómo Armar el Esqueleto: Paso a Paso</h3>
+            <ol class="list-decimal pl-6 space-y-3 font-light text-sm">
+                <li><strong>Dobla el alambre de aluminio</strong> (grosor 2mm) siguiendo la silueta de tu pieza. Usa alicates para ángulos precisos.</li>
+                <li><strong>Recubre con cinta de carrocero</strong> toda la armadura. Esto crea agarre para la arcilla y actúa como zona de alivio cuando el barro se encoge.</li>
+                <li><strong>Aplica arcilla en capas finas</strong> (máximo 1cm por capa). No intentes cubrir todo de una vez — el peso deformará la pieza.</li>
+                <li><strong>Deja reposar 2h entre capas</strong>. La capa exterior debe estar en estado "cuero" (no húmeda, no seca) antes de añadir la siguiente.</li>
+                <li><strong>Articula los puntos de unión</strong> dejando un pequeño espacio de arcilla sin comprimir cerca de las juntas del alambre. Esto absorbe la tensión de la contracción.</li>
+            </ol>
+
+            <div class="tip-box border-slate">
+                <h5 class="font-bold text-lg mb-2">Peligro: El Efecto "Espada"</h5>
+                <p class="text-sm">Si usas alambre demasiado rígido (ej: galvanizado grueso) sin acolchado, al encogerse la arcilla el alambre perforará la superficie desde dentro. Siempre recubre el alambre y deja holgura en las articulaciones.</p>
+            </div>
+        </section>
+
+        <div class="page-break"></div>
+
+        <!-- ================= CAPÍTULO 12: BOTÁNICA ================= -->
+        <section id="ch12" class="p-[25mm] prose-custom bg-clay-50">
+            <h4 class="text-terracotta tracking-[0.3em] text-xs uppercase font-bold mb-4">Sección IV: Acabados</h4>
+            <h2 class="chapter-title font-serif text-5xl text-clay-900 font-extrabold leading-tight">12. Pintura Botánica y Relieves</h2>
+            
+            <p>La naturaleza es la mejor diseñadora. En este capítulo, aprendemos a transferir la complejidad de la flora directamente a nuestras piezas, creando un vínculo eterno entre la tierra modelada y la vida orgánica.</p>
+            
+            <h3>Estampado Botánico: Técnica Paso a Paso</h3>
+            <ol class="list-decimal pl-6 space-y-3 font-light text-sm">
+                <li><strong>Escoge hojas frescas</strong> con venas marcadas: helecho, eucalipto, salvia o hoja de higuera. Sécalas ligeramente con papel absorbente — deben estar blandas pero sin exceso de humedad.</li>
+                <li><strong>Extiende tu placa</strong> de 6mm sobre una tela de lino. La textura del lino añade un fondo sutil muy elegante.</li>
+                <li><strong>Coloca la hoja</strong> con el lado de las venas hacia abajo sobre la arcilla fresca.</li>
+                <li><strong>Pasa el rodillo</strong> con presión firme y uniforme una sola vez. No repitas — el segundo paso borrará el detalle.</li>
+                <li><strong>Retira la hoja en un movimiento rápido y perpendicular</strong>, como si pegaras una curita. Lento distorsiona; rápido preserva.</li>
+                <li><strong>Deja secar 24h</strong> antes de cualquier acabado. El relieve se acentúa al secar.</li>
+            </ol>
+
+            <div class="my-12">
+                <img src="ceramica_botanica_1776964232366.png" class="w-full h-[350px] object-cover shadow-2xl border-[12px] border-white">
+            </div>
+
+            <h3>Glaseado en Frío con Acuarelas</h3>
+            <p>Aplica primero una capa de barniz mate y deja secar 1h. Luego mezcla acuarela verde oliva muy diluida (80% agua, 20% pintura) y aplícala con pincel ancho sobre el relieve. La acuarela se acumulará naturalmente en las depresiones de las venas. Limpia el exceso de las zonas planas con un trapo seco. El resultado simula musgo real creciendo sobre cerámica antigua.</p>
+        </section>
+
+        <div class="page-break"></div>
+
+        <!-- ================= CAPÍTULO 13: ALQUIMIA DE PÁTINAS ================= -->
+        <section id="ch13" class="p-[25mm] prose-custom">
+            <h4 class="text-terracotta tracking-[0.3em] text-xs uppercase font-bold mb-4">Sección IV: Acabados</h4>
+            <h2 class="chapter-title font-serif text-5xl text-clay-900 font-extrabold leading-tight">13. Alquimia de Pátinas Antiguas</h2>
+            
+            <p>¿Cómo lograr que una pieza terminada ayer parezca que ha estado enterrada durante mil años? La respuesta está en la alquimia de las pátinas. No pintamos; aplicamos capas de historia simulada.</p>
+            
+            <img src="patinas_antiguas_1776964412345.png" class="w-full h-[400px] object-cover my-12 shadow-xl">
+
+            <h3>Técnica Wipe-Away con Betún de Judea</h3>
+            <ol class="list-decimal pl-6 space-y-3 font-light text-sm">
+                <li><strong>Sella la pieza</strong> con barniz acrílico mate. Sin sellado, el Betún la mancha de forma permanente.</li>
+                <li><strong>Aplica el Betún de Judea</strong> con un pincel viejo en toda la superficie, sin dejar zonas sin cubrir.</li>
+                <li><strong>Espera 3–5 minutos</strong> (no más). El Betún debe estar pegajoso pero no completamente seco.</li>
+                <li><strong>Retira con un trapo de algodón limpio</strong> en movimientos circulares. El pigmento quedará solo en grietas y depresiones.</li>
+                <li><strong>Para más dramatismo</strong>, repite el proceso solo en las zonas de relieve.</li>
+                <li><strong>Sella con barniz final</strong> (mate o satinado) para fijar la pátina y protegerla.</li>
+            </ol>
+
+            <h3>Efecto Bronce Oxidado (Verdigrís)</h3>
+            <ol class="list-decimal pl-6 space-y-3 font-light text-sm mt-6">
+                <li>Pinta toda la pieza con pintura acrílica negra. Deja secar.</li>
+                <li>Aplica pintura metálica de cobre en seco con una esponja, solo tocando las partes altas del relieve.</li>
+                <li>Mezcla vinagre blanco con sal y aplica con un pincel fino sobre las zonas de cobre.</li>
+                <li>Deja actuar 12h. La reacción química crea un verde azulado real sobre el cobre.</li>
+            </ol>
+        </section>
+
+        <div class="page-break"></div>
+
+        <!-- ================= CAPÍTULO 14: JOYERÍA ALTA GAMA ================= -->
+        <section id="ch14" class="p-[25mm] prose-custom bg-clay-50">
+            <h4 class="text-terracotta tracking-[0.3em] text-xs uppercase font-bold mb-4">Sección IV: Acabados</h4>
+            <h2 class="chapter-title font-serif text-5xl text-clay-900 font-extrabold leading-tight">14. Joyería: Aretes y Collares de Alta Gama</h2>
+            
+            <p>La joyería es el punto donde la cerámica se convierte en moda. Debido a su ligereza, la cerámica fría es superior a la arcilla polimérica para aretes de gran tamaño que no cansan el lóbulo de la oreja.</p>
+            
+            <h3>Cómo Incrustar Herrajes: Paso a Paso</h3>
+            <ol class="list-decimal pl-6 space-y-3 font-light text-sm">
+                <li><strong>Modela la forma del arete</strong> con arcilla de base polimérica de mínimo 3mm de grosor en el centro.</li>
+                <li><strong>Con la arcilla fresca</strong>, presiona el poste del arete (acero quirúrgico o plata 925) desde la parte trasera, perpendicular, hasta 2/3 del grosor total.</li>
+                <li><strong>Aplica una gota de cianoacrilato gel</strong> alrededor del poste en la parte trasera. Espera 30 minutos antes de mover la pieza.</li>
+                <li><strong>Seca 48h en horizontal</strong> con el poste apuntando hacia arriba para evitar que se incline al secarse.</li>
+                <li><strong>Lija los bordes hasta grano 400.</strong> Los bordes afilados incomodan al usar el arete.</li>
+                <li><strong>Sella con resina UV:</strong> aplica una capa fina y cura con lámpara UV 60 segundos. La pieza quedará impermeable al sudor y perfumes.</li>
+            </ol>
+            <div class="tip-box mt-8">
+                <h5 class="font-bold mb-2">Proporciones para aretes de impacto sin peso:</h5>
+                <p class="text-sm">Aretes tipo "statement" de hasta 6cm no cansan si pesan menos de 4g. Usa arcilla polimérica y haz el centro hueco cuando el diámetro supere 4cm.</p>
+            </div>
+
+
+            <h3>Sellado de Alta Resistencia</h3>
+            <p>La joyería está expuesta al sudor, perfumes y cosméticos. Usaremos resina UV de grado joyero o barnices de poliuretano bi-componente para asegurar que la pieza sea impermeable y eterna.</p>
+        </section>
+
+        <div class="page-break"></div>
+
+        <!-- ================= CAPÍTULO 15: MESA FUNCIONAL ================= -->
+        <section id="ch15" class="p-[25mm] prose-custom">
+            <h4 class="text-terracotta tracking-[0.3em] text-xs uppercase font-bold mb-4">Sección IV: Acabados</h4>
+            <h2 class="chapter-title font-serif text-5xl text-clay-900 font-extrabold leading-tight">15. Decoración de Mesa Funcional</h2>
+            
+            <p>La mesa es el escenario donde tus piezas cobran vida. Aunque la cerámica fría no es apta para lavavajillas ni para contacto directo con alimentos líquidos calientes, su potencial decorativo en el comedor es inmenso.</p>
+            
+            <img src="mesa_funcional_1776964423635.png" class="w-full h-[400px] object-cover my-12 shadow-2xl">
+
+            <h3>Crea tu Set de Mesa en 5 Piezas Coherentes</h3>
+            <p>Un set se vende por mucho más que piezas sueltas. Usa la misma arcilla y textura para todas:</p>
+            <ul class="list-none space-y-3 text-sm font-light mt-4">
+                <li><span class="text-terracotta mr-2">01.</span><strong>Servilletero:</strong> Placa de 4mm enrollada en tubo. Diámetro interno 4cm. Textura de lino exterior.</li>
+                <li><span class="text-terracotta mr-2">02.</span><strong>Porta-nombre:</strong> Placa pequeña con ranura cortada con cutter. Graba el nombre con palillo o punzón.</li>
+                <li><span class="text-terracotta mr-2">03.</span><strong>Portavelas votivo:</strong> Cilindro con base maciza, altura máx. 6cm. Nunca velas directas — usa vasito de cristal interno.</li>
+                <li><span class="text-terracotta mr-2">04.</span><strong>Plato de presentación:</strong> Placa de 5mm con bordes de 1cm. Diámetro 20cm.</li>
+                <li><span class="text-terracotta mr-2">05.</span><strong>Cuenco de sales:</strong> Técnica de pellizco. Capacidad para 2 cucharadas de sal o especias.</li>
+            </ul>
+
+            <div class="tip-box border-clay-900 mt-8">
+                <h5 class="font-bold text-lg mb-2">Advertencia de Seguridad (Food Safety)</h5>
+                <p class="text-sm">Nunca uses barnices tóxicos en piezas cerca de la boca. Usa barnices certificados para contacto indirecto con alimentos y limpia siempre a mano con paño húmedo.</p>
+            </div>
+        </section>
+
+        <div class="page-break"></div>
+
+        <!-- ================= CAPÍTULO 16: FOTOGRAFÍA ================= -->
+        <section id="ch16" class="p-[25mm] prose-custom bg-clay-50">
+            <h4 class="text-terracotta tracking-[0.3em] text-xs uppercase font-bold mb-4">Sección V: El Negocio</h4>
+            <h2 class="chapter-title font-serif text-5xl text-clay-900 font-extrabold leading-tight">16. Fotografía Estilo Pinterest</h2>
+            
+            <p>En el mundo digital, tu producto es tu foto. Puedes ser el mejor artesano del mundo, pero si tu fotografía es pobre, tu negocio no despegará. La cámara de tu teléfono es suficiente con la configuración correcta.</p>
+            
+            <h3>Setup Profesional sin Estudio: 7 Pasos</h3>
+            <ol class="list-decimal pl-6 space-y-3 font-light text-sm">
+                <li><strong>Encuentra una ventana con luz suave</strong> (nunca sol directo). Mejor horario: 8–10am o 4–6pm.</li>
+                <li><strong>Crea tu fondo</strong> con una tabla de madera clara o papel kraft pegado en la pared.</li>
+                <li><strong>Coloca la pieza a 30cm de la ventana</strong>, con la ventana a su lado (nunca de frente).</li>
+                <li><strong>Usa un cartulón blanco A3</strong> al lado opuesto como reflector. Ilumina sombras sin flash.</li>
+                <li><strong>Añade máximo 2 props:</strong> ramita seca, granos de café, o una mano humana sosteniendo la pieza.</li>
+                <li><strong>Dispara en modo Retrato</strong> o apertura f/2.8. El fondo desenfocado dice "premium" instantáneamente.</li>
+                <li><strong>Edita solo brillo y contraste</strong> en Lightroom Mobile (gratis): brillo +20, luces −10.</li>
+            </ol>
+        </section>
+
+        <div class="page-break"></div>
+
+        <!-- ================= CAPÍTULO 17: BRANDING ================= -->
+        <section id="ch17" class="p-[25mm] prose-custom">
+            <h4 class="text-terracotta tracking-[0.3em] text-xs uppercase font-bold mb-4">Sección V: El Negocio</h4>
+            <h2 class="chapter-title font-serif text-5xl text-clay-900 font-extrabold leading-tight">17. Creación de Marca Personal</h2>
+            
+            <p>Una marca no es un logotipo; es una promesa. Es lo que la gente dice de ti cuando no estás en la habitación.</p>
+            
+            <img src="marca_personal_1776964439136.png" class="w-full h-[350px] object-cover my-10 shadow-xl border-white border-[12px]">
+
+            <h3>Construye tu Marca en 6 Pasos Concretos</h3>
+            <ol class="list-decimal pl-6 space-y-3 font-light text-sm">
+                <li><strong>Define tu público en 1 línea:</strong> ej. "Mujeres de 30–45 años que buscan decoración minimalista y consciente."</li>
+                <li><strong>Elige 3 palabras que describan tu estética:</strong> ej. "orgánico, sereno, artesanal". Todo tu visual debe comunicar estas palabras.</li>
+                <li><strong>Crea una paleta de 4 colores:</strong> un principal, un secundario, un acento y un neutro. Úsalos en fotos, etiquetas y web.</li>
+                <li><strong>Define tu "Signature Detail":</strong> ese elemento único que aparece en todas tus piezas (un borde dorado, textura de lino, forma de gota).</li>
+                <li><strong>Elige un nombre memorable</strong> (máx. 2 palabras) y verifica que el usuario de Instagram esté disponible.</li>
+                <li><strong>Escribe tu bio de Instagram</strong> con esta fórmula: [qué haces] + [para quién] + [resultado emocional]. Ej: "Cerámica hecha a mano para hogares que buscan calma."</li>
+            </ol>
+
+        </section>
+
+        <div class="page-break"></div>
+
+        <!-- ================= CAPÍTULO 18: PACKAGING ================= -->
+        <section id="ch18" class="p-[25mm] prose-custom bg-clay-50">
+            <h4 class="text-terracotta tracking-[0.3em] text-xs uppercase font-bold mb-4">Sección V: El Negocio</h4>
+            <h2 class="chapter-title font-serif text-5xl text-clay-900 font-extrabold leading-tight">18. Packaging y Envíos Seguros</h2>
+            
+            <p>El "Unboxing" es la única tasa de apertura del 100% que tendrá tu marketing. Es el momento de mayor alegría del cliente y debes aprovecharlo para fidelizarlo de por vida.</p>
+            
+            <img src="packaging_ceramica_1776964249183.png" class="w-full h-[400px] object-cover my-12 shadow-lg">
+
+            <h3>Ingeniería de Protección: La Caja Flotante</h3>
+            <ol class="list-decimal pl-6 space-y-3 font-light text-sm">
+                <li><strong>Elige una caja que sea 6cm más grande</strong> que la pieza en todas las dimensiones.</li>
+                <li><strong>Arruga papel kraft</strong> hasta tener bolas sueltas. No uses plástico de burbujas — el papel amortigua mejor los golpes de baja frecuencia.</li>
+                <li><strong>Crea una cama de 3cm de papel</strong> en el fondo de la caja.</li>
+                <li><strong>Envuelve la pieza</strong> con papel de seda x2 capas. Nunca plástico directamente sobre la arcilla.</li>
+                <li><strong>Rodea la pieza con papel kraft</strong> por todos los lados (3cm mínimo).</li>
+                <li><strong>Test de la caja cerrada:</strong> agítala suavemente. Si escuchas movimiento, añade más relleno. El silencio es señal de seguridad.</li>
+            </ol>
+            <div class="tip-box mt-6">
+                <h5 class="font-bold mb-2">El Toque Humano que Fideliza:</h5>
+                <p class="text-sm">Un sello de cera, una ramita de lavanda seca y una nota escrita a mano con el nombre del cliente cuestan menos de €0.50 pero generan reseñas de 5 estrellas y recompras espontáneas.</p>
+            </div>
+        </section>
+
+        <div class="page-break"></div>
+
+        <!-- ================= CAPÍTULO 19: PRECIOS ================= -->
+        <section id="ch19" class="p-[25mm] prose-custom">
+            <h4 class="text-terracotta tracking-[0.3em] text-xs uppercase font-bold mb-4">Sección V: El Negocio</h4>
+            <h2 class="chapter-title font-serif text-5xl text-clay-900 font-extrabold leading-tight">19. Estrategia de Precios y Costos</h2>
+            
+            <p>Muchos artesanos fracasan porque no saben cobrar. No estás vendiendo "barro", estás vendiendo "tiempo de vida" y "talento acumulado".</p>
+            
+            <div class="bg-clay-900 text-white p-12 my-12">
+                <h5 class="font-serif text-3xl mb-8 text-terracotta italic">La Ecuación de la Rentabilidad</h5>
+                <p class="text-3xl font-serif mb-6">(Materiales + Gastos Fijos + <span class="text-terracotta">Tu Valor Hora</span>) × 1.5 = <span class="text-gold">Precio Mayorista</span></p>
+                <p class="text-3xl font-serif">Precio Mayorista × 2 = <span class="text-gold">PVP al Público</span></p>
+            </div>
+
+            <h3>Cómo Calcular tu Precio Paso a Paso</h3>
+            <ol class="list-decimal pl-6 space-y-3 font-light text-sm">
+                <li><strong>Pesa la arcilla usada</strong> por pieza y calcula el costo: si el paquete de 500g cuesta $8 y usaste 150g, el costo de arcilla es $2.40.</li>
+                <li><strong>Suma todos los consumibles:</strong> barniz, pigmentos, papel de lija, herrajes. Divide por el número de piezas en las que los usarás.</li>
+                <li><strong>Define tu valor hora:</strong> comienza con el equivalente al salario mínimo de tu país. Cronometra el tiempo real de cada pieza.</li>
+                <li><strong>Añade gastos fijos mensuales</strong> (packaging, plataformas, envíos) divididos entre el número de piezas que vendes al mes.</li>
+                <li><strong>Aplica la fórmula</strong>: (Materiales + Gastos Fijos + Horas × Valor/hora) × 1.5 = Precio Mayorista × 2 = PVP.</li>
+                <li><strong>Nunca ajustes tu precio hacia abajo</strong> para competir. Ajusta tu presentación hacia arriba para justificar el precio.</li>
+            </ol>
+        </section>
+
+        <div class="page-break"></div>
+
+        <!-- ================= CAPÍTULO 20: ESTILO PROPIO ================= -->
+        <section id="ch20" class="p-[25mm] prose-custom bg-clay-50">
+            <h4 class="text-terracotta tracking-[0.3em] text-xs uppercase font-bold mb-4">Sección V: El Negocio</h4>
+            <h2 class="chapter-title font-serif text-5xl text-clay-900 font-extrabold leading-tight">20. Encontrando tu Estilo Propio</h2>
+            
+            <p>La imitación es el primer paso del aprendizaje, pero la innovación es el único camino hacia el éxito a largo plazo.</p>
+
+            <div class="quote-block">"Tu estilo es lo que queda después de que intentas imitar a tus héroes y fallas."</div>
+
+            <h3>Ejercicio: El Moodboard de 3 Mundos</h3>
+            <ol class="list-decimal pl-6 space-y-3 font-light text-sm">
+                <li><strong>Reúne 10 fotos de cerámica</strong> que admires. Identifica qué tienen en común: formas, texturas, colores.</li>
+                <li><strong>Reúne 10 fotos de fuera de la cerámica</strong> que te emocionen: arquitectura, moda, naturaleza, pintura.</li>
+                <li><strong>Junta los 20 en un tablero</strong> (Canva o papel). Busca el elemento visual que aparece en ambos mundos. Ese cruce es tu estilo.</li>
+                <li><strong>Traduce ese elemento al barro:</strong> si amas las líneas arquitectónicas brutalistas, experimenta con cantos vivos y bordes crudos sin lija.</li>
+                <li><strong>Crea 5 piezas seguidas</strong> aplicando solo ese elemento. La repetición lo solidifica como sello personal.</li>
+            </ol>
+        </section>
+
+        <div class="page-break"></div>
+
+        <!-- ================= CAPÍTULO 21: CUIDADO Y LEGADO ================= -->
+        <section id="ch21" class="p-[25mm] prose-custom">
+            <h4 class="text-terracotta tracking-[0.3em] text-xs uppercase font-bold mb-4">Sección VI: Apéndices</h4>
+            <h2 class="chapter-title font-serif text-5xl text-clay-900 font-extrabold leading-tight">21. Cuidado y Mantenimiento</h2>
+            
+            <p>Has creado una pieza con alma; ahora asegura su longevidad. Esto también es información valiosa para dar a tus clientes.</p>
+            
+            <h3>Guía de Cuidados para el Cliente</h3>
+            <ul class="list-none space-y-3 text-sm font-light">
+                <li><span class="text-terracotta mr-2">✦</span><strong>Limpieza:</strong> Paño de microfibra seco o ligeramente húmedo. Nunca sumergir en agua.</li>
+                <li><span class="text-terracotta mr-2">✦</span><strong>Ubicación:</strong> Lejos de baños y cocinas con vapor. La humedad ambiental acumulada puede debilitar el sellado.</li>
+                <li><span class="text-terracotta mr-2">✦</span><strong>Mantenimiento anual:</strong> Una capa fina de cera de carnauba (la misma que usan para coches) restaura el brillo y refuerza la barrera protectora.</li>
+                <li><span class="text-terracotta mr-2">✦</span><strong>Exposición solar:</strong> La luz UV directa puede amarillear los pigmentos blancos en piezas sin barniz UV.</li>
+            </ul>
+
+            <h3>Reparación Kintsugi Adaptado</h3>
+            <ol class="list-decimal pl-6 space-y-3 font-light text-sm mt-6">
+                <li>Limpia las superficies rotas con alcohol isopropílico. Deja secar 10 minutos.</li>
+                <li>Mezcla resina epoxi de 5 minutos con polvo de mica dorada (1 parte de polvo por 4 de resina).</li>
+                <li>Aplica con un palillo fino sobre las fracturas y une las piezas.</li>
+                <li>Mantén presión con cinta de carrocero durante 15 minutos.</li>
+                <li>Una vez curado (24h), lija suavemente la unión con grano 600 para nivelarla.</li>
+                <li>Aplica una línea fina de mica dorada pura con un pincel de punta fina sobre la reparación para el efecto Kintsugi definitivo.</li>
+            </ol>
+        </section>
+
+        <div class="page-break"></div>
+
+        <!-- ================= CAPÍTULO 23: TEXTURAS EXPERIMENTALES ================= -->
+        <section id="ch23" class="p-[25mm] prose-custom bg-clay-50">
+            <h4 class="text-terracotta tracking-[0.3em] text-xs uppercase font-bold mb-4">Sección VI: Apéndices</h4>
+            <h2 class="chapter-title font-serif text-5xl text-clay-900 font-extrabold leading-tight">23. Experimentación con Texturas</h2>
+            
+            <p>Aquí las reglas desaparecen. El barro es un lienzo infinito. Prueba estas técnicas de texturizado sobre arcilla fresca:</p>
+            
+            <img src="texturas_experimentales_1776964789751.png" class="w-full h-[350px] object-cover my-10 shadow-2xl">
+
+            <div class="grid grid-cols-2 gap-6">
+                <div class="bg-white p-6 border-t-2 border-terracotta">
+                    <h6 class="font-bold mb-2 uppercase text-xs tracking-widest">Sal Gruesa</h6>
+                    <p class="text-xs font-light">Esparce sal marina gruesa sobre la placa fresca. Presiona levemente. Al secar, retira la sal: quedarán cráteres lunares únicos.</p>
+                </div>
+                <div class="bg-white p-6 border-t-2 border-terracotta">
+                    <h6 class="font-bold mb-2 uppercase text-xs tracking-widest">Red de Fruta</h6>
+                    <p class="text-xs font-light">Presiona la red de plástico de una bolsa de naranjas sobre la arcilla y pasa el rodillo. Patrón geométrico repetitivo perfecto.</p>
+                </div>
+                <div class="bg-white p-6 border-t-2 border-terracotta">
+                    <h6 class="font-bold mb-2 uppercase text-xs tracking-widest">Corteza de Árbol</h6>
+                    <p class="text-xs font-light">Prensa directamente un trozo de corteza rugosa. Cada árbol produce un patrón diferente e irrepetible.</p>
+                </div>
+                <div class="bg-white p-6 border-t-2 border-terracotta">
+                    <h6 class="font-bold mb-2 uppercase text-xs tracking-widest">Tela de Arpillera</h6>
+                    <p class="text-xs font-light">Extiende arcilla directamente sobre arpillera y pasa el rodillo. La tela deja una trama rústica y artesanal en toda la superficie.</p>
+                </div>
+            </div>
+
+        </section>
+
+        <div class="page-break"></div>
+
+        <!-- ================= CAPÍTULO 24: MANIFIESTO ================= -->
+        <section id="ch24" class="p-[25mm] flex flex-col justify-center min-h-[297mm] text-center bg-clay-900 text-white relative">
+            <div class="absolute inset-0 opacity-10">
+                 <img src="ceramica_gallery_1776964199433.png" class="w-full h-full object-cover">
+            </div>
+            
+            <div class="relative z-10 max-w-2xl mx-auto">
+                <h4 class="text-terracotta tracking-[0.5em] text-xs uppercase font-bold mb-12">El Cierre del Círculo</h4>
+                <h2 class="font-serif text-7xl mb-16 italic font-extrabold leading-tight text-white">El Manifiesto del <br>Artesano Lento</h2>
+                
+                <div class="space-y-12 font-serif italic leading-relaxed text-2xl text-clay-100">
+                    <p>"Creo en las manos que crean lo que la mente imagina, porque en ese acto reside nuestra verdadera humanidad."</p>
+                    <p>"Creo en el valor de lo hecho despacio, con intención y presencia, desafiando la tiranía de lo instantáneo."</p>
+                    <p>"Creo que un objeto con alma tiene el poder de transformar un espacio, un estado de ánimo y una vida."</p>
+                    <p>"Acepto mis grietas, mis huellas dactilares y mi proceso, porque son el testimonio de mi existencia."</p>
+                </div>
+                
+                <div class="mt-24">
+                    <div class="w-32 h-1 bg-terracotta mx-auto mb-6"></div>
+                    <p class="font-serif text-3xl text-white font-bold">Gracias por crear conmigo.</p>
+                    <p class="font-sans text-[10px] uppercase tracking-[0.4em] mt-4 text-clay-400">Fin de la Primera Edición</p>
+                </div>
+            </div>
+        </section>
+
+    </div>
+
+    <!-- Scripts -->
+    <script>
+        // Fallback para imagens com erro
+        document.addEventListener("DOMContentLoaded", function() {
+            document.querySelectorAll('img').forEach(img => {
+                img.onerror = function() {
+                    this.style.display = 'none';
+                };
+            });
+        });
+
+        function showPrintGuide() {
+            const modal = document.getElementById('printModal');
+            modal.style.display = 'flex';
+        }
+
+        function startPrint() {
+            document.getElementById('printModal').style.display = 'none';
+            setTimeout(function() { window.print(); }, 150);
+        }
+    </script>
+</body>
+
+</html>
