@@ -52,6 +52,17 @@
             opacity: 0.6;
         }
 
+        .trust-icon.story-card {
+    flex: 0 0 200px;
+    height: 350px;
+    border-radius: 15px;
+    overflow: hidden;
+    position: relative;
+    scroll-snap-align: start;
+    box-shadow: var(--shadow-sm);
+    background-color: #f0f0f0;
+}
+
         .trust-icons img {
             height: 24px;
         }
@@ -127,7 +138,7 @@
                     </div>
                 </div>
                 <div class="hero-image">
-                    <img src="assets/ebook_mockup_es.png" alt="La Biblia de la Cerámica Fría">
+                    <img src="assets/ebook_mockup_es.png" alt="La Biblia de la Cerámica Fría" loading="eager" decoding="async">
                 </div>
             </div>
         </div>
@@ -238,72 +249,146 @@
     </section>
 
     <!-- Detailed Modules -->
+    <!-- Story Carousel Section -->
+    <section class="stories-section">
+        <div class="container">
+            <h3 style="text-align: center; margin-bottom: 10px; color: var(--color-accent);">Nuestra Comunidad en Acción</h3>
+            <p style="text-align: center; margin-bottom: 30px; opacity: 0.7; font-size: 0.9rem;">Resultados reales de personas como tú</p>
+            
+            <div class="stories-wrapper">
+                <div class="stories-container">
+                    <!-- Story 1 -->
+                    <div class="story-card">
+                        <div class="story-user">
+                        <div class="story-avatar"><img src="assets/avatar_marta.png" alt="Marta"></div>
+                        <span>@marta_art</span>
+                    </div>
+                        <img src="assets/story_client_1.png" alt="Testimonial 1" loading="lazy" decoding="async">
+                        <div class="story-overlay"></div>
+                    </div>
+                    <!-- Story 2 -->
+                    <div class="story-card">
+                        <div class="story-user">
+                        <div class="story-avatar"><img src="assets/avatar_jorge.png" alt="Jorge"></div>
+                        <span>@jorge_ceramics</span>
+                    </div>
+                        <img src="assets/story_client_2.png" alt="Testimonial 2" loading="lazy" decoding="async">
+                        <div class="story-overlay"></div>
+                    </div>
+                    <!-- Story 3 -->
+                    <div class="story-card">
+                        <div class="story-user">
+                        <div class="story-avatar"><img src="assets/avatar_lucia.png" alt="Lucia"></div>
+                        <span>@lucia_crea</span>
+                    </div>
+                        <img src="assets/story_client_3.png" alt="Testimonial 3" loading="lazy" decoding="async">
+                        <div class="story-overlay"></div>
+                    </div>
+                    <!-- Story 4 -->
+                    <div class="story-card">
+                        <div class="story-user">
+                        <div class="story-avatar"><img src="assets/avatar_sofia.png" alt="Sofia"></div>
+                        <span>@sofia_deco</span>
+                    </div>
+                        <img src="assets/story_client_4.png" alt="Testimonial 4" loading="lazy" decoding="async">
+                        <div class="story-overlay"></div>
+                    </div>
+                    <!-- Story 5 -->
+                    <div class="story-card">
+                        <div class="story-user">
+                        <div class="story-avatar"><img src="assets/avatar_ana.png" alt="Ana"></div>
+                        <span>@ana_manos_obra</span>
+                    </div>
+                        <img src="assets/story_client_5.png" alt="Testimonial 5" loading="lazy" decoding="async">
+                        <div class="story-overlay"></div>
+                    </div>
+            </div>
+            <span class="mobile-hint">⟵ Desliza para ver más ⟶</span>
+        </div>
+    </section>
+
     <section id="detalles" class="modules">
         <div class="container">
             <div style="text-align: center; margin-bottom: 60px;">
-                <h2 style="font-size: 3rem;">Lo que aprenderás paso a paso</h2>
-                <p>Más de 20 capítulos diseñados para convertirte en un experto.</p>
+                <h2 style="font-size: 3rem;">Todo lo que necesitas para empezar desde cero</h2>
+                <p>Más de 20 lecciones prácticas para crear tus propias piezas en casa</p>
             </div>
 
             <div class="module-list">
+                <!-- I. Primeros Pasos -->
                 <div class="module-item">
-                    <div class="module-number">01</div>
+                    <div class="module-number">🧱</div>
                     <div class="module-content">
-                        <h4>Fundamentos y "Flow"</h4>
-                        <p>Cómo usar la cerámica como una pausa creativa para reducir el estrés y reconectar con tu
-                            poder creador.</p>
+                        <h4>I. Primeros Pasos (Base)</h4>
+                        <ul class="module-points">
+                            <li>Cómo empezar desde cero (aunque nunca hayas hecho nada)</li>
+                            <li>Materiales y preparación correcta</li>
+                            <li>Cómo trabajar la masa sin errores</li>
+                        </ul>
                     </div>
                 </div>
+                <!-- II. Técnica Paso a Paso -->
                 <div class="module-item">
-                    <div class="module-number">02</div>
+                    <div class="module-number">🛠️</div>
                     <div class="module-content">
-                        <h4>Física del Modelado</h4>
-                        <p>El código anti-grietas: domina la humedad y la memoria del material para piezas eternas.</p>
+                        <h4>II. Técnica Paso a Paso</h4>
+                        <ul class="module-points">
+                            <li>Cómo dar forma a tus piezas fácilmente</li>
+                            <li>El método para evitar grietas (clave)</li>
+                            <li>Cómo lijar y lograr un acabado limpio</li>
+                            <li>Proporciones básicas para piezas equilibradas</li>
+                        </ul>
                     </div>
                 </div>
+                <!-- III. Moldes y Primeras Creaciones -->
                 <div class="module-item">
-                    <div class="module-number">03</div>
+                    <div class="module-number">🎨</div>
                     <div class="module-content">
-                        <h4>Masterclass: El Altar</h4>
-                        <p>Proyecto paso a paso de un "Altar de Joyas" con bordes orgánicos y texturas de lino.</p>
+                        <h4>III. Moldes y Primeras Creaciones</h4>
+                        <ul class="module-points">
+                            <li>Tu primera pieza paso a paso</li>
+                            <li>Cómo hacer moldes simples en casa</li>
+                            <li>Efecto marmolado fácil</li>
+                        </ul>
                     </div>
                 </div>
+                <!-- IV. Acabados Profesionales -->
                 <div class="module-item">
-                    <div class="module-number">04</div>
+                    <div class="module-number">✨</div>
                     <div class="module-content">
-                        <h4>Alquimia de Pátinas</h4>
-                        <p>Aprende a imitar mármol, bronce oxidado y acabados antiguos que elevan el valor de tu arte.
-                        </p>
+                        <h4>IV. Acabados Profesionales</h4>
+                        <ul class="module-points">
+                            <li>Cómo reforzar tus piezas correctamente</li>
+                            <li>Técnicas de textura y detalles naturales</li>
+                            <li>Cómo lograr acabados tipo mármol/bronce</li>
+                            <li>Cómo crear piezas decorativas y joyería</li>
+                            <li>Cómo hacer piezas útiles para el hogar</li>
+                        </ul>
                     </div>
                 </div>
+                <!-- V. Cómo Vender tus Creaciones -->
                 <div class="module-item">
-                    <div class="module-number">05</div>
+                    <div class="module-number">💰</div>
                     <div class="module-content">
-                        <h4>Joyería de Alta Gama</h4>
-                        <p>Diseño de aretes statement ultra-ligeros con herrajes de plata y sellado de alta resistencia.
-                        </p>
+                        <h4>V. Cómo Vender tus Creaciones</h4>
+                        <ul class="module-points">
+                            <li>Cómo tomar fotos que venden</li>
+                            <li>Cómo crear una marca simple</li>
+                            <li>Cómo presentar y empaquetar tus piezas</li>
+                            <li>Cómo poner precios sin perder dinero</li>
+                            <li>Cómo encontrar tu estilo</li>
+                        </ul>
                     </div>
                 </div>
+                <!-- VI. Extras -->
                 <div class="module-item">
-                    <div class="module-number">06</div>
+                    <div class="module-number">📎</div>
                     <div class="module-content">
-                        <h4>Ingeniería de Moldes</h4>
-                        <p>Crea tus propios moldes caseros para replicar tus mejores piezas y escalar tu producción.</p>
-                    </div>
-                </div>
-                <div class="module-item">
-                    <div class="module-number">07</div>
-                    <div class="module-content">
-                        <h4>Botánica y Relieves</h4>
-                        <p>Técnicas de impresión de hojas reales y flores para crear piezas con alma orgánica.</p>
-                    </div>
-                </div>
-                <div class="module-item">
-                    <div class="module-number">08</div>
-                    <div class="module-content">
-                        <h4>El Negocio del Arte</h4>
-                        <p>Fotografía estilo Pinterest, branding personal y estrategias de precios para vender con
-                            orgullo.</p>
+                        <h4>VI. Extras</h4>
+                        <ul class="module-points">
+                            <li>Cómo cuidar tus piezas</li>
+                            <li>Consejos finales y guía práctica</li>
+                        </ul>
                     </div>
                 </div>
             </div>
@@ -324,26 +409,19 @@
                 </div>
                 <div class="experience-content">
                     <span class="badge">El Arte de Regalar</span>
-                    <h2>Crea Regalos con <span class="gradient-text">Alma y Significado.</span></h2>
-                    <p>En un mundo de productos industriales y vacíos, recibir algo hecho a mano es un acto de amor
-                        puro. Imagina la emoción de tus amigos y familiares al recibir una pieza única, diseñada y
-                        moldeada exclusivamente por ti.</p>
-                    <p>Desde delicadas joyas personalizadas hasta objetos de decoración con sus iniciales, la cerámica
-                        fría te permite materializar tus sentimientos en objetos eternos que ellos atesorarán para
-                        siempre.</p>
+                    <h2>Crea regalos únicos hechos por ti <span class="gradient-text">(sin experiencia previa)</span></h2>
+                    <p>En un mundo lleno de productos iguales, un regalo hecho a mano tiene un valor completamente diferente.</p>
+                    <p>Imagina entregar algo creado por ti: una pieza única, personalizada y con un significado real.</p>
+                    <p>Con la cerámica fría, puedes crear desde pequeños detalles hasta objetos decorativos que se convierten en recuerdos especiales.</p>
                     <ul
-                        style="list-style: none; margin: 30px 0; display: grid; grid-template-columns: 1fr 1fr; gap: 15px;">
-                        <li style="display: flex; align-items: center; gap: 10px; font-size: 0.9rem;">✨ Piezas 100%
-                            Únicas</li>
-                        <li style="display: flex; align-items: center; gap: 10px; font-size: 0.9rem;">🎁 Unboxing de
-                            Lujo</li>
-                        <li style="display: flex; align-items: center; gap: 10px; font-size: 0.9rem;">💖 Valor
-                            Sentimental</li>
-                        <li style="display: flex; align-items: center; gap: 10px; font-size: 0.9rem;">🎨 Personalización
-                            Total</li>
+                        style="list-style: none; margin: 30px 0; display: grid; grid-template-columns: 1fr; gap: 15px;">
+                        <li style="display: flex; align-items: center; gap: 10px; font-size: 0.95rem;">✨ Piezas únicas hechas a mano</li>
+                        <li style="display: flex; align-items: center; gap: 10px; font-size: 0.95rem;">🎁 Regalos personalizados con significado</li>
+                        <li style="display: flex; align-items: center; gap: 10px; font-size: 0.95rem;">💖 Detalles que realmente emocionan</li>
+                        <li style="display: flex; align-items: center; gap: 10px; font-size: 0.95rem;">🎨 Diseños simples que puedes hacer desde casa</li>
                     </ul>
                     <a href="#comparativa"
-                        class="btn btn-primary">Quiero aprender a crear estos regalos</a>
+                        class="btn btn-primary">👉 Quiero crear mis propios regalos</a>
                 </div>
             </div>
         </div>
@@ -353,42 +431,40 @@
     <section id="comparativa">
         <div class="container">
             <div style="text-align: center; margin-bottom: 60px;">
-                <h2 style="font-size: 2.5rem;">El Camino Difícil vs. <span style="color: var(--color-primary);">El
-                        Método de Lujo</span></h2>
-                <p>¿Por qué complicarse cuando puedes tener resultados de galería hoy mismo?</p>
+                <h2 style="font-size: 2.5rem;">El Camino Difícil vs. <span style="color: var(--color-primary);">Una Forma Más Simple</span></h2>
+                <p>¿Por qué empezar con algo complejo si puedes aprender de forma más práctica desde casa?</p>
             </div>
-
             <div class="comparison-grid">
                 <!-- Old Way -->
                 <div class="comp-card">
-                    <h3>Cerámica de Horno</h3>
+                    <h3>Cerámica Tradicional <br><span style="font-size: 0.9em; opacity: 0.8; font-weight: 400;">(con horno)</span></h3>
                     <div class="comp-list">
                         <div class="comp-item">
                             <span class="icon">❌</span>
                             <div class="text">
-                                <strong>Inversión Elevada</strong>
-                                <span>Necesitas comprar un horno y torno (+$2,000 USD).</span>
+                                <strong>Inversión alta</strong>
+                                <span>Requiere horno, torno y espacio dedicado</span>
                             </div>
                         </div>
                         <div class="comp-item">
                             <span class="icon">❌</span>
                             <div class="text">
-                                <strong>Dependencia Externa</strong>
-                                <span>Debes alquilar quemas en talleres de terceros.</span>
+                                <strong>Proceso más técnico</strong>
+                                <span>Curva de aprendizaje más larga</span>
                             </div>
                         </div>
                         <div class="comp-item">
                             <span class="icon">❌</span>
                             <div class="text">
-                                <strong>Técnica Frustrante</strong>
-                                <span>Años de práctica para dominar el centrado en el torno.</span>
+                                <strong>Dependencia de equipos</strong>
+                                <span>Necesitas herramientas específicas</span>
                             </div>
                         </div>
                         <div class="comp-item">
                             <span class="icon">❌</span>
                             <div class="text">
-                                <strong>Limitación de Espacio</strong>
-                                <span>Requiere un taller con ventilación industrial y agua.</span>
+                                <strong>Menos accesible en casa</strong>
+                                <span>No siempre es práctico para empezar</span>
                             </div>
                         </div>
                     </div>
@@ -397,42 +473,85 @@
                 <!-- Our Way -->
                 <div class="comp-card highlight">
                     <span class="comp-badge">EL MÉTODO DEFINITIVO</span>
-                    <h3>Cerámica Fría de Lujo</h3>
+                    <h3>✅ Cerámica Fría <br><span style="font-size: 0.9em; opacity: 0.8; font-weight: 400;">(Método Paso a Paso)</span></h3>
                     <div class="comp-list">
                         <div class="comp-item">
-                            <span class="icon">✅</span>
+                            <span class="icon">✔</span>
                             <div class="text">
-                                <strong>Bajo Costo Inicial</strong>
-                                <span>Empieza hoy con menos de $20 en materiales.</span>
+                                <strong>Bajo costo inicial</strong>
+                                <span>Puedes empezar con materiales accesibles</span>
                             </div>
                         </div>
                         <div class="comp-item">
-                            <span class="icon">✅</span>
+                            <span class="icon">✔</span>
                             <div class="text">
-                                <strong>Independencia Total</strong>
-                                <span>Tus piezas secan al aire en tu propia casa.</span>
+                                <strong>Sin horno</strong>
+                                <span>Tus piezas secan al aire</span>
                             </div>
                         </div>
                         <div class="comp-item">
-                            <span class="icon">✅</span>
+                            <span class="icon">✔</span>
                             <div class="text">
-                                <strong>Resultados Inmediatos</strong>
-                                <span>Método paso a paso para piezas perfectas desde el día 1.</span>
+                                <strong>Proceso simple</strong>
+                                <span>Pensado para principiantes</span>
                             </div>
                         </div>
                         <div class="comp-item">
-                            <span class="icon">✅</span>
+                            <span class="icon">✔</span>
                             <div class="text">
-                                <strong>Taller en tu Mesa</strong>
-                                <span>Solo necesitas tu mesa de comedor y tus manos.</span>
+                                <strong>Desde casa</strong>
+                                <span>Solo necesitas una mesa y tus manos</span>
                             </div>
                         </div>
                     </div>
                 </div>
             </div>
             <div class="cta-container" style="margin-top: 40px;">
-                <a href="#negocio"
-                    class="btn btn-primary">Elegir el Método de Lujo</a>
+                <a href="#negocio" class="btn btn-primary">👉 Quiero empezar desde casa</a>
+            </div>
+        </div>
+    </section>
+                <!-- Gallery Section -->
+    <section id="inspiracion" style="background: var(--color-white); padding: 80px 0; overflow: hidden;">
+        <div class="container">
+            <div style="text-align: center; margin-bottom: 50px;">
+                <h2 style="font-size: 2.8rem; margin-bottom: 20px; font-family: var(--font-serif);">Inspírate con lo que puedes crear</h2>
+                <p style="font-size: 1.1rem; color: var(--color-text-light); max-width: 600px; margin: 0 auto;">Piezas reales hechas con cerámica fría, incluso por quienes empezaron desde cero</p>
+            </div>
+            
+            <div class="stories-wrapper">
+                <button class="story-nav prev" onclick="scrollInspiration(-1)">&#10094;</button>
+                <div class="stories-container" id="inspirationGallery" style="padding-bottom: 30px;">
+                    <div class="story-card">
+                        <img src="assets/ceramica_gallery_1776964199433.png" alt="Vaso decorativo minimalista" style="height: 100%; width: 100%; object-fit: cover;" loading="lazy" decoding="async">
+                    </div>
+                    <div class="story-card">
+                        <img src="assets/mesa_funcional_1776964423635.png" alt="Porta-velas estética clean" style="height: 100%; width: 100%; object-fit: cover;" loading="lazy" decoding="async">
+                    </div>
+                    <div class="story-card">
+                        <img src="assets/altar_joyas_1776964216699.png" alt="Bijuteria artesanal moderna" style="height: 100%; width: 100%; object-fit: cover;" loading="lazy" decoding="async">
+                    </div>
+                    <div class="story-card">
+                        <img src="assets/texturas_experimentales_1776964789751.png" alt="Textura y efecto marmolado" style="height: 100%; width: 100%; object-fit: cover;" loading="lazy" decoding="async">
+                    </div>
+                    <div class="story-card">
+                        <img src="assets/patinas_antiguas_1776964412345.png" alt="Objeto decorativo personalizado" style="height: 100%; width: 100%; object-fit: cover;" loading="lazy" decoding="async">
+                    </div>
+                    <div class="story-card">
+                        <img src="assets/amasado_arcilla.png" alt="Proceso de amasado en casa" style="height: 100%; width: 100%; object-fit: cover;" loading="lazy" decoding="async">
+                    </div>
+                    <div class="story-card">
+                        <img src="assets/packaging_ceramica_1776964249183.png" alt="Pieza final y empaque simple" style="height: 100%; width: 100%; object-fit: cover;" loading="lazy" decoding="async">
+                    </div>
+                    <div class="story-card">
+                        <img src="assets/moldes_caseros_1776964399655.png" alt="Moldes y creaciones simples" style="height: 100%; width: 100%; object-fit: cover;" loading="lazy" decoding="async">
+                    </div>
+                </div>
+                <button class="story-nav next" onclick="scrollInspiration(1)">&#10095;</button>
+            </div>
+
+            <div style="text-align: center; margin-top: 40px;">
+                <a href="#precio" class="btn btn-primary" style="padding: 20px 40px; font-size: 1.1rem;">Quiero crear mis propias piezas</a>
             </div>
         </div>
     </section>
@@ -449,35 +568,35 @@
                 <!-- Review 1 -->
                 <div class="benefit-card" style="padding: 25px; border: 1px solid #e0e0e0; box-shadow: none;">
                     <div style="display: flex; align-items: center; gap: 12px; margin-bottom: 15px;">
-                        <div style="width: 40px; height: 40px; background: #4285F4; color: white; border-radius: 50%; display: flex; align-items: center; justify-content: center; font-weight: bold;">E</div>
+                        <img src="assets/alumna_elena_review.png" alt="Elena" style="width: 45px; height: 45px; border-radius: 50%; object-fit: cover;">
                         <div>
-                            <div style="font-weight: 700; font-size: 0.9rem;">Elena Rodríguez</div>
+                            <div style="font-weight: 700; font-size: 0.9rem;">Elena</div>
                             <div style="color: #fbbc05; font-size: 0.8rem;">★★★★★</div>
                         </div>
                     </div>
-                    <p style="font-size: 0.85rem; color: var(--color-text-light); font-style: italic;">"Siempre quise hacer cerámica pero el horno me frenaba. Este curso cambió todo. Mis piezas parecen compradas en una tienda de lujo. ¡Increíble!"</p>
+                    <p style="font-size: 0.85rem; color: var(--color-text-light); font-style: italic;">“Pensé que sería complicado, pero empecé desde cero y en poco tiempo ya tenía mis primeras piezas. Me gustó porque es muy práctico.”</p>
                 </div>
                 <!-- Review 2 -->
                 <div class="benefit-card" style="padding: 25px; border: 1px solid #e0e0e0; box-shadow: none;">
                     <div style="display: flex; align-items: center; gap: 12px; margin-bottom: 15px;">
-                        <div style="width: 40px; height: 40px; background: #34A853; color: white; border-radius: 50%; display: flex; align-items: center; justify-content: center; font-weight: bold;">M</div>
+                        <img src="assets/alumno_marcos_review.png" alt="Marcos" style="width: 45px; height: 45px; border-radius: 50%; object-fit: cover;">
                         <div>
-                            <div style="font-weight: 700; font-size: 0.9rem;">Marcos Delgado</div>
+                            <div style="font-weight: 700; font-size: 0.9rem;">Marcos</div>
                             <div style="color: #fbbc05; font-size: 0.8rem;">★★★★★</div>
                         </div>
                     </div>
-                    <p style="font-size: 0.85rem; color: var(--color-text-light); font-style: italic;">"La sección de pátinas es increíble. Logré un acabado de bronce que nadie cree que es cerámica fría. Un curso muy completo y profesional."</p>
+                    <p style="font-size: 0.85rem; color: var(--color-text-light); font-style: italic;">“No sabía nada de acabados y esa parte me ayudó bastante. Con cosas simples logré mejorar mucho el resultado.”</p>
                 </div>
                 <!-- Review 3 -->
                 <div class="benefit-card" style="padding: 25px; border: 1px solid #e0e0e0; box-shadow: none;">
                     <div style="display: flex; align-items: center; gap: 12px; margin-bottom: 15px;">
-                        <div style="width: 40px; height: 40px; background: #EA4335; color: white; border-radius: 50%; display: flex; align-items: center; justify-content: center; font-weight: bold;">S</div>
+                        <img src="assets/alumna_sofia_review.png" alt="Sofía" style="width: 45px; height: 45px; border-radius: 50%; object-fit: cover;">
                         <div>
-                            <div style="font-weight: 700; font-size: 0.9rem;">Sofía Lucía</div>
+                            <div style="font-weight: 700; font-size: 0.9rem;">Sofía</div>
                             <div style="color: #fbbc05; font-size: 0.8rem;">★★★★★</div>
                         </div>
                     </div>
-                    <p style="font-size: 0.85rem; color: var(--color-text-light); font-style: italic;">"Lo compré por hobby y ahora estoy vendiendo mis propios aretes. El empaque de lujo que enseñan fue la clave para mis primeras ventas."</p>
+                    <p style="font-size: 0.85rem; color: var(--color-text-light); font-style: italic;">“Empecé solo por curiosidad y terminé vendiendo mis primeros aretes a conocidos. Está bueno para quien quiere empezar sin complicarse.”</p>
                 </div>
             </div>
         </div>
@@ -488,23 +607,21 @@
         <div class="container">
             <div class="business-banner">
                 <div>
-                    <h2 style="color: var(--color-primary);">Tu Hobby puede ser <br>tu Emprendimiento.</h2>
-                    <p>No solo te enseñamos a crear. Te enseñamos a <strong>prosperar</strong>. Aprende a crear un
-                        empaque de lujo que enamore a tus clientes y a fotografiar tus piezas para que se vendan solas.
-                    </p>
+                    <h2 style="color: var(--color-primary);">De hobby a ingresos desde casa</h2>
+                    <p>Aprende no solo a crear, sino también a dar valor a tus piezas y empezar a venderlas paso a paso.</p>
                     <ul style="list-style: none; margin-bottom: 30px;">
                         <li style="margin-bottom: 10px; display: flex; align-items: center; gap: 10px;">
-                            <span style="color: var(--color-primary);">✓</span> Fotografía de Producto con Smartphone
+                            <span style="color: var(--color-primary);">✓</span> Fotos simples que hacen destacar tus piezas
                         </li>
                         <li style="margin-bottom: 10px; display: flex; align-items: center; gap: 10px;">
-                            <span style="color: var(--color-primary);">✓</span> Estrategias de Branding y Alma de Marca
+                            <span style="color: var(--color-primary);">✓</span> Ideas para crear una marca básica
                         </li>
                         <li style="margin-bottom: 10px; display: flex; align-items: center; gap: 10px;">
-                            <span style="color: var(--color-primary);">✓</span> Ingeniería de Precios y Rentabilidad
+                            <span style="color: var(--color-primary);">✓</span> Cómo definir precios de forma clara
                         </li>
                     </ul>
                     <a href="#precio"
-                        class="btn btn-primary">Empezar mi Negocio</a>
+                        class="btn btn-primary">👉 Quiero generar ingresos con esto</a>
                 </div>
                 <div style="position: relative;">
                     <img src="assets/marca_personal_1776964439136.png" alt="Negocio Artesanal"
@@ -517,30 +634,34 @@
     <!-- Pricing Section -->
     <section id="precio" class="pricing">
         <div class="container">
-            <h2 style="font-size: 3rem; margin-bottom: 20px;">Acceso Completo y Permanente</h2>
-            <p>Únete hoy a la comunidad de artesanos modernos por un precio único.</p>
+            <h2 style="font-size: 3rem; margin-bottom: 20px;">Acceso completo y permanente</h2>
+            <p>Empieza hoy mismo y aprende a crear tus propias piezas desde casa, paso a paso.</p>
 
             <div class="pricing-card">
+                <p style="font-size: 1rem; color: var(--color-primary); font-weight: 700; margin-bottom: 20px; text-transform: uppercase; letter-spacing: 1px;">Acceso a más de 20 lecciones paso a paso</p>
                 <span class="old-price">Precio Regular: $47</span>
-                <p class="new-price"><span class="price-currency">$</span>14</p>
-                <p
-                    style="margin-bottom: 30px; font-weight: 800; color: var(--color-primary); letter-spacing: 1px; font-size: 0.9rem;">
-                    ACCESO INMEDIATO TRAS EL PAGO</p>
+                <span style="display: block; color: var(--color-primary); font-weight: 800; font-size: 1rem; margin-top: -5px; margin-bottom: 15px;">(70% de DESCUENTO)</span>
+                <p class="new-price"><span style="font-size: 1.5rem; vertical-align: middle; font-family: var(--font-sans); font-weight: 400; color: var(--color-text);">Hoy:</span> <span class="price-currency">$</span>14</p>
+                
+                <ul style="list-style: none; margin: 10px 0 30px; text-align: left; display: inline-block;">
+                    <li style="margin-bottom: 12px; font-size: 0.95rem; color: var(--color-accent);">✔ Acceso inmediato tras el pago</li>
+                    <li style="margin-bottom: 12px; font-size: 0.95rem; color: var(--color-accent);">✔ Disponible en celular, tablet o computadora</li>
+                    <li style="margin-bottom: 12px; font-size: 0.95rem; color: var(--color-accent);">✔ Aprende a tu ritmo, sin horarios</li>
+                </ul>
 
                 <a href="https://pay.hotmart.com/B105523460F?off=csqgjy3n&checkoutMode=10" class="btn btn-primary"
-                    style="width: 100%; margin-bottom: 25px; padding: 25px; font-size: 1rem;">COMPRAR AHORA CON
-                    DESCUENTO</a>
+                    style="width: 100%; margin-bottom: 25px; padding: 25px; font-size: 1.1rem;">👉 Quiero empezar ahora</a>
 
-                <p style="font-size: 0.85rem; color: var(--color-text-light); margin-bottom: 30px;">
-                    🔒 Pago 100% Seguro y Encriptado <br>
-                    Recibe el acceso en tu email al instante
+                <p style="font-size: 0.9rem; color: var(--color-text-light); margin-bottom: 30px;">
+                    🔒 Pago 100% seguro <br>
+                    📩 Acceso enviado a tu email al instante
                 </p>
 
                 <div class="guarantee-card">
                     <img src="https://cdn-icons-png.flaticon.com/512/3514/3514491.png" alt="Garantía">
                     <div class="guarantee-info">
-                        <h5>30 Días de Garantía Total</h5>
-                        <p>Si no estás conforme, te devolvemos el 100% de tu dinero sin preguntas.</p>
+                        <h5>Garantía de 30 días</h5>
+                        <p>Prueba el contenido con tranquilidad. <br> Si no te convence, puedes solicitar el reembolso completo.</p>
                     </div>
                 </div>
 
@@ -550,6 +671,7 @@
                     <img src="https://img.icons8.com/color/48/paypal.png" alt="PayPal">
                     <img src="https://img.icons8.com/color/48/amex.png" alt="Amex">
                 </div>
+                <p style="font-size: 0.75rem; opacity: 0.6; margin-top: 10px;">(Visa • Mastercard • PayPal • Amex y más...)</p>
             </div>
         </div>
     </section>
@@ -585,13 +707,30 @@
     </section>
 
     <!-- Final CTA -->
-    <section style="background-color: var(--color-accent); color: white; text-align: center;">
-        <div class="container">
-            <h2 style="font-size: 2.5rem; margin-bottom: 20px;">¿Lista para comenzar tu viaje artístico?</h2>
-            <p style="margin-bottom: 40px; opacity: 0.8;">No dejes pasar esta oferta por tiempo limitado.</p>
+    <section style="background-color: var(--color-accent); color: white; text-align: center; padding: 100px 0;">
+        <div class="container" style="max-width: 800px;">
+            <h2 style="font-size: 2.8rem; margin-bottom: 30px; font-family: var(--font-serif);">¿Y si esto es exactamente lo que estabas buscando?</h2>
+            
+            <div style="font-size: 1.2rem; margin-bottom: 40px; line-height: 1.8; opacity: 0.9;">
+                <p>No necesitas experiencia.</p>
+                <p>No necesitas herramientas caras.</p>
+                <p>No necesitas hacerlo perfecto.</p>
+                <br>
+                <p style="font-weight: 700; font-size: 1.5rem; color: var(--color-primary);">Solo necesitas empezar.</p>
+                <br>
+                <p>Muchas personas pasan meses pensando en aprender algo nuevo… <br> y nunca dan el primer paso.</p>
+                <br>
+                <p>Hoy puedes hacerlo de forma simple, desde casa y a tu ritmo.</p>
+            </div>
+
             <a href="https://pay.hotmart.com/B105523460F?off=csqgjy3n&checkoutMode=10" class="btn btn-primary"
-                style="background-color: var(--color-white); color: var(--color-accent);">¡SÍ, QUIERO EMPEZAR POR
-                $14!</a>
+                style="background-color: var(--color-white); color: var(--color-accent); padding: 25px 50px; font-size: 1.2rem;">👉 Quiero dar el primer paso</a>
+
+            <div style="display: flex; justify-content: center; gap: 30px; margin-top: 40px; font-size: 0.9rem; opacity: 0.8;">
+                <span>🔒 Acceso inmediato</span>
+                <span>📩 Recíbelo en tu email</span>
+                <span>🛡️ 30 días de garantía</span>
+            </div>
         </div>
     </section>
 
@@ -628,11 +767,11 @@
             }, 1000);
         }
 
-        window.onload = function () {
+        document.addEventListener('DOMContentLoaded', function () {
             let fifteenMinutes = 60 * 15;
             let display = document.querySelector('#countdown');
-            startCountdown(fifteenMinutes, display);
-        };
+            if (display) startCountdown(fifteenMinutes, display);
+        });
 
         // Purchase Notification Logic
         const users = ["María G.", "Roberto F.", "Lucía M.", "Carlos S.", "Elena P.", "Javier R.", "Sofía V.", "Andrés T."];
@@ -677,6 +816,13 @@
                 document.querySelector(this.getAttribute('href')).scrollIntoView({ behavior: 'smooth' });
             });
         });
+
+        // Inspiration Gallery Carousel
+        function scrollInspiration(direction) {
+            const container = document.getElementById('inspirationGallery');
+            const scrollAmount = container.clientWidth * 0.8;
+            container.scrollBy({ left: direction * scrollAmount, behavior: 'smooth' });
+        }
     </script>
 </body>
 
