@@ -15,10 +15,11 @@
     <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
 
     <!-- Fonts: only needed weights, display=swap prevents FOIT -->
-    <link rel="preload" as="style" href="https://fonts.googleapis.com/css2?family=Inter:wght@400;600;700;800&display=swap" onload="this.onload=null;this.rel='stylesheet'">
-    <noscript><link rel="stylesheet" href="https://fonts.googleapis.com/css2?family=Inter:wght@400;600;700;800&display=swap"></noscript>
+    <link rel="preload" as="style" href="https://fonts.googleapis.com/css2?family=Caveat:wght@600;700&family=Inter:wght@400;500;600;700;800&display=swap" onload="this.onload=null;this.rel='stylesheet'">
+    <noscript><link rel="stylesheet" href="https://fonts.googleapis.com/css2?family=Caveat:wght@600;700&family=Inter:wght@400;500;600;700;800&display=swap"></noscript>
 
     <!-- Main stylesheet -->
+    <link rel="preload" as="style" href="venda.css">
     <link rel="stylesheet" href="venda.css">
 
     <!-- GTM deferred to avoid render-blocking -->
@@ -156,7 +157,7 @@
 
                 </div>
                 <div class="hero-image">
-                    <img src="assets/hero_woman_new.jpg" alt="Mujer feliz creando cerámica fría" style="width: 100%; height: auto; border-radius: 20px; box-shadow: var(--shadow-lg); object-fit: cover; max-height: 700px;" loading="eager" decoding="async" fetchpriority="high">
+                    <img src="assets/hero_woman_new.jpg" alt="Mujer feliz creando cerámica fría" width="600" height="700" style="width: 100%; height: auto; border-radius: 20px; box-shadow: var(--shadow-lg); object-fit: cover; max-height: 700px;" loading="eager" decoding="sync" fetchpriority="high">
                 </div>
             </div>
         </div>
@@ -166,7 +167,7 @@
     <section style="background-color: var(--color-bg); padding: 40px 0 20px;">
         <div class="container">
             <div style="display: flex; align-items: center; gap: 15px; margin-bottom: 30px; justify-content: center;">
-                <img src="https://img.icons8.com/color/48/google-logo.png" alt="Google" style="height: 25px;">
+                <img loading="lazy" decoding="async" src="https://img.icons8.com/color/48/google-logo.png" alt="Google" style="height: 25px;">
                 <h3 style="font-size: 1.1rem; color: var(--color-accent);">Lo que dicen nuestros alumnos</h3>
                 <div style="color: #fbbc05; font-size: 1rem;">★★★★★</div>
             </div>
@@ -279,7 +280,7 @@
                     <div style="width: 100%; height: 160px; margin: -40px -40px 25px -40px; border-radius: 30px 30px 0 0; overflow: hidden; width: calc(100% + 80px);">
                         <picture>
                             <source srcset="assets/comp_traditional.webp" type="image/webp">
-                            <img src="assets/comp_traditional.png" alt="Cerámica Tradicional" style="width: 100%; height: 100%; object-fit: cover;">
+                            <img loading="lazy" decoding="async" src="assets/comp_traditional.png" alt="Cerámica Tradicional" style="width: 100%; height: 100%; object-fit: cover;">
                         </picture>
                     </div>
                     <h4 style="text-align: center; margin-bottom: 25px; color: var(--color-accent); font-weight: 800; font-size: 1.4rem;">Cerámica Tradicional <br><span style="font-size: 0.95rem; font-weight: 400; color: #7f8c8d;">(con horno)</span></h4>
@@ -313,7 +314,7 @@
                     <div style="width: 100%; height: 160px; margin: -40px -40px 25px -40px; border-radius: 30px 30px 0 0; overflow: hidden; width: calc(100% + 80px);">
                         <picture>
                             <source srcset="assets/comp_modern.webp" type="image/webp">
-                            <img src="assets/comp_modern.png" alt="Cerámica Fría" style="width: 100%; height: 100%; object-fit: cover;">
+                            <img loading="lazy" decoding="async" src="assets/comp_modern.png" alt="Cerámica Fría" style="width: 100%; height: 100%; object-fit: cover;">
                         </picture>
                     </div>
                     <h4 style="text-align: center; margin-bottom: 25px; color: var(--color-primary); font-weight: 800; font-size: 1.4rem;">Cerámica Fría <br><span style="font-size: 0.95rem; font-weight: 400; color: var(--color-primary-dark);">(Método Paso a Paso)</span></h4>
@@ -728,6 +729,10 @@
                     <span style="background-color: var(--color-primary); color: white; font-weight: 800; font-size: 0.8rem; padding: 5px 12px; border-radius: 10px; display: inline-block; margin-bottom: 20px; box-shadow: 0 4px 10px rgba(201, 122, 99, 0.3);">💎 BONUS 1</span>
                     <h3 style="color: white; font-size: 1.25rem; margin-bottom: 15px; line-height: 1.4;">🧠 Guía para principiantes: empieza desde cero sin errores</h3>
                     <p style="color: #BDC3C7; font-size: 0.95rem; line-height: 1.6; margin: 0;">Un material simple que te guía paso a paso, evitando los errores más comunes al comenzar.</p>
+                    <div style="margin-top: 25px; padding-top: 20px; border-top: 1px solid rgba(255, 255, 255, 0.05); display: flex; justify-content: space-between; align-items: center;">
+                        <span style="color: #7f8c8d; text-decoration: line-through; font-size: 0.95rem;">Valor: $27</span>
+                        <span style="color: #2ecc71; font-weight: 800; font-size: 1.1rem; background: rgba(46, 204, 113, 0.1); padding: 4px 10px; border-radius: 8px;">¡Hoy $0!</span>
+                    </div>
                 </div>
 
                 <!-- Bonus 2 -->
@@ -736,6 +741,10 @@
                     <span style="background-color: var(--color-primary); color: white; font-weight: 800; font-size: 0.8rem; padding: 5px 12px; border-radius: 10px; display: inline-block; margin-bottom: 20px; box-shadow: 0 4px 10px rgba(201, 122, 99, 0.3);">💎 BONUS 2</span>
                     <h3 style="color: white; font-size: 1.25rem; margin-bottom: 15px; line-height: 1.4;">🧰 Lista de materiales básicos y cómo usarlos</h3>
                     <p style="color: #BDC3C7; font-size: 0.95rem; line-height: 1.6; margin: 0;">Descubre exactamente qué necesitas para empezar sin gastar de más, con opciones simples y accesibles.</p>
+                    <div style="margin-top: 25px; padding-top: 20px; border-top: 1px solid rgba(255, 255, 255, 0.05); display: flex; justify-content: space-between; align-items: center;">
+                        <span style="color: #7f8c8d; text-decoration: line-through; font-size: 0.95rem;">Valor: $19</span>
+                        <span style="color: #2ecc71; font-weight: 800; font-size: 1.1rem; background: rgba(46, 204, 113, 0.1); padding: 4px 10px; border-radius: 8px;">¡Hoy $0!</span>
+                    </div>
                 </div>
 
                 <!-- Bonus 3 -->
@@ -744,6 +753,10 @@
                     <span style="background-color: var(--color-primary); color: white; font-weight: 800; font-size: 0.8rem; padding: 5px 12px; border-radius: 10px; display: inline-block; margin-bottom: 20px; box-shadow: 0 4px 10px rgba(201, 122, 99, 0.3);">💎 BONUS 3</span>
                     <h3 style="color: white; font-size: 1.25rem; margin-bottom: 15px; line-height: 1.4;">✨ Ideas de piezas fáciles para tus primeras creaciones</h3>
                     <p style="color: #BDC3C7; font-size: 0.95rem; line-height: 1.6; margin: 0;">Una selección de ideas pensadas para que puedas crear con seguridad desde el inicio… incluso si nunca hiciste nada antes.</p>
+                    <div style="margin-top: 25px; padding-top: 20px; border-top: 1px solid rgba(255, 255, 255, 0.05); display: flex; justify-content: space-between; align-items: center;">
+                        <span style="color: #7f8c8d; text-decoration: line-through; font-size: 0.95rem;">Valor: $37</span>
+                        <span style="color: #2ecc71; font-weight: 800; font-size: 1.1rem; background: rgba(46, 204, 113, 0.1); padding: 4px 10px; border-radius: 8px;">¡Hoy $0!</span>
+                    </div>
                 </div>
             </div>
             
@@ -821,7 +834,7 @@
     <section class="reviews-section" style="background-color: var(--color-bg); padding: 60px 0 20px;">
         <div class="container">
             <div style="display: flex; align-items: center; gap: 15px; margin-bottom: 40px; justify-content: center;">
-                <img src="https://img.icons8.com/color/48/google-logo.png" alt="Google" style="height: 25px;">
+                <img loading="lazy" decoding="async" src="https://img.icons8.com/color/48/google-logo.png" alt="Google" style="height: 25px;">
                 <h3 style="font-size: 1.2rem; color: var(--color-accent);">Lo que dicen nuestros alumnos</h3>
                 <div style="color: #fbbc05; font-size: 1.2rem;">★★★★★</div>
             </div>
@@ -866,7 +879,7 @@
     <!-- Business Section -->
     <section id="negocio" style="background-color: var(--color-bg); padding: 80px 0; overflow: hidden;">
         <style>
-            @import url('https://fonts.googleapis.com/css2?family=Caveat:wght@600&display=swap');
+
             .business-refactored {
                 display: flex;
                 flex-wrap: wrap;
@@ -1024,7 +1037,7 @@
         <div class="container" style="padding-top: 40px; margin-bottom: -20px; position: relative; z-index: 3;">
             <div style="background-color: var(--color-accent); border-radius: 15px; padding: 15px 30px; display: flex; flex-wrap: wrap; justify-content: space-between; align-items: center; gap: 20px; box-shadow: var(--shadow-md); max-width: 800px; margin: 0 auto;">
                 <div style="display: flex; align-items: center; gap: 15px;">
-                    <img src="https://img.icons8.com/ios/50/c97a63/stopwatch.png" alt="Reloj" width="45" height="45">
+                    <img loading="lazy" decoding="async" src="https://img.icons8.com/ios/50/c97a63/stopwatch.png" alt="Reloj" width="45" height="45">
                     <div style="color: white; text-align: left;">
                         <div style="font-weight: 700; letter-spacing: 0.5px; font-size: 1.05rem;">¡OFERTA POR TIEMPO LIMITADO!</div>
                         <div style="font-size: 0.95rem; opacity: 0.85;">Tu cupón de 70% de descuento expira en:</div>
@@ -1103,19 +1116,19 @@
                 <div class="pricing-benefits-mobile">
                     <div class="benefit-icon-box">
                         <div style="width: 45px; height: 45px; border: 1px solid #e0e0e0; border-radius: 50%; display: flex; align-items: center; justify-content: center; margin: 0 auto 10px auto; background-color: #fafafa;">
-                            <img src="https://img.icons8.com/ios-filled/50/2c3e50/iphone.png" width="22" height="22" alt="Mobile">
+                            <img loading="lazy" decoding="async" src="https://img.icons8.com/ios-filled/50/2c3e50/iphone.png" width="22" height="22" alt="Mobile">
                         </div>
                         Acceso inmediato<br>tras el pago
                     </div>
                     <div class="benefit-icon-box" style="border-left: 1px solid #eee; border-right: 1px solid #eee; padding: 0 10px;">
                         <div style="width: 45px; height: 45px; border: 1px solid #e0e0e0; border-radius: 50%; display: flex; align-items: center; justify-content: center; margin: 0 auto 10px auto; background-color: #fafafa;">
-                            <img src="https://img.icons8.com/ios-filled/50/2c3e50/mac-client.png" width="22" height="22" alt="Desktop">
+                            <img loading="lazy" decoding="async" src="https://img.icons8.com/ios-filled/50/2c3e50/mac-client.png" width="22" height="22" alt="Desktop">
                         </div>
                         Disponible en celular, tablet o computadora
                     </div>
                     <div class="benefit-icon-box">
                         <div style="width: 45px; height: 45px; border: 1px solid #e0e0e0; border-radius: 50%; display: flex; align-items: center; justify-content: center; margin: 0 auto 10px auto; background-color: #fafafa;">
-                            <img src="https://img.icons8.com/ios-filled/50/2c3e50/clock--v1.png" width="22" height="22" alt="Clock">
+                            <img loading="lazy" decoding="async" src="https://img.icons8.com/ios-filled/50/2c3e50/clock--v1.png" width="22" height="22" alt="Clock">
                         </div>
                         Aprende a tu ritmo,<br>sin horarios
                     </div>
@@ -1135,11 +1148,11 @@
                 <!-- Security Badges -->
                 <div style="display: flex; flex-wrap: wrap; margin-top: 30px; padding-top: 20px; justify-content: center; gap: 20px;">
                     <div style="background-color: var(--color-bg); padding: 15px 20px; border-radius: 10px; display: flex; align-items: center; gap: 15px; flex: 1; min-width: 250px; justify-content: center;">
-                        <img src="https://img.icons8.com/ios-glyphs/30/B8926A/shield.png" alt="Seguro" width="20" height="20" loading="lazy">
+                        <img decoding="async" src="https://img.icons8.com/ios-glyphs/30/B8926A/shield.png" alt="Seguro" width="20" height="20" loading="lazy">
                         <span style="font-size: 0.85rem; color: var(--color-accent); font-weight: 600;">Pago 100% seguro</span>
                     </div>
                     <div style="background-color: var(--color-bg); padding: 15px 20px; border-radius: 10px; display: flex; align-items: center; gap: 15px; flex: 1; min-width: 250px; justify-content: center;">
-                        <img src="https://img.icons8.com/ios-glyphs/30/B8926A/new-post.png" alt="Email" width="20" height="20" loading="lazy">
+                        <img decoding="async" src="https://img.icons8.com/ios-glyphs/30/B8926A/new-post.png" alt="Email" width="20" height="20" loading="lazy">
                         <span style="font-size: 0.85rem; color: var(--color-accent); font-weight: 600;">Acceso enviado a tu email al instante</span>
                     </div>
                 </div>
@@ -1147,7 +1160,7 @@
                 <!-- Guarantee Box -->
                 <div style="background-color: var(--color-bg); border-radius: 15px; padding: 30px; margin-top: 40px; text-align: center; position: relative;">
                     <div style="background-color: var(--color-accent); color: white; width: 46px; height: 46px; border-radius: 50%; display: flex; align-items: center; justify-content: center; position: absolute; top: -23px; left: 50%; transform: translateX(-50%); box-shadow: var(--shadow-sm);">
-                        <img src="https://img.icons8.com/ios-filled/24/ffffff/shopping-cart.png" alt="Cart" width="20" height="20">
+                        <img loading="lazy" decoding="async" src="https://img.icons8.com/ios-filled/24/ffffff/shopping-cart.png" alt="Cart" width="20" height="20">
                     </div>
                     <h3 style="color: var(--color-accent); font-size: 1.4rem; margin-bottom: 15px; margin-top: 10px;">Garantía de 30 días</h3>
                     <p style="font-size: 0.9rem; color: var(--color-accent); opacity: 0.8; margin-bottom: 25px; line-height: 1.5;">
@@ -1157,10 +1170,10 @@
                     
                     <!-- Payment Methods -->
                     <div style="display: flex; justify-content: center; align-items: center; gap: 15px; flex-wrap: wrap;">
-                        <img src="https://img.icons8.com/color/48/visa.png" alt="Visa" width="36" height="22" loading="lazy">
-                        <img src="https://img.icons8.com/color/48/mastercard.png" alt="Mastercard" width="36" height="22" loading="lazy">
-                        <img src="https://img.icons8.com/color/48/paypal.png" alt="PayPal" width="36" height="22" loading="lazy">
-                        <img src="https://img.icons8.com/color/48/amex.png" alt="Amex" width="36" height="22" loading="lazy">
+                        <img decoding="async" src="https://img.icons8.com/color/48/visa.png" alt="Visa" width="36" height="22" loading="lazy">
+                        <img decoding="async" src="https://img.icons8.com/color/48/mastercard.png" alt="Mastercard" width="36" height="22" loading="lazy">
+                        <img decoding="async" src="https://img.icons8.com/color/48/paypal.png" alt="PayPal" width="36" height="22" loading="lazy">
+                        <img decoding="async" src="https://img.icons8.com/color/48/amex.png" alt="Amex" width="36" height="22" loading="lazy">
                         <span style="font-size: 0.8rem; color: var(--color-accent); opacity: 0.7;">y más...</span>
                     </div>
                 </div>
@@ -1246,9 +1259,9 @@
             </div>
 
             <div style="display: flex; justify-content: center; flex-wrap: wrap; gap: 25px; margin-top: 40px; font-size: 0.9rem; opacity: 0.7;">
-                <span style="display: flex; align-items: center; gap: 8px;"><img src="https://img.icons8.com/ios-glyphs/30/ffffff/shield.png" alt="Seguro" width="16" height="16"> Acceso inmediato</span>
-                <span style="display: flex; align-items: center; gap: 8px;"><img src="https://img.icons8.com/ios-glyphs/30/ffffff/new-post.png" alt="Email" width="16" height="16"> Recíbelo en tu email</span>
-                <span style="display: flex; align-items: center; gap: 8px;"><img src="https://img.icons8.com/ios-filled/24/ffffff/shopping-cart.png" alt="Garantía" width="16" height="16"> 30 días de garantía</span>
+                <span style="display: flex; align-items: center; gap: 8px;"><img loading="lazy" decoding="async" src="https://img.icons8.com/ios-glyphs/30/ffffff/shield.png" alt="Seguro" width="16" height="16"> Acceso inmediato</span>
+                <span style="display: flex; align-items: center; gap: 8px;"><img loading="lazy" decoding="async" src="https://img.icons8.com/ios-glyphs/30/ffffff/new-post.png" alt="Email" width="16" height="16"> Recíbelo en tu email</span>
+                <span style="display: flex; align-items: center; gap: 8px;"><img loading="lazy" decoding="async" src="https://img.icons8.com/ios-filled/24/ffffff/shopping-cart.png" alt="Garantía" width="16" height="16"> 30 días de garantía</span>
             </div>
         </div>
     </section>
