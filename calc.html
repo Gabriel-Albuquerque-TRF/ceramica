@@ -1,0 +1,454 @@
+<!DOCTYPE html>
+<html lang="es">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Calculadora de Precios | La Biblia de la Cerámica Fría</title>
+    
+    <!-- Fonts -->
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Caveat:wght@600;700&family=Inter:wght@400;500;600;700;800&display=swap" rel="stylesheet">
+    
+    <style>
+        :root {
+            --color-bg: #FAF8F5;
+            --color-text: #2C2824;
+            --color-text-light: #5C4E3C;
+            --color-primary: #C97A63;
+            --color-primary-dark: #A65F4C;
+            --color-accent: #2C3E50;
+            --color-white: #FFFFFF;
+            --color-clay-100: #F0EBE1;
+            --color-clay-200: #E1D5C1;
+            --shadow-premium: 0 25px 50px -12px rgba(201, 122, 99, 0.15);
+            --transition: all 0.3s cubic-bezier(0.4, 0, 0.2, 1);
+        }
+
+        * {
+            margin: 0;
+            padding: 0;
+            box-sizing: border-box;
+            font-family: 'Inter', sans-serif;
+        }
+
+        body {
+            background-color: var(--color-bg);
+            color: var(--color-text);
+            line-height: 1.6;
+            padding: 20px;
+        }
+
+        .cursive-text {
+            font-family: 'Caveat', cursive;
+        }
+
+        .container {
+            max-width: 900px;
+            margin: 40px auto;
+        }
+
+        header {
+            text-align: center;
+            margin-bottom: 40px;
+        }
+
+        h1 {
+            font-size: 2.5rem;
+            color: var(--color-accent);
+            margin-bottom: 10px;
+            letter-spacing: -1px;
+        }
+
+        h1 span {
+            color: var(--color-primary);
+        }
+
+        .badge {
+            display: inline-block;
+            padding: 6px 16px;
+            background-color: rgba(201, 122, 99, 0.1);
+            color: var(--color-primary);
+            border-radius: 20px;
+            font-size: 0.75rem;
+            font-weight: 700;
+            text-transform: uppercase;
+            letter-spacing: 1.5px;
+            margin-bottom: 15px;
+        }
+
+        .grid {
+            display: grid;
+            grid-template-columns: 1fr 350px;
+            gap: 30px;
+        }
+
+        @media (max-width: 850px) {
+            .grid {
+                grid-template-columns: 1fr;
+            }
+        }
+
+        .card {
+            background: var(--color-white);
+            border-radius: 24px;
+            padding: 35px;
+            box-shadow: var(--shadow-premium);
+            border: 1px solid var(--color-clay-100);
+        }
+
+        .section-title {
+            font-size: 1.25rem;
+            color: var(--color-accent);
+            font-weight: 700;
+            margin-bottom: 25px;
+            display: flex;
+            align-items: center;
+            gap: 10px;
+        }
+
+        .section-title span {
+            background: var(--color-primary);
+            color: white;
+            width: 28px;
+            height: 28px;
+            border-radius: 50%;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            font-size: 0.9rem;
+        }
+
+        .form-group {
+            margin-bottom: 20px;
+        }
+
+        label {
+            display: block;
+            font-size: 0.9rem;
+            font-weight: 600;
+            color: var(--color-text-light);
+            margin-bottom: 8px;
+        }
+
+        input {
+            width: 100%;
+            padding: 14px 18px;
+            border-radius: 12px;
+            border: 1px solid var(--color-clay-200);
+            background: #fafafa;
+            font-size: 1rem;
+            transition: var(--transition);
+        }
+
+        input:focus {
+            outline: none;
+            border-color: var(--color-primary);
+            background: #fff;
+            box-shadow: 0 0 0 4px rgba(201, 122, 99, 0.1);
+        }
+
+        .input-with-symbol {
+            position: relative;
+        }
+
+        .input-with-symbol input {
+            padding-left: 35px;
+        }
+
+        .input-with-symbol::before {
+            content: '$';
+            position: absolute;
+            left: 15px;
+            top: 50%;
+            transform: translateY(-50%);
+            color: var(--color-text-light);
+            font-weight: 600;
+        }
+
+        .hint {
+            font-size: 0.8rem;
+            color: var(--color-text-light);
+            margin-top: 5px;
+            opacity: 0.8;
+            font-style: italic;
+        }
+
+        /* Results Card */
+        .results-card {
+            background: var(--color-accent);
+            color: white;
+            position: sticky;
+            top: 20px;
+        }
+
+        .result-item {
+            margin-bottom: 25px;
+            padding-bottom: 15px;
+            border-bottom: 1px solid rgba(255, 255, 255, 0.1);
+        }
+
+        .result-item:last-child {
+            border-bottom: none;
+        }
+
+        .result-label {
+            font-size: 0.85rem;
+            opacity: 0.7;
+            text-transform: uppercase;
+            letter-spacing: 1px;
+            margin-bottom: 5px;
+        }
+
+        .result-value {
+            font-size: 2.2rem;
+            font-weight: 800;
+            color: var(--color-primary);
+        }
+
+        .profit-badge {
+            background: rgba(39, 174, 96, 0.2);
+            color: #2ecc71;
+            padding: 4px 10px;
+            border-radius: 8px;
+            font-size: 0.8rem;
+            font-weight: 700;
+            margin-left: 10px;
+        }
+
+        /* Instructions */
+        .guide-section {
+            margin-top: 60px;
+        }
+
+        .guide-grid {
+            display: grid;
+            grid-template-columns: repeat(auto-fit, minmax(250px, 1fr));
+            gap: 20px;
+        }
+
+        .guide-card {
+            background: rgba(201, 122, 99, 0.05);
+            border: 1px dashed var(--color-primary);
+            padding: 25px;
+            border-radius: 15px;
+        }
+
+        .guide-card h4 {
+            color: var(--color-primary);
+            margin-bottom: 10px;
+            font-size: 1.1rem;
+        }
+
+        .guide-card p {
+            font-size: 0.9rem;
+            color: var(--color-text-light);
+        }
+
+        .footer-note {
+            text-align: center;
+            margin-top: 40px;
+            color: var(--color-text-light);
+            font-size: 0.9rem;
+            opacity: 0.7;
+        }
+
+        /* Tooltip style */
+        .info-icon {
+            display: inline-flex;
+            width: 16px;
+            height: 16px;
+            background: var(--color-clay-200);
+            color: var(--color-text-light);
+            border-radius: 50%;
+            font-size: 10px;
+            align-items: center;
+            justify-content: center;
+            cursor: help;
+            margin-left: 5px;
+        }
+
+        input[type="range"] {
+            -webkit-appearance: none;
+            width: 100%;
+            height: 8px;
+            background: var(--color-clay-100);
+            border-radius: 5px;
+            outline: none;
+            padding: 0;
+            border: none;
+        }
+
+        input[type="range"]::-webkit-slider-thumb {
+            -webkit-appearance: none;
+            appearance: none;
+            width: 20px;
+            height: 20px;
+            background: var(--color-primary);
+            cursor: pointer;
+            border-radius: 50%;
+        }
+
+        .range-value {
+            font-weight: 700;
+            color: var(--color-primary);
+            float: right;
+        }
+    </style>
+</head>
+
+<body>
+
+    <nav style="background: white; padding: 15px 0; border-bottom: 1px solid var(--color-clay-100); position: sticky; top: 0; z-index: 1000; width: 100%;">
+        <div style="max-width: 900px; margin: 0 auto; padding: 0 20px;">
+            <a href="ebook.html" style="text-decoration: none; color: var(--color-accent); font-weight: 700; font-size: 0.85rem; text-transform: uppercase; letter-spacing: 1px; display: flex; align-items: center; gap: 8px;">
+                <svg xmlns="http://www.w3.org/2000/svg" width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="3" stroke-linecap="round" stroke-linejoin="round"><path d="m15 18-6-6 6-6"/></svg>
+                Volver al Ebook
+            </a>
+        </div>
+    </nav>
+
+    <div class="container">
+        <header>
+            <span class="badge">Herramienta Exclusiva</span>
+            <h1>Calculadora de <span>Precios</span></h1>
+            <p class="cursive-text" style="font-size: 1.5rem; color: var(--color-text-light);">No trabajes más gratis, ponle valor real a tu arte.</p>
+        </header>
+
+        <div class="grid">
+            <!-- Form Section -->
+            <div class="card">
+                <!-- Section 1: Materials -->
+                <div class="section-title"><span>1</span> Materiales</div>
+                <div class="form-group">
+                    <label>Costo de Insumos</label>
+                    <div class="input-with-symbol">
+                        <input type="number" id="materiales" placeholder="0.00" oninput="updateAll()">
+                    </div>
+                    <p class="hint">Suma masa, barniz, pinturas, lijas y packaging.</p>
+                </div>
+
+                <!-- Section 2: Labor -->
+                <div class="section-title"><span>2</span> Mano de Obra</div>
+                <div class="form-group">
+                    <label>Tiempo de Trabajo (Horas)</label>
+                    <input type="number" id="horas" placeholder="0" step="0.5" oninput="updateAll()">
+                    <p class="hint">Desde el diseño hasta el empaquetado final.</p>
+                </div>
+                <div class="form-group">
+                    <label>Valor de tu Hora <span class="info-icon" title="Lo que quieres ganar libre por hora">?</span></label>
+                    <div class="input-with-symbol">
+                        <input type="number" id="horaValor" placeholder="0.00" oninput="updateAll()">
+                    </div>
+                    <p class="hint">Si no sabes qué poner, empieza con el valor de una hora de salario mínimo + 50%.</p>
+                </div>
+
+                <!-- Section 3: Overhead -->
+                <div class="section-title"><span>3</span> Costos Fijos y Extras</div>
+                <div class="form-group">
+                    <label>Otros gastos (%) <span class="info-icon" title="Luz, agua, internet, marketing">?</span></label>
+                    <input type="number" id="gastosExtras" value="10" oninput="updateAll()">
+                    <p class="hint">Un 10% suele cubrir luz, internet y desgaste de herramientas.</p>
+                </div>
+
+                <!-- Section 4: Profit -->
+                <div class="section-title"><span>4</span> Margen de Ganancia</div>
+                <div class="form-group">
+                    <label>Margen Deseado: <span id="margenLabel" class="range-value">100%</span></label>
+                    <input type="range" id="margen" min="0" max="300" value="100" step="5" oninput="updateAll()">
+                    <p class="hint">El margen sugerido para piezas artesanales es de 100% a 200%.</p>
+                </div>
+            </div>
+
+            <!-- Results Section -->
+            <div class="card results-card">
+                <div class="result-item">
+                    <div class="result-label">Costo de Producción</div>
+                    <div class="result-value" id="costoProduccion">$ 0.00</div>
+                    <p style="font-size: 0.8rem; opacity: 0.6; margin-top: 5px;">Lo que te cuesta hacer la pieza.</p>
+                </div>
+
+                <div class="result-item">
+                    <div class="result-label">Precio Sugerido</div>
+                    <div class="result-value" id="precioSugerido" style="color: #fff;">$ 0.00</div>
+                    <p style="font-size: 0.8rem; opacity: 0.8; margin-top: 5px;">Precio final de venta al público.</p>
+                </div>
+
+                <div class="result-item">
+                    <div class="result-label">Tu Ganancia Neta</div>
+                    <div class="result-value" id="gananciaNeta" style="color: #2ecc71;">$ 0.00</div>
+                    <p style="font-size: 0.8rem; opacity: 0.8; margin-top: 5px;">Lo que queda en tu bolsillo después de pagar materiales y tu sueldo.</p>
+                </div>
+                
+                <div style="margin-top: 20px; font-size: 0.85rem; background: rgba(0,0,0,0.2); padding: 15px; border-radius: 12px; border-left: 3px solid var(--color-primary);">
+                    <strong>💡 Consejo Pro:</strong> Si el precio te parece "alto", no lo bajes. ¡Mejora tu packaging o tus fotos! El valor percibido es la clave del lujo.
+                </div>
+            </div>
+        </div>
+
+        <!-- Instructions/Education -->
+        <div class="guide-section">
+            <h2 style="text-align: center; margin-bottom: 30px; color: var(--color-accent);">Guía de <span class="cursive-text" style="color: var(--color-primary); font-size: 2.5rem;">Precificación Exitosa</span></h2>
+            <div class="guide-grid">
+                <div class="guide-card">
+                    <h4>¿Por qué cobrar por hora?</h4>
+                    <p>Si solo sumas materiales, estás regalando tu talento. Tu tiempo es el recurso más valioso. Definir un sueldo por hora te permite crecer y contratar ayuda en el futuro.</p>
+                </div>
+                <div class="guide-card">
+                    <h4>La Regla del Margen</h4>
+                    <p>La ganancia neta (el margen) no es para gastar, es para reinvertir en tu negocio, comprar mejores herramientas o cubrir piezas que salieron mal.</p>
+                </div>
+                <div class="guide-card">
+                    <h4>Valor vs. Precio</h4>
+                    <p>El precio es lo que el cliente paga, el valor es lo que recibe. Una pieza de cerámica fría es una obra de arte, no un producto industrial de plástico.</p>
+                </div>
+            </div>
+        </div>
+
+        <div class="footer-note">
+            © 2026 La Biblia de la Cerámica Fría - Herramienta de Gestión para Artesanos Modernos
+        </div>
+    </div>
+
+    <script>
+        function updateAll() {
+            // Inputs
+            const materiales = parseFloat(document.getElementById('materiales').value) || 0;
+            const horas = parseFloat(document.getElementById('horas').value) || 0;
+            const horaValor = parseFloat(document.getElementById('horaValor').value) || 0;
+            const gastosExtrasPct = parseFloat(document.getElementById('gastosExtras').value) || 0;
+            const margenPct = parseFloat(document.getElementById('margen').value) || 0;
+
+            // Update Label
+            document.getElementById('margenLabel').innerText = margenPct + '%';
+
+            // Calculations
+            const costoManoObra = horas * horaValor;
+            const subtotal = materiales + costoManoObra;
+            
+            // Add fixed costs percentage
+            const costoProduccion = subtotal * (1 + (gastosExtrasPct / 100));
+            
+            // Final Price based on margin
+            // Price = Cost + (Cost * Margin%)
+            const gananciaMargen = costoProduccion * (margenPct / 100);
+            const precioFinal = costoProduccion + gananciaMargen;
+            
+            // Net Profit (Total Price - Cost of Materials - Fixed Costs % - Labor) 
+            // Actually, if we consider Labor as "salary", the "Net Profit" is the extra margin.
+            const gananciaNeta = gananciaMargen;
+
+            // Display
+            document.getElementById('costoProduccion').innerText = "$ " + costoProduccion.toLocaleString(undefined, {minimumFractionDigits: 2, maximumFractionDigits: 2});
+            document.getElementById('precioSugerido').innerText = "$ " + precioFinal.toLocaleString(undefined, {minimumFractionDigits: 2, maximumFractionDigits: 2});
+            document.getElementById('gananciaNeta').innerText = "$ " + gananciaNeta.toLocaleString(undefined, {minimumFractionDigits: 2, maximumFractionDigits: 2});
+        }
+
+        // Initialize tooltips (native titles used)
+        window.onload = updateAll;
+    </script>
+
+</body>
+
+</html>
