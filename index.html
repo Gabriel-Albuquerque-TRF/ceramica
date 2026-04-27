@@ -5,87 +5,60 @@
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>La Biblia de la Cerámica Fría - Domina el Arte del Artesano Moderno</title>
-    <meta name="description"
-        content="Aprende a crear cerámicas profesionales sin horno. El guía definitivo para transformar tu creatividad en arte de lujo.">
+    <meta name="description" content="Aprende a crear cerámicas profesionales sin horno. El guía definitivo para transformar tu creatividad en arte de lujo.">
 
-    <!-- Fonts -->
+    <!-- Preload critical hero image (LCP) -->
+    <link rel="preload" as="image" href="assets/hero_woman_new.jpg" fetchpriority="high">
+
+    <!-- Preconnect for fonts -->
     <link rel="preconnect" href="https://fonts.googleapis.com">
     <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
-    <link
-        href="https://fonts.googleapis.com/css2?family=Inter:wght@300;400;600;700;800&family=Playfair+Display:ital,wght@0,400;0,700;0,800;1,400;1,700&display=swap"
-        rel="stylesheet">
 
-    <!-- Styles -->
+    <!-- Fonts: only needed weights, display=swap prevents FOIT -->
+    <link rel="preload" as="style" href="https://fonts.googleapis.com/css2?family=Inter:wght@400;600;700;800&display=swap" onload="this.onload=null;this.rel='stylesheet'">
+    <noscript><link rel="stylesheet" href="https://fonts.googleapis.com/css2?family=Inter:wght@400;600;700;800&display=swap"></noscript>
+
+    <!-- Main stylesheet -->
     <link rel="stylesheet" href="venda.css">
 
-    <!-- Google Tag Manager -->
+    <!-- GTM deferred to avoid render-blocking -->
     <script>
-        (function (w, d, s, l, i) {
-            w[l] = w[l] || [];
-            w[l].push({
-                'gtm.start':
-                    new Date().getTime(), event: 'gtm.js'
-            });
-            var f = d.getElementsByTagName(s)[0],
-                j = d.createElement(s),
-                dl = l != 'dataLayer' ? '&l=' + l : '';
-            j.async = true;
-            j.src =
-                'https://www.googletagmanager.com/gtm.js?id=' + i + dl;
-            f.parentNode.insertBefore(j, f);
-        })(window, document, 'script', 'dataLayer', 'GTM-PDV4PF2D');
+        window.addEventListener('load', function() {
+            (function(w,d,s,l,i){w[l]=w[l]||[];w[l].push({'gtm.start':new Date().getTime(),event:'gtm.js'});var f=d.getElementsByTagName(s)[0],j=d.createElement(s),dl=l!='dataLayer'?'&l='+l:'';j.async=true;j.src='https://www.googletagmanager.com/gtm.js?id='+i+dl;f.parentNode.insertBefore(j,f);})(window,document,'script','dataLayer','GTM-PDV4PF2D');
+        });
     </script>
-    <!-- End Google Tag Manager -->
 
     <style>
-        .gradient-text {
-            background: linear-gradient(90deg, var(--color-primary), var(--color-secondary));
-            -webkit-background-clip: text;
-            -webkit-text-fill-color: transparent;
-        }
-
-        .trust-icons {
-            display: flex;
-            justify-content: center;
-            gap: 20px;
-            margin-top: 20px;
-            opacity: 0.6;
-        }
-
-        .trust-icon.story-card {
-    flex: 0 0 200px;
-    height: 350px;
-    border-radius: 15px;
-    overflow: hidden;
-    position: relative;
-    scroll-snap-align: start;
-    box-shadow: var(--shadow-sm);
-    background-color: #f0f0f0;
-}
-
-        .trust-icons img {
-            height: 24px;
-        }
-
-        .guarantee-badge {
-            display: flex;
-            align-items: center;
-            justify-content: center;
-            gap: 15px;
-            margin-top: 40px;
-            padding: 20px;
-            background: rgba(201, 122, 99, 0.05);
-            border-radius: 12px;
-            border: 1px dashed var(--color-primary);
-        }
-
-        .guarantee-badge img {
-            width: 60px;
-        }
-
-        .guarantee-text {
-            text-align: left;
-            font-size: 0.9rem;
+        .gradient-text{background:linear-gradient(90deg,var(--color-primary),var(--color-secondary));-webkit-background-clip:text;-webkit-text-fill-color:transparent}
+        .trust-icons{display:flex;justify-content:center;gap:20px;margin-top:20px;opacity:.6}
+        .trust-icon.story-card{flex:0 0 200px;height:350px;border-radius:15px;overflow:hidden;position:relative;scroll-snap-align:start;box-shadow:var(--shadow-sm);background-color:#f0f0f0}
+        .trust-icons img{height:24px}
+        .guarantee-badge{display:flex;align-items:center;justify-content:center;gap:15px;margin-top:40px;padding:20px;background:rgba(201,122,99,.05);border-radius:12px;border:1px dashed var(--color-primary)}
+        .guarantee-badge img{width:60px}
+        .guarantee-text{text-align:left;font-size:.9rem}
+        
+        @media (max-width: 768px) {
+            .mobile-edge-to-edge {
+                margin-left: -30px !important;
+                margin-right: -30px !important;
+                width: calc(100% + 60px) !important;
+                max-width: none !important;
+                border-radius: 0 !important;
+                padding-left: 20px !important;
+                padding-right: 20px !important;
+                border-left: none !important;
+                border-right: none !important;
+            }
+            #experiencia, #beneficios, #regalos, #inspiracion {
+                padding-top: 0 !important;
+                padding-bottom: 0 !important;
+            }
+            #comparativa {
+                padding-bottom: 20px !important;
+            }
+            .reviews-section {
+                padding-top: 20px !important;
+            }
         }
     </style>
 </head>
@@ -93,17 +66,13 @@
 <body>
 
     <!-- Google Tag Manager (noscript) -->
-    <noscript>
-        <iframe src="https://www.googletagmanager.com/ns.html?id=GTM-PDV4PF2D" height="0" width="0"
-            style="display:none;visibility:hidden">
-        </iframe>
-    </noscript>
+    <noscript><iframe src="https://www.googletagmanager.com/ns.html?id=GTM-PDV4PF2D" height="0" width="0" style="display:none;visibility:hidden"></iframe></noscript>
     <!-- End Google Tag Manager (noscript) -->
 
     <!-- Scarcity Timer Bar -->
     <div class="scarcity-bar">
         <span>⚠️ ¡OFERTA POR TIEMPO LIMITADO!</span>
-        <span class="scarcity-detail">Tu cupón de 70% de descuento expira en: <span id="countdown">15:00</span></span>
+        <span class="scarcity-detail">Tu cupón de 70% de descuento expira en: <span id="countdown">20:00</span></span>
     </div>
 
     <!-- Notification Container -->
@@ -115,30 +84,79 @@
         </div>
     </div>
 
-    <!-- Header -->
-    <header style="position: absolute; width: 100%; padding: 30px 0; z-index: 100; top: 40px;">
-        <div class="container" style="display: flex; justify-content: center; align-items: center;">
-            <div class="logo"
-                style="font-family: var(--font-serif); font-size: 1.5rem; font-weight: 800; color: var(--color-accent);">
-                BIBLIA DE LA <span style="color: var(--color-primary);">CERÁMICA</span>
-            </div>
-        </div>
-    </header>
+
 
     <!-- Hero Section -->
-    <section class="hero" style="padding-top: 180px;">
+    <section class="hero" style="padding-top: 80px;">
         <div class="container">
             <div class="hero-grid">
                 <div class="hero-content">
-                    <span class="badge">Para Principiantes • Acceso Inmediato</span>
-                    <h1>Aprende a crear tus primeras piezas de <br><span>cerámica fría en casa</span> <br>— sin horno y sin experiencia.</h1>
-                    <p>Un método simple paso a paso para que puedas crear tus primeras piezas desde cero, usando materiales accesibles y sin necesidad de herramientas profesionales.</p>
-                    <div style="display: flex; gap: 20px; flex-wrap: wrap;">
-                        <a href="#experiencia" class="btn btn-outline" style="width: 100%; background: var(--color-primary); color: white; border: none;">Quiero crear mis primeras piezas</a>
-                    </div>
+                    <style>
+                        .hero-content {
+                            display: flex;
+                            flex-direction: column;
+                            justify-content: center;
+                        }
+                        .hero-badge { order: 1; align-self: flex-start; margin-bottom: 15px !important; }
+                        .hero-headline { order: 2; text-align: left; }
+                        .hero-subheadline { order: 3; }
+                        .hero-bullets-list { order: 4; }
+                        
+                        @media (max-width: 768px) {
+                            .hero-grid {
+                                display: flex;
+                                flex-direction: column;
+                            }
+                            .hero-content {
+                                display: contents;
+                            }
+                            .hero-badge { order: 1; }
+                            .hero-headline { order: 2; margin-bottom: 5px !important; }
+                            .hero-image {
+                                order: 3;
+                                margin: 20px 0;
+                            }
+                            .hero-subheadline { order: 4; margin-bottom: 20px !important; }
+                            .hero-bullets-list { order: 5; margin-bottom: 15px !important; }
+                        }
+                    </style>
+                    <span class="badge hero-badge" style="display: inline-flex; align-items: center; gap: 8px; background-color: rgba(39, 174, 96, 0.1); color: #27ae60; padding: 8px 15px; border-radius: 20px; font-weight: 700; font-size: 0.85rem; border: 1px solid rgba(39, 174, 96, 0.2);">
+                        <span style="display: inline-block; width: 8px; height: 8px; background-color: #27ae60; border-radius: 50%; box-shadow: 0 0 8px #27ae60;"></span>
+                        ACCESO INMEDIATO
+                    </span>
+                    
+                    <h1 class="hero-headline" style="font-size: clamp(2.1rem, 7.5vw, 3.2rem); line-height: 1.1; color: var(--color-accent); margin-bottom: 20px; letter-spacing: -1px;">
+                        Crea piezas de cerámica<br>
+                        <span style="color: var(--color-primary);">sin horno, desde casa</span><br>
+                        <span class="cursive-text" style="font-family: 'Caveat', cursive; font-size: clamp(3rem, 11vw, 4.5rem); color: var(--color-primary); font-weight: 600; line-height: 0.8; display: inline-block; margin-top: 8px;">incluso sin experiencia</span>
+                    </h1>
+                    
+                    <p class="hero-subheadline" style="font-size: 1.15rem; color: var(--color-text-light); line-height: 1.5; margin-bottom: 25px; text-align: left;">
+                        Descubre el método paso a paso para crear piezas elegantes, con acabado profesional, usando materiales simples y <strong style="color: var(--color-primary); font-weight: 700;">sin inversión alta.</strong>
+                    </p>
+                    
+                    <ul class="hero-bullets-list" style="list-style: none; padding: 0; margin: 0 0 10px 0; text-align: left; width: 100%;">
+                        <li style="display: flex; align-items: center; gap: 15px; padding: 12px 0; border-bottom: 1px solid rgba(201, 122, 99, 0.15);">
+                            <span style="background-color: var(--color-primary); color: white; width: 28px; height: 28px; border-radius: 50%; display: flex; align-items: center; justify-content: center; flex-shrink: 0; font-size: 0.85rem; font-weight: bold;">✓</span>
+                            <span style="font-size: 1.05rem; color: var(--color-accent); line-height: 1.4;">Sin horno ni herramientas caras</span>
+                        </li>
+                        <li style="display: flex; align-items: center; gap: 15px; padding: 12px 0; border-bottom: 1px solid rgba(201, 122, 99, 0.15);">
+                            <span style="background-color: var(--color-primary); color: white; width: 28px; height: 28px; border-radius: 50%; display: flex; align-items: center; justify-content: center; flex-shrink: 0; font-size: 0.85rem; font-weight: bold;">✓</span>
+                            <span style="font-size: 1.05rem; color: var(--color-accent); line-height: 1.4;">Ideal para principiantes <strong style="color: var(--color-primary);">desde cero</strong></span>
+                        </li>
+                        <li style="display: flex; align-items: center; gap: 15px; padding: 12px 0; border-bottom: 1px solid rgba(201, 122, 99, 0.15);">
+                            <span style="background-color: var(--color-primary); color: white; width: 28px; height: 28px; border-radius: 50%; display: flex; align-items: center; justify-content: center; flex-shrink: 0; font-size: 0.85rem; font-weight: bold;">✓</span>
+                            <span style="font-size: 1.05rem; color: var(--color-accent); line-height: 1.4;">Aprende a crear piezas con <strong style="color: var(--color-primary);">acabado de lujo</strong></span>
+                        </li>
+                        <li style="display: flex; align-items: center; gap: 15px; padding: 12px 0;">
+                            <span style="background-color: var(--color-primary); color: white; width: 28px; height: 28px; border-radius: 50%; display: flex; align-items: center; justify-content: center; flex-shrink: 0; font-size: 0.85rem; font-weight: bold;">✓</span>
+                            <span style="font-size: 1.05rem; color: var(--color-accent); line-height: 1.4;">Vende tus primeras piezas en <strong style="color: var(--color-primary);">pocos días</strong></span>
+                        </li>
+                    </ul>
+
                 </div>
                 <div class="hero-image">
-                    <img src="assets/ebook_mockup_es.png" alt="La Biblia de la Cerámica Fría" loading="eager" decoding="async">
+                    <img src="assets/hero_woman_new.jpg" alt="Mujer feliz creando cerámica fría" style="width: 100%; height: auto; border-radius: 20px; box-shadow: var(--shadow-lg); object-fit: cover; max-height: 700px;" loading="eager" decoding="async" fetchpriority="high">
                 </div>
             </div>
         </div>
@@ -191,59 +209,210 @@
     </section>
 
     <!-- Emotional / Sentimental Section -->
-    <section id="experiencia" class="experience">
+    <section id="experiencia" style="padding: 80px 0; background-color: var(--color-white);">
         <div class="container">
-            <div class="experience-grid">
-                <div class="experience-content">
-                    <span class="badge">La Experiencia</span>
-                    <h2>Reconecta con tu <span class="gradient-text">Poder Creador.</span></h2>
-                    <p>No se trata solo de modelar arcilla. Se trata de regalarte ese momento de paz en un mundo que
-                        nunca se detiene. Es el orgullo de ver una pieza terminada en tu estantería y poder decir:
-                        <em>"Esto lo hice yo"</em>.
-                    </p>
-                    <p>Nuestra methodology se basa en el <strong>Slow Craft</strong>: un proceso meditativo que reduce
-                        el estrés, mejora la concentración y te devuelve la satisfacción de crear algo tangible y
-                        eterno.</p>
-                    <a href="#beneficios" class="btn btn-primary"
-                        style="margin-top: 20px;">Quiero esta Experiencia</a>
+            <style>
+                .experiencia-box {
+                    background-color: #F8F5F0; border-radius: 30px; padding: 50px; box-shadow: 0 15px 35px rgba(0,0,0,0.05); max-width: 1000px; margin: 0 auto;
+                }
+                .experiencia-grid-new {
+                    display: flex;
+                    flex-wrap: wrap;
+                    align-items: center;
+                    gap: 40px;
+                }
+                .experiencia-content-new { flex: 1; min-width: 300px; text-align: left; }
+                .experiencia-image-new { flex: 1; min-width: 300px; text-align: center; }
+                
+                .experiencia-title { font-size: 2.8rem; }
+                .experiencia-title .cursive-text { font-size: 4rem; }
+                @media (max-width: 768px) {
+                    .experiencia-box { padding: 40px 25px; }
+                    .experiencia-title { font-size: 2.2rem !important; }
+                    .experiencia-title .cursive-text { font-size: 3.2rem !important; margin-top: -5px !important; }
+                }
+            </style>
+            <div class="experiencia-box">
+                <div class="experiencia-grid-new">
+                    <div class="experiencia-content-new">
+                        <span class="badge" style="display: inline-flex; align-items: center; gap: 8px; background-color: rgba(201, 122, 99, 0.1); color: var(--color-primary); padding: 8px 15px; border-radius: 20px; font-weight: 700; font-size: 0.85rem; border: 1px solid rgba(201, 122, 99, 0.2); margin-bottom: 20px;">
+                            La Experiencia
+                        </span>
+                        
+                        <h2 class="experiencia-title" style="line-height: 1.15; color: var(--color-accent); margin-bottom: 25px; letter-spacing: -1px;">
+                            No es solo cerámica…<br>
+                            es crear algo que<br>
+                            <span class="cursive-text" style="font-family: 'Caveat', cursive; color: var(--color-primary); font-weight: 600; display: inline-block; margin-top: 5px;">realmente es tuyo</span>
+                        </h2>
+                        
+                        <div style="font-size: 1.1rem; color: var(--color-text-light); line-height: 1.6;">
+                            <p style="margin-bottom: 15px;">Imagina terminar una pieza con tus propias manos y pensar: <strong style="color: var(--color-primary); font-weight: 700;">"esto lo hice yo"</strong> — con un acabado tan bonito que parece de tienda.</p>
+                            
+                            <p style="margin-bottom: 15px;">No necesitas experiencia, ni herramientas caras. Solo un método claro que te guía paso a paso para crear piezas reales <strong style="color: var(--color-primary); font-weight: 700;">desde casa.</strong></p>
+                            
+                            <p style="margin-bottom: 15px;">Además, este proceso no solo es creativo: te ayuda a desconectar, enfocarte y disfrutar algo que es completamente tuyo.</p>
+                            
+                            <p style="font-family: 'Caveat', cursive; font-size: 2rem; color: var(--color-accent); font-weight: 600; margin-top: 25px;">Y lo mejor… puedes empezar <span style="color: var(--color-primary);">hoy mismo.</span></p>
+                        </div>
+                    </div>
+                    <div class="experiencia-image-new">
+                        <picture>
+                            <source srcset="assets/ceramic_cat_tray.webp" type="image/webp">
+                            <img src="assets/ceramic_cat_tray.png" alt="Plato de cerámica personalizado" loading="lazy" decoding="async" style="width: 100%; max-width: 400px; height: auto; border-radius: 25px; box-shadow: var(--shadow-lg); object-fit: cover;">
+                        </picture>
+                    </div>
                 </div>
-                <div class="experience-image">
-                    <img src="assets/modelado_avanzado_1776964776711.png" alt="Modelado Terapéutico">
+            </div>
+        </div>
+    </section>
+
+    <!-- Comparison Cards -->
+    <section id="comparativa">
+        <div class="container">
+            <div style="text-align: center; margin-bottom: 60px;">
+                <h2>El camino difícil vs. <span style="color: var(--color-primary);">Una forma simple</span></h2>
+                <p>¿Por qué empezar con algo complejo si puedes aprender de forma más práctica desde casa?</p>
+            </div>
+            <div class="comparison-grid">
+                <!-- Card 1 -->
+                <div class="comp-card">
+                    <div style="width: 100%; height: 160px; margin: -40px -40px 25px -40px; border-radius: 30px 30px 0 0; overflow: hidden; width: calc(100% + 80px);">
+                        <picture>
+                            <source srcset="assets/comp_traditional.webp" type="image/webp">
+                            <img src="assets/comp_traditional.png" alt="Cerámica Tradicional" style="width: 100%; height: 100%; object-fit: cover;">
+                        </picture>
+                    </div>
+                    <h4 style="text-align: center; margin-bottom: 25px; color: var(--color-accent); font-weight: 800; font-size: 1.4rem;">Cerámica Tradicional <br><span style="font-size: 0.95rem; font-weight: 400; color: #7f8c8d;">(con horno)</span></h4>
+                    <ul class="comp-list" style="list-style: none; padding: 0; margin: 0;">
+                        <li style="display: flex; align-items: flex-start; gap: 15px; padding: 12px 0; border-bottom: 1px solid rgba(0, 0, 0, 0.05);">
+                            <span style="background-color: #ffeaea; color: #ff5252; width: 26px; height: 26px; border-radius: 50%; display: flex; align-items: center; justify-content: center; flex-shrink: 0; font-size: 0.8rem; font-weight: bold; margin-top: 2px;">✕</span>
+                            <span style="font-size: 1rem; color: #7f8c8d; line-height: 1.4;">Requiere un horno profesional caro</span>
+                        </li>
+                        <li style="display: flex; align-items: flex-start; gap: 15px; padding: 12px 0; border-bottom: 1px solid rgba(0, 0, 0, 0.05);">
+                            <span style="background-color: #ffeaea; color: #ff5252; width: 26px; height: 26px; border-radius: 50%; display: flex; align-items: center; justify-content: center; flex-shrink: 0; font-size: 0.8rem; font-weight: bold; margin-top: 2px;">✕</span>
+                            <span style="font-size: 1rem; color: #7f8c8d; line-height: 1.4;">Alto consumo de energía eléctrica</span>
+                        </li>
+                        <li style="display: flex; align-items: flex-start; gap: 15px; padding: 12px 0; border-bottom: 1px solid rgba(0, 0, 0, 0.05);">
+                            <span style="background-color: #ffeaea; color: #ff5252; width: 26px; height: 26px; border-radius: 50%; display: flex; align-items: center; justify-content: center; flex-shrink: 0; font-size: 0.8rem; font-weight: bold; margin-top: 2px;">✕</span>
+                            <span style="font-size: 1rem; color: #7f8c8d; line-height: 1.4;">Curva de aprendizaje muy lenta</span>
+                        </li>
+                        <li style="display: flex; align-items: flex-start; gap: 15px; padding: 12px 0; border-bottom: 1px solid rgba(0, 0, 0, 0.05);">
+                            <span style="background-color: #ffeaea; color: #ff5252; width: 26px; height: 26px; border-radius: 50%; display: flex; align-items: center; justify-content: center; flex-shrink: 0; font-size: 0.8rem; font-weight: bold; margin-top: 2px;">✕</span>
+                            <span style="font-size: 1rem; color: #7f8c8d; line-height: 1.4;">Necesitas un espacio de taller separado</span>
+                        </li>
+                        <li style="display: flex; align-items: flex-start; gap: 15px; padding: 12px 0;">
+                            <span style="background-color: #ffeaea; color: #ff5252; width: 26px; height: 26px; border-radius: 50%; display: flex; align-items: center; justify-content: center; flex-shrink: 0; font-size: 0.8rem; font-weight: bold; margin-top: 2px;">✕</span>
+                            <span style="font-size: 1rem; color: #7f8c8d; line-height: 1.4;">Riesgo de quemaduras y accidentes</span>
+                        </li>
+                    </ul>
+                </div>
+
+                <!-- Card 2 -->
+                <div class="comp-card highlight">
+                    <span class="comp-badge">EL MÉTODO DEFINITIVO</span>
+                    <div style="width: 100%; height: 160px; margin: -40px -40px 25px -40px; border-radius: 30px 30px 0 0; overflow: hidden; width: calc(100% + 80px);">
+                        <picture>
+                            <source srcset="assets/comp_modern.webp" type="image/webp">
+                            <img src="assets/comp_modern.png" alt="Cerámica Fría" style="width: 100%; height: 100%; object-fit: cover;">
+                        </picture>
+                    </div>
+                    <h4 style="text-align: center; margin-bottom: 25px; color: var(--color-primary); font-weight: 800; font-size: 1.4rem;">Cerámica Fría <br><span style="font-size: 0.95rem; font-weight: 400; color: var(--color-primary-dark);">(Método Paso a Paso)</span></h4>
+                    <ul class="comp-list" style="list-style: none; padding: 0; margin: 0;">
+                        <li style="display: flex; align-items: flex-start; gap: 15px; padding: 12px 0; border-bottom: 1px solid rgba(201, 122, 99, 0.15);">
+                            <span style="background-color: var(--color-primary); color: white; width: 28px; height: 28px; border-radius: 50%; display: flex; align-items: center; justify-content: center; flex-shrink: 0; font-size: 0.85rem; font-weight: bold; margin-top: 1px;">✓</span>
+                            <span style="font-size: 1.05rem; color: var(--color-accent); line-height: 1.4; font-weight: 500;">No necesitas horno ni herramientas caras</span>
+                        </li>
+                        <li style="display: flex; align-items: flex-start; gap: 15px; padding: 12px 0; border-bottom: 1px solid rgba(201, 122, 99, 0.15);">
+                            <span style="background-color: var(--color-primary); color: white; width: 28px; height: 28px; border-radius: 50%; display: flex; align-items: center; justify-content: center; flex-shrink: 0; font-size: 0.85rem; font-weight: bold; margin-top: 1px;">✓</span>
+                            <span style="font-size: 1.05rem; color: var(--color-accent); line-height: 1.4; font-weight: 500;">Secado al aire de forma natural</span>
+                        </li>
+                        <li style="display: flex; align-items: flex-start; gap: 15px; padding: 12px 0; border-bottom: 1px solid rgba(201, 122, 99, 0.15);">
+                            <span style="background-color: var(--color-primary); color: white; width: 28px; height: 28px; border-radius: 50%; display: flex; align-items: center; justify-content: center; flex-shrink: 0; font-size: 0.85rem; font-weight: bold; margin-top: 1px;">✓</span>
+                            <span style="font-size: 1.05rem; color: var(--color-accent); line-height: 1.4; font-weight: 500;">Aprende en pocos días, no años</span>
+                        </li>
+                        <li style="display: flex; align-items: flex-start; gap: 15px; padding: 12px 0; border-bottom: 1px solid rgba(201, 122, 99, 0.15);">
+                            <span style="background-color: var(--color-primary); color: white; width: 28px; height: 28px; border-radius: 50%; display: flex; align-items: center; justify-content: center; flex-shrink: 0; font-size: 0.85rem; font-weight: bold; margin-top: 1px;">✓</span>
+                            <span style="font-size: 1.05rem; color: var(--color-accent); line-height: 1.4; font-weight: 500;">Hazlo en la mesa de tu comedor</span>
+                        </li>
+                        <li style="display: flex; align-items: flex-start; gap: 15px; padding: 12px 0;">
+                            <span style="background-color: var(--color-primary); color: white; width: 28px; height: 28px; border-radius: 50%; display: flex; align-items: center; justify-content: center; flex-shrink: 0; font-size: 0.85rem; font-weight: bold; margin-top: 1px;">✓</span>
+                            <span style="font-size: 1.05rem; color: var(--color-accent); line-height: 1.4; font-weight: 500;">Proceso seguro, limpio y relajante</span>
+                        </li>
+                    </ul>
                 </div>
             </div>
         </div>
     </section>
 
     <!-- Benefits Grid -->
-    <section id="beneficios" style="background-color: var(--color-bg);">
+    <section id="beneficios" style="background-color: var(--color-white); padding: 80px 0;">
         <div class="container">
-            <div style="text-align: center; margin-bottom: 60px;">
-                <h2 style="font-size: 2.5rem;">¿Por qué elegir la <span style="color: var(--color-primary);">Cerámica
-                        Fría?</span></h2>
-            </div>
-            <div class="benefits-grid">
-                <div class="benefit-card">
-                    <span class="benefit-icon">🌬️</span>
-                    <h3>Sin horno: tus piezas secan al aire, sin equipos caros</h3>
-                    <p>Olvídate de las costosas quemas industriales. Aprende el secreto del secado al aire que deja tus
-                        piezas duras como la piedra.</p>
+            <div class="mobile-edge-to-edge" style="background-color: #F8F5F0; border-radius: 30px; padding: 60px 20px; box-shadow: 0 15px 35px rgba(0,0,0,0.05); max-width: 1000px; margin: 0 auto;">
+                <style>
+                    .beneficios-title { font-size: 3.2rem; }
+                    .beneficios-title .cursive-text { font-size: 4.5rem; }
+                    .benefit-card-new {
+                        background-color: white;
+                        border-radius: 20px;
+                        padding: 35px 25px;
+                        box-shadow: 0 10px 25px rgba(0,0,0,0.03);
+                        text-align: center;
+                        border: 1px solid rgba(0,0,0,0.02);
+                        transition: transform 0.3s ease;
+                    }
+                    .benefit-card-new:hover { transform: translateY(-5px); }
+                    .benefit-icon-new {
+                        background-color: rgba(201, 122, 99, 0.1);
+                        width: 60px;
+                        height: 60px;
+                        border-radius: 50%;
+                        display: flex;
+                        align-items: center;
+                        justify-content: center;
+                        margin: 0 auto 20px auto;
+                        font-size: 1.8rem;
+                        box-shadow: 0 4px 10px rgba(201, 122, 99, 0.15);
+                    }
+                    .benefits-grid-new {
+                        display: grid;
+                        grid-template-columns: repeat(auto-fit, minmax(250px, 1fr));
+                        gap: 25px;
+                        margin-top: 50px;
+                    }
+                    @media (max-width: 768px) {
+                        .beneficios-title { font-size: 2.2rem !important; }
+                        .beneficios-title .cursive-text { font-size: 3.2rem !important; margin-top: -5px !important; }
+                        .benefits-grid-new { grid-template-columns: 1fr; margin-top: 35px; }
+                    }
+                </style>
+                
+                <div style="text-align: center;">
+                    <span class="badge" style="display: inline-flex; align-items: center; gap: 8px; background-color: rgba(201, 122, 99, 0.1); color: var(--color-primary); padding: 8px 15px; border-radius: 20px; font-weight: 700; font-size: 0.85rem; border: 1px solid rgba(201, 122, 99, 0.2); margin-bottom: 20px;">
+                        Beneficios del Método
+                    </span>
+                    <h2 class="beneficios-title" style="line-height: 1.15; color: var(--color-accent); letter-spacing: -1px; margin-bottom: 0;">
+                        ¿Por qué elegir la<br>
+                        <span class="cursive-text" style="font-family: 'Caveat', cursive; color: var(--color-primary); font-weight: 600; display: inline-block; margin-top: 5px;">Cerámica Fría?</span>
+                    </h2>
                 </div>
-                <div class="benefit-card">
-                    <span class="benefit-icon">💎</span>
-                    <h3>Aprende técnicas para que tus piezas parezcan profesionales</h3>
-                    <p>Técnicas de lijado y sellado que transforman un material simple en objetos de lujo con apariencia
-                        de porcelana.</p>
+
+                <div class="benefits-grid-new">
+                    <div class="benefit-card-new">
+                        <div class="benefit-icon-new">🌬️</div>
+                        <h3 style="font-size: 1.2rem; color: var(--color-accent); margin-bottom: 15px; line-height: 1.4;">Sin horno: secado al aire libre</h3>
+                        <p style="font-size: 0.95rem; color: var(--color-text-light); line-height: 1.6;">Olvídate de las costosas quemas industriales. Aprende el secreto del secado que deja tus piezas duras como la piedra.</p>
+                    </div>
+                    <div class="benefit-card-new">
+                        <div class="benefit-icon-new">💎</div>
+                        <h3 style="font-size: 1.2rem; color: var(--color-accent); margin-bottom: 15px; line-height: 1.4;">Técnicas de acabado profesional</h3>
+                        <p style="font-size: 0.95rem; color: var(--color-text-light); line-height: 1.6;">Técnicas de lijado y sellado que transforman un material simple en objetos de lujo con apariencia de porcelana real.</p>
+                    </div>
+                    <div class="benefit-card-new">
+                        <div class="benefit-icon-new">🏡</div>
+                        <h3 style="font-size: 1.2rem; color: var(--color-accent); margin-bottom: 15px; line-height: 1.4;">Tu propio taller en casa</h3>
+                        <p style="font-size: 0.95rem; color: var(--color-text-light); line-height: 1.6;">Sin ruidos, sin suciedad extrema y sin necesidad de un espacio dedicado. Solo tú, tu mesa y tu creatividad fluyendo.</p>
+                    </div>
                 </div>
-                <div class="benefit-card">
-                    <span class="benefit-icon">🏡</span>
-                    <h3>Tu Taller en Casa</h3>
-                    <p>Sin ruidos, sin suciedad extrema y sin necesidad de un espacio dedicado. Solo tú, tu mesa y tu
-                        creatividad.</p>
-                </div>
-            </div>
-            <div class="cta-container">
-                <a href="#detalles"
-                    class="btn btn-outline">Descubre lo que aprenderás</a>
             </div>
         </div>
     </section>
@@ -260,46 +429,46 @@
                     <!-- Story 1 -->
                     <div class="story-card">
                         <div class="story-user">
-                        <div class="story-avatar"><img src="assets/avatar_marta.png" alt="Marta"></div>
-                        <span>@marta_art</span>
-                    </div>
-                        <img src="assets/story_client_1.png" alt="Testimonial 1" loading="lazy" decoding="async">
+                            <div class="story-avatar"><picture><source srcset="assets/avatar_marta.webp" type="image/webp"><img src="assets/avatar_marta.png" alt="Marta" width="34" height="34" loading="lazy" decoding="async"></picture></div>
+                            <span>@marta_art</span>
+                        </div>
+                        <picture><source srcset="assets/story_client_1.webp" type="image/webp"><img src="assets/story_client_1.png" alt="Testimonial 1" width="200" height="350" loading="lazy" decoding="async"></picture>
                         <div class="story-overlay"></div>
                     </div>
                     <!-- Story 2 -->
                     <div class="story-card">
                         <div class="story-user">
-                        <div class="story-avatar"><img src="assets/avatar_jorge.png" alt="Jorge"></div>
-                        <span>@jorge_ceramics</span>
-                    </div>
-                        <img src="assets/story_client_2.png" alt="Testimonial 2" loading="lazy" decoding="async">
+                            <div class="story-avatar"><picture><source srcset="assets/avatar_ana.webp" type="image/webp"><img src="assets/avatar_ana.png" alt="Ana" width="34" height="34" loading="lazy" decoding="async"></picture></div>
+                            <span>@ana_manos_obra</span>
+                        </div>
+                        <picture><source srcset="assets/story_client_2.webp" type="image/webp"><img src="assets/story_client_2.png" alt="Testimonial 2" width="200" height="350" loading="lazy" decoding="async"></picture>
                         <div class="story-overlay"></div>
                     </div>
                     <!-- Story 3 -->
                     <div class="story-card">
                         <div class="story-user">
-                        <div class="story-avatar"><img src="assets/avatar_lucia.png" alt="Lucia"></div>
-                        <span>@lucia_crea</span>
-                    </div>
-                        <img src="assets/story_client_3.png" alt="Testimonial 3" loading="lazy" decoding="async">
+                            <div class="story-avatar"><picture><source srcset="assets/avatar_lucia.webp" type="image/webp"><img src="assets/avatar_lucia.png" alt="Lucia" width="34" height="34" loading="lazy" decoding="async"></picture></div>
+                            <span>@lucia_crea</span>
+                        </div>
+                        <picture><source srcset="assets/story_client_3.webp" type="image/webp"><img src="assets/story_client_3.png" alt="Testimonial 3" width="200" height="350" loading="lazy" decoding="async"></picture>
                         <div class="story-overlay"></div>
                     </div>
                     <!-- Story 4 -->
                     <div class="story-card">
                         <div class="story-user">
-                        <div class="story-avatar"><img src="assets/avatar_sofia.png" alt="Sofia"></div>
-                        <span>@sofia_deco</span>
-                    </div>
-                        <img src="assets/story_client_4.png" alt="Testimonial 4" loading="lazy" decoding="async">
+                            <div class="story-avatar"><picture><source srcset="assets/avatar_sofia.webp" type="image/webp"><img src="assets/avatar_sofia.png" alt="Sofia" width="34" height="34" loading="lazy" decoding="async"></picture></div>
+                            <span>@sofia_deco</span>
+                        </div>
+                        <picture><source srcset="assets/story_client_4.webp" type="image/webp"><img src="assets/story_client_4.png" alt="Testimonial 4" width="200" height="350" loading="lazy" decoding="async"></picture>
                         <div class="story-overlay"></div>
                     </div>
                     <!-- Story 5 -->
                     <div class="story-card">
                         <div class="story-user">
-                        <div class="story-avatar"><img src="assets/avatar_ana.png" alt="Ana"></div>
-                        <span>@ana_manos_obra</span>
-                    </div>
-                        <img src="assets/story_client_5.png" alt="Testimonial 5" loading="lazy" decoding="async">
+                            <div class="story-avatar"><picture><source srcset="assets/avatar_jorge.webp" type="image/webp"><img src="assets/avatar_jorge.png" alt="Jorge" width="34" height="34" loading="lazy" decoding="async"></picture></div>
+                            <span>@jorge_ceramics</span>
+                        </div>
+                        <picture><source srcset="assets/story_client_5.webp" type="image/webp"><img src="assets/story_client_5.png" alt="Testimonial 5" width="200" height="350" loading="lazy" decoding="async"></picture>
                         <div class="story-overlay"></div>
                     </div>
             </div>
@@ -310,14 +479,19 @@
     <section id="detalles" class="modules">
         <div class="container">
             <div style="text-align: center; margin-bottom: 60px;">
-                <h2 style="font-size: 3rem;">Todo lo que necesitas para empezar desde cero</h2>
+                <h2>Todo lo que necesitas para empezar desde cero</h2>
                 <p>Más de 20 lecciones prácticas para crear tus propias piezas en casa</p>
             </div>
 
             <div class="module-list">
                 <!-- I. Primeros Pasos -->
                 <div class="module-item">
-                    <div class="module-number">🧱</div>
+                    <div class="module-image">
+                        <picture>
+                            <source srcset="assets/module_1.webp" type="image/webp">
+                            <img src="assets/module_1.png" alt="Primeros Pasos" loading="lazy" decoding="async">
+                        </picture>
+                    </div>
                     <div class="module-content">
                         <h4>I. Primeros Pasos (Base)</h4>
                         <ul class="module-points">
@@ -329,7 +503,12 @@
                 </div>
                 <!-- II. Técnica Paso a Paso -->
                 <div class="module-item">
-                    <div class="module-number">🛠️</div>
+                    <div class="module-image">
+                        <picture>
+                            <source srcset="assets/module_2.webp" type="image/webp">
+                            <img src="assets/module_2.png" alt="Técnica Paso a Paso" loading="lazy" decoding="async">
+                        </picture>
+                    </div>
                     <div class="module-content">
                         <h4>II. Técnica Paso a Paso</h4>
                         <ul class="module-points">
@@ -340,9 +519,14 @@
                         </ul>
                     </div>
                 </div>
-                <!-- III. Moldes y Primeras Creaciones -->
+                <!-- III. Moldes y Creaciones -->
                 <div class="module-item">
-                    <div class="module-number">🎨</div>
+                    <div class="module-image">
+                        <picture>
+                            <source srcset="assets/module_3.webp" type="image/webp">
+                            <img src="assets/module_3.png" alt="Moldes y Creaciones" loading="lazy" decoding="async">
+                        </picture>
+                    </div>
                     <div class="module-content">
                         <h4>III. Moldes y Primeras Creaciones</h4>
                         <ul class="module-points">
@@ -354,7 +538,12 @@
                 </div>
                 <!-- IV. Acabados Profesionales -->
                 <div class="module-item">
-                    <div class="module-number">✨</div>
+                    <div class="module-image">
+                        <picture>
+                            <source srcset="assets/module_4.webp" type="image/webp">
+                            <img src="assets/module_4.png" alt="Acabados Profesionales" loading="lazy" decoding="async">
+                        </picture>
+                    </div>
                     <div class="module-content">
                         <h4>IV. Acabados Profesionales</h4>
                         <ul class="module-points">
@@ -366,9 +555,14 @@
                         </ul>
                     </div>
                 </div>
-                <!-- V. Cómo Vender tus Creaciones -->
+                <!-- V. Cómo Vender -->
                 <div class="module-item">
-                    <div class="module-number">💰</div>
+                    <div class="module-image">
+                        <picture>
+                            <source srcset="assets/module_5.webp" type="image/webp">
+                            <img src="assets/module_5.png" alt="Cómo Vender" loading="lazy" decoding="async">
+                        </picture>
+                    </div>
                     <div class="module-content">
                         <h4>V. Cómo Vender tus Creaciones</h4>
                         <ul class="module-points">
@@ -382,7 +576,12 @@
                 </div>
                 <!-- VI. Extras -->
                 <div class="module-item">
-                    <div class="module-number">📎</div>
+                    <div class="module-image">
+                        <picture>
+                            <source srcset="assets/module_6.webp" type="image/webp">
+                            <img src="assets/module_6.png" alt="Extras" loading="lazy" decoding="async">
+                        </picture>
+                    </div>
                     <div class="module-content">
                         <h4>VI. Extras</h4>
                         <ul class="module-points">
@@ -392,172 +591,234 @@
                     </div>
                 </div>
             </div>
-            <div class="cta-container">
-                <a href="#regalos"
-                    class="btn btn-primary">Ver extras y beneficios adicionales</a>
-            </div>
         </div>
     </section>
 
     <!-- Gift Section -->
-    <section id="regalos" class="gifts" style="background-color: var(--color-bg); padding: 100px 0;">
+    <section id="regalos" class="gifts" style="padding: 80px 0; background-color: var(--color-white);">
         <div class="container">
-            <div class="experience-grid" style="align-items: center;">
-                <div class="experience-image">
-                    <img src="assets/packaging_ceramica_1776964249183.png" alt="Regalos Personalizados"
-                        style="border-radius: 30px; box-shadow: var(--shadow-lg);">
-                </div>
-                <div class="experience-content">
-                    <span class="badge">El Arte de Regalar</span>
-                    <h2>Crea regalos únicos hechos por ti <span class="gradient-text">(sin experiencia previa)</span></h2>
-                    <p>En un mundo lleno de productos iguales, un regalo hecho a mano tiene un valor completamente diferente.</p>
-                    <p>Imagina entregar algo creado por ti: una pieza única, personalizada y con un significado real.</p>
-                    <p>Con la cerámica fría, puedes crear desde pequeños detalles hasta objetos decorativos que se convierten en recuerdos especiales.</p>
-                    <ul
-                        style="list-style: none; margin: 30px 0; display: grid; grid-template-columns: 1fr; gap: 15px;">
-                        <li style="display: flex; align-items: center; gap: 10px; font-size: 0.95rem;">✨ Piezas únicas hechas a mano</li>
-                        <li style="display: flex; align-items: center; gap: 10px; font-size: 0.95rem;">🎁 Regalos personalizados con significado</li>
-                        <li style="display: flex; align-items: center; gap: 10px; font-size: 0.95rem;">💖 Detalles que realmente emocionan</li>
-                        <li style="display: flex; align-items: center; gap: 10px; font-size: 0.95rem;">🎨 Diseños simples que puedes hacer desde casa</li>
-                    </ul>
-                    <a href="#comparativa"
-                        class="btn btn-primary">👉 Quiero crear mis propios regalos</a>
+            <style>
+                .regalos-box {
+                    background-color: #F8F5F0; border-radius: 30px; padding: 50px; box-shadow: 0 15px 35px rgba(0,0,0,0.05); max-width: 1000px; margin: 0 auto;
+                }
+                .regalos-grid-new {
+                    display: flex;
+                    flex-wrap: wrap;
+                    align-items: center;
+                    gap: 40px;
+                }
+                .regalos-content-new { flex: 1; min-width: 300px; text-align: left; }
+                .regalos-image-new { flex: 1; min-width: 300px; text-align: center; }
+                
+                .regalos-title { font-size: 2.8rem; }
+                .regalos-title .cursive-text { font-size: 4rem; }
+                
+                /* For Desktop zigzag: image on left, content on right */
+                @media (min-width: 769px) {
+                    .regalos-grid-new { flex-direction: row-reverse; }
+                }
+
+                @media (max-width: 768px) {
+                    .regalos-box { padding: 40px 25px; }
+                    .regalos-title { font-size: 2.2rem !important; }
+                    .regalos-title .cursive-text { font-size: 3.2rem !important; margin-top: -5px !important; }
+                }
+            </style>
+            <div class="regalos-box">
+                <div class="regalos-grid-new">
+                    <div class="regalos-content-new">
+                        <span class="badge" style="display: inline-flex; align-items: center; gap: 8px; background-color: rgba(201, 122, 99, 0.1); color: var(--color-primary); padding: 8px 15px; border-radius: 20px; font-weight: 700; font-size: 0.85rem; border: 1px solid rgba(201, 122, 99, 0.2); margin-bottom: 20px;">
+                            El Arte de Regalar
+                        </span>
+                        
+                        <h2 class="regalos-title" style="line-height: 1.15; color: var(--color-accent); margin-bottom: 25px; letter-spacing: -1px;">
+                            Crea regalos únicos<br>
+                            hechos por ti<br>
+                            <span class="cursive-text" style="font-family: 'Caveat', cursive; color: var(--color-primary); font-weight: 600; display: inline-block; margin-top: 5px;">sin experiencia previa</span>
+                        </h2>
+                        
+                        <div style="font-size: 1.1rem; color: var(--color-text-light); line-height: 1.6;">
+                            <p style="margin-bottom: 15px;">En un mundo lleno de productos iguales, un regalo hecho a mano tiene un valor <strong style="color: var(--color-primary); font-weight: 700;">completamente diferente.</strong></p>
+                            
+                            <p style="margin-bottom: 15px;">Imagina entregar algo creado por ti: una pieza única, personalizada y con un significado <strong style="color: var(--color-primary); font-weight: 700;">real.</strong></p>
+                            
+                            <p style="margin-bottom: 25px;">Con la cerámica fría, puedes crear desde pequeños detalles hasta objetos decorativos que se convierten en recuerdos especiales.</p>
+                        </div>
+                        
+                        <ul style="list-style: none; padding: 0; margin: 0; max-width: 420px; text-align: left;">
+                            <li style="display: flex; align-items: center; gap: 15px; padding: 12px 0; border-bottom: 1px solid rgba(201, 122, 99, 0.15);">
+                                <span style="background-color: var(--color-primary); color: white; width: 28px; height: 28px; border-radius: 50%; display: flex; align-items: center; justify-content: center; flex-shrink: 0; font-size: 0.85rem; font-weight: bold;">✓</span>
+                                <span style="font-size: 1.05rem; color: var(--color-accent); line-height: 1.4;">Piezas únicas hechas a mano</span>
+                            </li>
+                            <li style="display: flex; align-items: center; gap: 15px; padding: 12px 0; border-bottom: 1px solid rgba(201, 122, 99, 0.15);">
+                                <span style="background-color: var(--color-primary); color: white; width: 28px; height: 28px; border-radius: 50%; display: flex; align-items: center; justify-content: center; flex-shrink: 0; font-size: 0.85rem; font-weight: bold;">✓</span>
+                                <span style="font-size: 1.05rem; color: var(--color-accent); line-height: 1.4;">Regalos con <strong style="color: var(--color-primary);">significado real</strong></span>
+                            </li>
+                            <li style="display: flex; align-items: center; gap: 15px; padding: 12px 0;">
+                                <span style="background-color: var(--color-primary); color: white; width: 28px; height: 28px; border-radius: 50%; display: flex; align-items: center; justify-content: center; flex-shrink: 0; font-size: 0.85rem; font-weight: bold;">✓</span>
+                                <span style="font-size: 1.05rem; color: var(--color-accent); line-height: 1.4;">Detalles que realmente emocionan</span>
+                            </li>
+                        </ul>
+                    </div>
+                    <div class="regalos-image-new">
+                        <picture>
+                            <source srcset="assets/gifts_new.webp" type="image/webp">
+                            <img src="assets/gifts_new.png" alt="Regalos Personalizados" loading="lazy" decoding="async" style="width: 100%; max-width: 400px; height: auto; border-radius: 25px; box-shadow: var(--shadow-lg); object-fit: cover;">
+                        </picture>
+                    </div>
                 </div>
             </div>
         </div>
     </section>
+    <div class="container">
+        <div style="width: 100%; height: 1px; background: linear-gradient(to right, transparent, var(--color-clay-200), transparent); opacity: 0.6;"></div>
+    </div>
 
-    <!-- Comparison Cards -->
-    <section id="comparativa">
+    <!-- Bonus Section -->
+    <section id="bonos" style="background-color: #2C3E50; padding: 80px 0;">
         <div class="container">
-            <div style="text-align: center; margin-bottom: 60px;">
-                <h2 style="font-size: 2.5rem;">El Camino Difícil vs. <span style="color: var(--color-primary);">Una Forma Más Simple</span></h2>
-                <p>¿Por qué empezar con algo complejo si puedes aprender de forma más práctica desde casa?</p>
-            </div>
-            <div class="comparison-grid">
-                <!-- Old Way -->
-                <div class="comp-card">
-                    <h3>Cerámica Tradicional <br><span style="font-size: 0.9em; opacity: 0.8; font-weight: 400;">(con horno)</span></h3>
-                    <div class="comp-list">
-                        <div class="comp-item">
-                            <span class="icon">❌</span>
-                            <div class="text">
-                                <strong>Inversión alta</strong>
-                                <span>Requiere horno, torno y espacio dedicado</span>
-                            </div>
-                        </div>
-                        <div class="comp-item">
-                            <span class="icon">❌</span>
-                            <div class="text">
-                                <strong>Proceso más técnico</strong>
-                                <span>Curva de aprendizaje más larga</span>
-                            </div>
-                        </div>
-                        <div class="comp-item">
-                            <span class="icon">❌</span>
-                            <div class="text">
-                                <strong>Dependencia de equipos</strong>
-                                <span>Necesitas herramientas específicas</span>
-                            </div>
-                        </div>
-                        <div class="comp-item">
-                            <span class="icon">❌</span>
-                            <div class="text">
-                                <strong>Menos accesible en casa</strong>
-                                <span>No siempre es práctico para empezar</span>
-                            </div>
-                        </div>
-                    </div>
-                </div>
-
-                <!-- Our Way -->
-                <div class="comp-card highlight">
-                    <span class="comp-badge">EL MÉTODO DEFINITIVO</span>
-                    <h3>✅ Cerámica Fría <br><span style="font-size: 0.9em; opacity: 0.8; font-weight: 400;">(Método Paso a Paso)</span></h3>
-                    <div class="comp-list">
-                        <div class="comp-item">
-                            <span class="icon">✔</span>
-                            <div class="text">
-                                <strong>Bajo costo inicial</strong>
-                                <span>Puedes empezar con materiales accesibles</span>
-                            </div>
-                        </div>
-                        <div class="comp-item">
-                            <span class="icon">✔</span>
-                            <div class="text">
-                                <strong>Sin horno</strong>
-                                <span>Tus piezas secan al aire</span>
-                            </div>
-                        </div>
-                        <div class="comp-item">
-                            <span class="icon">✔</span>
-                            <div class="text">
-                                <strong>Proceso simple</strong>
-                                <span>Pensado para principiantes</span>
-                            </div>
-                        </div>
-                        <div class="comp-item">
-                            <span class="icon">✔</span>
-                            <div class="text">
-                                <strong>Desde casa</strong>
-                                <span>Solo necesitas una mesa y tus manos</span>
-                            </div>
-                        </div>
-                    </div>
-                </div>
-            </div>
-            <div class="cta-container" style="margin-top: 40px;">
-                <a href="#negocio" class="btn btn-primary">👉 Quiero empezar desde casa</a>
-            </div>
-        </div>
-    </section>
-                <!-- Gallery Section -->
-    <section id="inspiracion" style="background: var(--color-white); padding: 80px 0; overflow: hidden;">
-        <div class="container">
+            <style>
+                .bonus-card {
+                    background-color: #34495E;
+                    border-radius: 20px;
+                    padding: 35px 25px;
+                    text-align: left;
+                    border: 1px solid rgba(255, 255, 255, 0.05);
+                    position: relative;
+                    overflow: hidden;
+                    transition: transform 0.3s ease, box-shadow 0.3s ease;
+                    z-index: 1;
+                }
+                .bonus-card:hover {
+                    transform: translateY(-5px);
+                    box-shadow: 0 10px 30px rgba(0,0,0,0.3);
+                }
+                .bonus-bg-number {
+                    position: absolute;
+                    top: -20px;
+                    right: -10px;
+                    opacity: 0.03;
+                    font-size: 12rem;
+                    font-weight: 900;
+                    color: white;
+                    line-height: 1;
+                    pointer-events: none;
+                    z-index: -1;
+                }
+            </style>
+            
             <div style="text-align: center; margin-bottom: 50px;">
-                <h2 style="font-size: 2.8rem; margin-bottom: 20px; font-family: var(--font-serif);">Inspírate con lo que puedes crear</h2>
-                <p style="font-size: 1.1rem; color: var(--color-text-light); max-width: 600px; margin: 0 auto;">Piezas reales hechas con cerámica fría, incluso por quienes empezaron desde cero</p>
+                <span class="badge" style="display: inline-flex; align-items: center; gap: 8px; background-color: rgba(201, 122, 99, 0.2); color: var(--color-primary); padding: 8px 15px; border-radius: 20px; font-weight: 700; font-size: 0.85rem; border: 1px solid rgba(201, 122, 99, 0.3); margin-bottom: 20px;">
+                    🎁 Bonos exclusivos incluidos solo hoy
+                </span>
+                <h2 style="font-size: clamp(2.2rem, 5vw, 3.2rem); line-height: 1.15; color: white; margin-bottom: 20px; letter-spacing: -1px;">
+                    Empieza con ventaja <br>
+                    <span class="cursive-text" style="font-family: 'Caveat', cursive; color: var(--color-primary); font-size: clamp(3rem, 7vw, 4.5rem); font-weight: 600; display: inline-block; margin-top: -5px;">desde el primer día</span>
+                </h2>
+                <p style="font-size: 1.1rem; color: #BDC3C7; max-width: 700px; margin: 0 auto; line-height: 1.6;">
+                    Además del acceso completo, recibirás estos materiales pensados para ayudarte a empezar con confianza desde el primer día. <br><br>
+                    <span style="display: inline-block; background: rgba(255,255,255,0.1); padding: 8px 15px; border-radius: 10px; color: white; font-weight: 600; font-size: 0.95rem;">⚠️ Estos bonos están disponibles únicamente para compras realizadas hoy.</span>
+                </p>
+            </div>
+
+            <div style="display: grid; grid-template-columns: repeat(auto-fit, minmax(280px, 1fr)); gap: 25px; max-width: 1000px; margin: 0 auto;">
+                <!-- Bonus 1 -->
+                <div class="bonus-card">
+                    <div class="bonus-bg-number">1</div>
+                    <span style="background-color: var(--color-primary); color: white; font-weight: 800; font-size: 0.8rem; padding: 5px 12px; border-radius: 10px; display: inline-block; margin-bottom: 20px; box-shadow: 0 4px 10px rgba(201, 122, 99, 0.3);">💎 BONUS 1</span>
+                    <h3 style="color: white; font-size: 1.25rem; margin-bottom: 15px; line-height: 1.4;">🧠 Guía para principiantes: empieza desde cero sin errores</h3>
+                    <p style="color: #BDC3C7; font-size: 0.95rem; line-height: 1.6; margin: 0;">Un material simple que te guía paso a paso, evitando los errores más comunes al comenzar.</p>
+                </div>
+
+                <!-- Bonus 2 -->
+                <div class="bonus-card">
+                    <div class="bonus-bg-number">2</div>
+                    <span style="background-color: var(--color-primary); color: white; font-weight: 800; font-size: 0.8rem; padding: 5px 12px; border-radius: 10px; display: inline-block; margin-bottom: 20px; box-shadow: 0 4px 10px rgba(201, 122, 99, 0.3);">💎 BONUS 2</span>
+                    <h3 style="color: white; font-size: 1.25rem; margin-bottom: 15px; line-height: 1.4;">🧰 Lista de materiales básicos y cómo usarlos</h3>
+                    <p style="color: #BDC3C7; font-size: 0.95rem; line-height: 1.6; margin: 0;">Descubre exactamente qué necesitas para empezar sin gastar de más, con opciones simples y accesibles.</p>
+                </div>
+
+                <!-- Bonus 3 -->
+                <div class="bonus-card">
+                    <div class="bonus-bg-number">3</div>
+                    <span style="background-color: var(--color-primary); color: white; font-weight: 800; font-size: 0.8rem; padding: 5px 12px; border-radius: 10px; display: inline-block; margin-bottom: 20px; box-shadow: 0 4px 10px rgba(201, 122, 99, 0.3);">💎 BONUS 3</span>
+                    <h3 style="color: white; font-size: 1.25rem; margin-bottom: 15px; line-height: 1.4;">✨ Ideas de piezas fáciles para tus primeras creaciones</h3>
+                    <p style="color: #BDC3C7; font-size: 0.95rem; line-height: 1.6; margin: 0;">Una selección de ideas pensadas para que puedas crear con seguridad desde el inicio… incluso si nunca hiciste nada antes.</p>
+                </div>
             </div>
             
-            <div class="stories-wrapper">
-                <button class="story-nav prev" onclick="scrollInspiration(-1)">&#10094;</button>
-                <div class="stories-container" id="inspirationGallery" style="padding-bottom: 30px;">
-                    <div class="story-card">
-                        <img src="assets/ceramica_gallery_1776964199433.png" alt="Vaso decorativo minimalista" style="height: 100%; width: 100%; object-fit: cover;" loading="lazy" decoding="async">
-                    </div>
-                    <div class="story-card">
-                        <img src="assets/mesa_funcional_1776964423635.png" alt="Porta-velas estética clean" style="height: 100%; width: 100%; object-fit: cover;" loading="lazy" decoding="async">
-                    </div>
-                    <div class="story-card">
-                        <img src="assets/altar_joyas_1776964216699.png" alt="Bijuteria artesanal moderna" style="height: 100%; width: 100%; object-fit: cover;" loading="lazy" decoding="async">
-                    </div>
-                    <div class="story-card">
-                        <img src="assets/texturas_experimentales_1776964789751.png" alt="Textura y efecto marmolado" style="height: 100%; width: 100%; object-fit: cover;" loading="lazy" decoding="async">
-                    </div>
-                    <div class="story-card">
-                        <img src="assets/patinas_antiguas_1776964412345.png" alt="Objeto decorativo personalizado" style="height: 100%; width: 100%; object-fit: cover;" loading="lazy" decoding="async">
-                    </div>
-                    <div class="story-card">
-                        <img src="assets/amasado_arcilla.png" alt="Proceso de amasado en casa" style="height: 100%; width: 100%; object-fit: cover;" loading="lazy" decoding="async">
-                    </div>
-                    <div class="story-card">
-                        <img src="assets/packaging_ceramica_1776964249183.png" alt="Pieza final y empaque simple" style="height: 100%; width: 100%; object-fit: cover;" loading="lazy" decoding="async">
-                    </div>
-                    <div class="story-card">
-                        <img src="assets/moldes_caseros_1776964399655.png" alt="Moldes y creaciones simples" style="height: 100%; width: 100%; object-fit: cover;" loading="lazy" decoding="async">
-                    </div>
-                </div>
-                <button class="story-nav next" onclick="scrollInspiration(1)">&#10095;</button>
+            <!-- Urgency Block -->
+            <div style="text-align: center; margin-top: 60px; background-color: rgba(201, 122, 99, 0.1); border: 2px dashed rgba(201, 122, 99, 0.5); border-radius: 20px; padding: 30px 20px; max-width: 700px; margin-left: auto; margin-right: auto; box-shadow: inset 0 0 20px rgba(201, 122, 99, 0.05);">
+                <div style="font-size: 2.5rem; margin-bottom: 15px; animation: pulse 2s infinite;">🔥</div>
+                <p style="color: white; font-weight: 700; font-size: 1.2rem; line-height: 1.5; margin: 0;">
+                    ⏳ Estos bonos no estarán disponibles mañana. <br>
+                    <span style="color: var(--color-primary);">Accede hoy y asegúralos junto con tu acceso completo.</span>
+                </p>
+                <style>
+                    @keyframes pulse {
+                        0% { transform: scale(1); }
+                        50% { transform: scale(1.1); }
+                        100% { transform: scale(1); }
+                    }
+                </style>
             </div>
 
-            <div style="text-align: center; margin-top: 40px;">
-                <a href="#precio" class="btn btn-primary" style="padding: 20px 40px; font-size: 1.1rem;">Quiero crear mis propias piezas</a>
+        </div>
+    </section>
+
+    <!-- Gallery Section -->
+    <section id="inspiracion" style="background: var(--color-white); padding: 80px 0; overflow: hidden;">
+        <div class="container">
+            <style>
+                .inspiracion-title { font-size: 3.2rem; }
+                .inspiracion-title .cursive-text { font-size: 4.5rem; }
+                @media (max-width: 768px) {
+                    .inspiracion-title { font-size: 1.9rem !important; }
+                    .inspiracion-title .cursive-text { font-size: 3.2rem !important; margin-top: -5px !important; }
+                }
+            </style>
+            <div class="mobile-edge-to-edge" style="background-color: #F8F5F0; border-radius: 30px; padding: 60px 20px; box-shadow: 0 15px 35px rgba(0,0,0,0.05); max-width: 1000px; margin: 0 auto;">
+                <div style="text-align: center; margin-bottom: 50px;">
+                    <h2 class="inspiracion-title" style="line-height: 1.15; color: var(--color-accent); margin-bottom: 10px; letter-spacing: -1px;">
+                        <span style="white-space: nowrap;">Inspírate con lo que</span><br>
+                        <span class="cursive-text" style="font-family: 'Caveat', cursive; color: var(--color-primary); font-weight: 600; margin-top: -10px; display: inline-block;">puedes crear</span>
+                    </h2>
+                    <p style="font-size: 1.1rem; color: var(--color-text-light); max-width: 600px; margin: 0 auto; line-height: 1.5;">
+                        Piezas reales hechas con cerámica fría por personas comunes…<br>
+                        <strong style="color: var(--color-primary); font-weight: 700;">como tú.</strong>
+                    </p>
+                </div>
+                
+                <div class="stories-wrapper" style="max-width: 800px; margin: 0 auto;">
+                    <button class="story-nav prev" onclick="scrollInspiration(-1)">&#10094;</button>
+                    <div class="stories-container" id="inspirationGallery" style="padding-bottom: 30px;">
+                        <div class="story-card">
+                            <picture><source srcset="assets/gallery_1.webp" type="image/webp"><img src="assets/gallery_1.png" alt="Mi primer plato de anillos marmoleado" style="height:100%;width:100%;object-fit:cover" width="200" height="350" loading="lazy" decoding="async"></picture>
+                        </div>
+                        <div class="story-card">
+                            <picture><source srcset="assets/gallery_2.webp" type="image/webp"><img src="assets/gallery_2.png" alt="Porta incienso de hoja natural" style="height:100%;width:100%;object-fit:cover" width="200" height="350" loading="lazy" decoding="async"></picture>
+                        </div>
+                        <div class="story-card">
+                            <picture><source srcset="assets/gallery_3.webp" type="image/webp"><img src="assets/gallery_3.png" alt="Bandeja para joyas con bordes dorados" style="height:100%;width:100%;object-fit:cover" width="200" height="350" loading="lazy" decoding="async"></picture>
+                        </div>
+                        <div class="story-card">
+                            <picture><source srcset="assets/gallery_4.webp" type="image/webp"><img src="assets/gallery_4.png" alt="Bandeja de gatito hecha por uma alumna" style="height:100%;width:100%;object-fit:cover" width="200" height="350" loading="lazy" decoding="async"></picture>
+                        </div>
+                    </div>
+                    <button class="story-nav next" onclick="scrollInspiration(1)">&#10095;</button>
+                </div>
+                
+                <div style="text-align: center; margin-top: 30px;">
+                    <span class="badge" style="display: inline-flex; align-items: center; gap: 8px; background-color: rgba(201, 122, 99, 0.1); color: var(--color-primary); padding: 8px 15px; border-radius: 20px; font-weight: 700; font-size: 0.85rem; border: 1px solid rgba(201, 122, 99, 0.2);">
+                        Más de 3.000 alumnos ya empezaron desde cero
+                    </span>
+                </div>
             </div>
         </div>
     </section>
 
     <!-- Reviews Section -->
-    <section style="background-color: var(--color-bg); padding: 60px 0 20px;">
+    <section class="reviews-section" style="background-color: var(--color-bg); padding: 60px 0 20px;">
         <div class="container">
             <div style="display: flex; align-items: center; gap: 15px; margin-bottom: 40px; justify-content: center;">
                 <img src="https://img.icons8.com/color/48/google-logo.png" alt="Google" style="height: 25px;">
@@ -568,7 +829,7 @@
                 <!-- Review 1 -->
                 <div class="benefit-card" style="padding: 25px; border: 1px solid #e0e0e0; box-shadow: none;">
                     <div style="display: flex; align-items: center; gap: 12px; margin-bottom: 15px;">
-                        <img src="assets/alumna_elena_review.png" alt="Elena" style="width: 45px; height: 45px; border-radius: 50%; object-fit: cover;">
+                        <picture><source srcset="assets/alumna_elena_review.webp" type="image/webp"><img src="assets/alumna_elena_review.png" alt="Elena" width="45" height="45" style="border-radius:50%;object-fit:cover" loading="lazy" decoding="async"></picture>
                         <div>
                             <div style="font-weight: 700; font-size: 0.9rem;">Elena</div>
                             <div style="color: #fbbc05; font-size: 0.8rem;">★★★★★</div>
@@ -579,7 +840,7 @@
                 <!-- Review 2 -->
                 <div class="benefit-card" style="padding: 25px; border: 1px solid #e0e0e0; box-shadow: none;">
                     <div style="display: flex; align-items: center; gap: 12px; margin-bottom: 15px;">
-                        <img src="assets/alumno_marcos_review.png" alt="Marcos" style="width: 45px; height: 45px; border-radius: 50%; object-fit: cover;">
+                        <picture><source srcset="assets/alumno_marcos_review.webp" type="image/webp"><img src="assets/alumno_marcos_review.png" alt="Marcos" width="45" height="45" style="border-radius:50%;object-fit:cover" loading="lazy" decoding="async"></picture>
                         <div>
                             <div style="font-weight: 700; font-size: 0.9rem;">Marcos</div>
                             <div style="color: #fbbc05; font-size: 0.8rem;">★★★★★</div>
@@ -590,7 +851,7 @@
                 <!-- Review 3 -->
                 <div class="benefit-card" style="padding: 25px; border: 1px solid #e0e0e0; box-shadow: none;">
                     <div style="display: flex; align-items: center; gap: 12px; margin-bottom: 15px;">
-                        <img src="assets/alumna_sofia_review.png" alt="Sofía" style="width: 45px; height: 45px; border-radius: 50%; object-fit: cover;">
+                        <picture><source srcset="assets/alumna_sofia_review.webp" type="image/webp"><img src="assets/alumna_sofia_review.png" alt="Sofía" width="45" height="45" style="border-radius:50%;object-fit:cover" loading="lazy" decoding="async"></picture>
                         <div>
                             <div style="font-weight: 700; font-size: 0.9rem;">Sofía</div>
                             <div style="color: #fbbc05; font-size: 0.8rem;">★★★★★</div>
@@ -603,75 +864,306 @@
     </section>
 
     <!-- Business Section -->
-    <section id="negocio">
+    <section id="negocio" style="background-color: var(--color-bg); padding: 80px 0; overflow: hidden;">
+        <style>
+            @import url('https://fonts.googleapis.com/css2?family=Caveat:wght@600&display=swap');
+            .business-refactored {
+                display: flex;
+                flex-wrap: wrap;
+                align-items: center;
+                justify-content: center;
+                gap: 50px;
+                background-color: #F8F5F0;
+                border-radius: 30px;
+                padding: 50px;
+                box-shadow: 0 15px 35px rgba(0,0,0,0.05);
+            }
+            @media (max-width: 768px) {
+                .business-refactored {
+                    padding: 30px 20px;
+                    gap: 30px;
+                }
+                .business-refactored h2 {
+                    font-size: 2.2rem !important;
+                }
+                .business-refactored .cursive-text {
+                    font-size: 2.8rem !important;
+                }
+            }
+        </style>
         <div class="container">
-            <div class="business-banner">
-                <div>
-                    <h2 style="color: var(--color-primary);">De hobby a ingresos desde casa</h2>
-                    <p>Aprende no solo a crear, sino también a dar valor a tus piezas y empezar a venderlas paso a paso.</p>
-                    <ul style="list-style: none; margin-bottom: 30px;">
-                        <li style="margin-bottom: 10px; display: flex; align-items: center; gap: 10px;">
-                            <span style="color: var(--color-primary);">✓</span> Fotos simples que hacen destacar tus piezas
+            <div class="business-refactored">
+                <div style="flex: 1; min-width: 300px; text-align: left;">
+                    <h2 style="font-size: 2.8rem; margin-bottom: 25px; line-height: 1.15; color: var(--color-accent);">
+                        Convierte tus<br>
+                        piezas en<br>
+                        <span style="color: var(--color-primary);">dinero real</span><br>
+                        <span class="cursive-text" style="font-family: 'Caveat', cursive; font-size: 3.5rem; color: var(--color-primary); font-weight: 600; margin-top: -10px; display: inline-block;">desde casa</span>
+                    </h2>
+                    
+                    <p style="font-size: 1.1rem; color: var(--color-text-light); margin-bottom: 35px; max-width: 400px; line-height: 1.5;">
+                        No solo aprendes a crear... aprendes <strong style="color: var(--color-primary); font-weight: 700;">exactamente</strong> cómo vender tus piezas, incluso si estás empezando <strong style="color: var(--color-primary); font-weight: 700;">desde cero.</strong>
+                    </p>
+                    
+                    <ul style="list-style: none; padding: 0; margin: 0; max-width: 420px;">
+                        <li style="display: flex; align-items: center; gap: 15px; padding: 15px 0; border-bottom: 1px solid rgba(201, 122, 99, 0.2);">
+                            <span style="background-color: var(--color-primary); color: white; width: 34px; height: 34px; border-radius: 50%; display: flex; align-items: center; justify-content: center; flex-shrink: 0; font-size: 1rem; font-weight: bold;">✓</span>
+                            <span style="font-size: 1.05rem; color: var(--color-text); line-height: 1.4;">Cómo tomar fotos que hacen que tus piezas se vendan</span>
                         </li>
-                        <li style="margin-bottom: 10px; display: flex; align-items: center; gap: 10px;">
-                            <span style="color: var(--color-primary);">✓</span> Ideas para crear una marca básica
+                        <li style="display: flex; align-items: center; gap: 15px; padding: 15px 0; border-bottom: 1px solid rgba(201, 122, 99, 0.2);">
+                            <span style="background-color: var(--color-primary); color: white; width: 34px; height: 34px; border-radius: 50%; display: flex; align-items: center; justify-content: center; flex-shrink: 0; font-size: 1rem; font-weight: bold;">✓</span>
+                            <span style="font-size: 1.05rem; color: var(--color-text); line-height: 1.4;">Cómo poner precios sin sentirte insegura</span>
                         </li>
-                        <li style="margin-bottom: 10px; display: flex; align-items: center; gap: 10px;">
-                            <span style="color: var(--color-primary);">✓</span> Cómo definir precios de forma clara
+                        <li style="display: flex; align-items: center; gap: 15px; padding: 15px 0;">
+                            <span style="background-color: var(--color-primary); color: white; width: 34px; height: 34px; border-radius: 50%; display: flex; align-items: center; justify-content: center; flex-shrink: 0; font-size: 1rem; font-weight: bold;">✓</span>
+                            <span style="font-size: 1.05rem; color: var(--color-text); line-height: 1.4;">Cómo empezar a vender aunque no tengas marca</span>
                         </li>
                     </ul>
-                    <a href="#precio"
-                        class="btn btn-primary">👉 Quiero generar ingresos con esto</a>
                 </div>
-                <div style="position: relative;">
-                    <img src="assets/marca_personal_1776964439136.png" alt="Negocio Artesanal"
-                        style="width: 100%; border-radius: 20px; box-shadow: var(--shadow-lg);">
+                
+                <div style="flex: 1; min-width: 300px; position: relative; display: flex; justify-content: center; align-items: center;">
+                    <picture>
+                        <source srcset="assets/marca_personal_1776964439136.webp" type="image/webp">
+                        <img src="assets/marca_personal_1776964439136.png" alt="Negocio Artesanal" style="width: 100%; max-width: 450px; border-radius: 20px; box-shadow: var(--shadow-lg);" loading="lazy" decoding="async">
+                    </picture>
                 </div>
             </div>
         </div>
     </section>
 
-    <!-- Pricing Section -->
-    <section id="precio" class="pricing">
-        <div class="container">
-            <h2 style="font-size: 3rem; margin-bottom: 20px;">Acceso completo y permanente</h2>
-            <p>Empieza hoy mismo y aprende a crear tus propias piezas desde casa, paso a paso.</p>
+    <section id="precio" style="background-color: var(--color-bg); padding: 0 0 80px 0; overflow: hidden; position: relative;">
+        <style>
+            .pricing-card-grid {
+                display: flex;
+                flex-wrap: wrap;
+                align-items: center;
+                justify-content: space-between;
+                border-bottom: 1px solid #eee;
+                padding-bottom: 30px;
+                margin-bottom: 30px;
+            }
+            .pricing-benefits-desktop { display: flex; flex-direction: column; gap: 15px; }
+            .pricing-benefits-mobile { display: none; }
+            .pricing-border-center {
+                border-left: 1px solid #eee;
+                border-right: 1px solid #eee;
+                padding: 0 30px;
+            }
+            .pricing-col {
+                flex: 1;
+                min-width: 220px;
+                text-align: center;
+            }
+            .pricing-card-container {
+                background: white; 
+                border-radius: 20px; 
+                box-shadow: var(--shadow-lg); 
+                max-width: 800px; 
+                margin: 0 auto; 
+                position: relative; 
+                padding: 50px 40px;
+            }
+            @media (max-width: 768px) {
+                .pricing-card-grid {
+                    flex-direction: column;
+                    gap: 25px;
+                    border-bottom: none;
+                }
+                .pricing-border-center {
+                    border-left: none;
+                    border-right: none;
+                    padding: 0;
+                }
+                .pricing-benefits-desktop { display: none; }
+                .pricing-benefits-mobile { 
+                    display: flex; 
+                    flex-direction: row; 
+                    justify-content: space-between; 
+                    gap: 10px;
+                    border-top: 1px solid #eee;
+                    padding-top: 25px;
+                    margin-top: 10px;
+                    margin-bottom: -10px;
+                }
+                .pricing-benefits-mobile .benefit-icon-box {
+                    flex: 1;
+                    text-align: center;
+                    font-size: 0.75rem;
+                    line-height: 1.2;
+                    color: var(--color-accent);
+                }
+                .pricing-card-container {
+                    padding: 40px 20px !important;
+                }
+                .pricing-timer-blocks {
+                    margin: 0 auto;
+                    justify-content: center;
+                }
+                .pricing-title-area {
+                    text-align: left !important;
+                    margin-left: 0 !important;
+                    margin-right: 0 !important;
+                }
+                .pricing-title-area p {
+                    margin-left: 0 !important;
+                    margin-right: 0 !important;
+                }
+            }
+            .pricing-title-area {
+                text-align: center !important;
+                margin-left: auto;
+                margin-right: auto;
+            }
+            .pricing-title-area p {
+                margin-left: auto;
+                margin-right: auto;
+            }
+        </style>
 
-            <div class="pricing-card">
-                <p style="font-size: 1rem; color: var(--color-primary); font-weight: 700; margin-bottom: 20px; text-transform: uppercase; letter-spacing: 1px;">Acceso a más de 20 lecciones paso a paso</p>
-                <span class="old-price">Precio Regular: $47</span>
-                <span style="display: block; color: var(--color-primary); font-weight: 800; font-size: 1rem; margin-top: -5px; margin-bottom: 15px;">(70% de DESCUENTO)</span>
-                <p class="new-price"><span style="font-size: 1.5rem; vertical-align: middle; font-family: var(--font-sans); font-weight: 400; color: var(--color-text);">Hoy:</span> <span class="price-currency">$</span>14</p>
-                
-                <ul style="list-style: none; margin: 10px 0 30px; text-align: left; display: inline-block;">
-                    <li style="margin-bottom: 12px; font-size: 0.95rem; color: var(--color-accent);">✔ Acceso inmediato tras el pago</li>
-                    <li style="margin-bottom: 12px; font-size: 0.95rem; color: var(--color-accent);">✔ Disponible en celular, tablet o computadora</li>
-                    <li style="margin-bottom: 12px; font-size: 0.95rem; color: var(--color-accent);">✔ Aprende a tu ritmo, sin horarios</li>
-                </ul>
+        <!-- Top Banner (Timer) -->
+        <div class="container" style="padding-top: 40px; margin-bottom: -20px; position: relative; z-index: 3;">
+            <div style="background-color: var(--color-accent); border-radius: 15px; padding: 15px 30px; display: flex; flex-wrap: wrap; justify-content: space-between; align-items: center; gap: 20px; box-shadow: var(--shadow-md); max-width: 800px; margin: 0 auto;">
+                <div style="display: flex; align-items: center; gap: 15px;">
+                    <img src="https://img.icons8.com/ios/50/c97a63/stopwatch.png" alt="Reloj" width="45" height="45">
+                    <div style="color: white; text-align: left;">
+                        <div style="font-weight: 700; letter-spacing: 0.5px; font-size: 1.05rem;">¡OFERTA POR TIEMPO LIMITADO!</div>
+                        <div style="font-size: 0.95rem; opacity: 0.85;">Tu cupón de 70% de descuento expira en:</div>
+                    </div>
+                </div>
+                <div class="pricing-timer-blocks" style="display: flex; gap: 10px; align-items: flex-start; color: white; font-weight: 800;">
+                    <div style="text-align: center; display: flex; flex-direction: column; align-items: center; gap: 5px;">
+                        <div class="countdown-min" style="background: white; color: var(--color-primary); font-size: 1.8rem; padding: 5px 12px; border-radius: 8px; line-height: 1; min-width: 55px;">19</div>
+                        <span style="font-size: 0.65rem; font-weight: 700; opacity: 0.9; letter-spacing: 1px;">MIN</span>
+                    </div>
+                    <div style="font-size: 1.8rem; line-height: 1; margin-top: 5px;">:</div>
+                    <div style="text-align: center; display: flex; flex-direction: column; align-items: center; gap: 5px;">
+                        <div class="countdown-sec" style="background: white; color: var(--color-primary); font-size: 1.8rem; padding: 5px 12px; border-radius: 8px; line-height: 1; min-width: 55px;">45</div>
+                        <span style="font-size: 0.65rem; font-weight: 700; opacity: 0.9; letter-spacing: 1px;">SEG</span>
+                    </div>
+                </div>
+            </div>
+        </div>
 
-                <a href="https://pay.hotmart.com/B105523460F?off=csqgjy3n&checkoutMode=10" class="btn btn-primary"
-                    style="width: 100%; margin-bottom: 25px; padding: 25px; font-size: 1.1rem;">👉 Quiero empezar ahora</a>
-
-                <p style="font-size: 0.9rem; color: var(--color-text-light); margin-bottom: 30px;">
-                    🔒 Pago 100% seguro <br>
-                    📩 Acceso enviado a tu email al instante
+        <div class="container" style="position: relative; z-index: 2; margin-top: 60px;">
+            <!-- Title Area -->
+            <div class="pricing-title-area" style="max-width: 500px; margin-bottom: 40px;">
+                <h2 style="font-size: 3.2rem; line-height: 1.1; color: var(--color-accent); margin-bottom: 15px; letter-spacing: -1px;">
+                    Acceso completo<br>
+                    y <span style="color: var(--color-primary);">permanente</span>
+                </h2>
+                <p style="font-size: 1.1rem; color: var(--color-accent); opacity: 0.8; max-width: 400px; line-height: 1.5;">
+                    Empieza hoy mismo y aprende a crear tus propias piezas desde casa, paso a paso.
                 </p>
+            </div>
 
-                <div class="guarantee-card">
-                    <img src="https://cdn-icons-png.flaticon.com/512/3514/3514491.png" alt="Garantía">
-                    <div class="guarantee-info">
-                        <h5>Garantía de 30 días</h5>
-                        <p>Prueba el contenido con tranquilidad. <br> Si no te convence, puedes solicitar el reembolso completo.</p>
+            <!-- Pricing Card -->
+            <div class="pricing-card-container">
+                <!-- Badge -->
+                <div style="position: absolute; top: -15px; left: 50%; transform: translateX(-50%); background-color: #D38B74; color: white; padding: 8px 25px; border-radius: 20px; font-weight: 700; font-size: 0.85rem; display: flex; align-items: center; gap: 8px; box-shadow: var(--shadow-sm); white-space: nowrap;">
+                    <span>🔥</span> OFERTA ESPECIAL POR TIEMPO LIMITADO
+                </div>
+
+                <!-- Card Grid -->
+                <div class="pricing-card-grid">
+                    
+                    <!-- Left: 20+ Lessons -->
+                    <div class="pricing-col">
+                        <div style="font-weight: 700; color: var(--color-accent); letter-spacing: 1px; font-size: 0.9rem;">ACCESO A MÁS DE</div>
+                        <div style="font-size: 5rem; font-weight: 800; color: var(--color-primary); line-height: 1; margin: 10px 0;">20+</div>
+                        <div style="font-weight: 700; color: var(--color-accent); letter-spacing: 1px; font-size: 0.9rem;">LECCIONES PASO A PASO</div>
+                    </div>
+
+                    <!-- Center: Price -->
+                    <div class="pricing-col pricing-border-center">
+                        <div style="color: var(--color-accent); opacity: 0.8; font-size: 1.1rem; margin-bottom: 5px;">Precio regular: <span style="text-decoration: line-through;">$47</span></div>
+                        <div style="display: inline-block; background-color: rgba(201, 122, 99, 0.1); color: var(--color-primary); font-weight: 700; font-size: 0.8rem; padding: 5px 15px; border-radius: 15px; margin-bottom: 15px;">(70% DE DESCUENTO)</div>
+                        <div style="color: var(--color-accent); font-size: 1.8rem; display: flex; align-items: baseline; justify-content: center; gap: 10px;">
+                            Hoy: <span style="font-size: 4.5rem; font-weight: 800; line-height: 1; letter-spacing: -2px;">$14</span>
+                        </div>
+                    </div>
+
+                    <!-- Right: Benefits Desktop -->
+                    <div class="pricing-col pricing-benefits-desktop" style="text-align: left;">
+                        <div style="display: flex; gap: 12px; align-items: flex-start;">
+                            <span style="color: white; background-color: var(--color-primary); border-radius: 50%; width: 22px; height: 22px; display: flex; align-items: center; justify-content: center; font-size: 0.75rem; flex-shrink: 0;">✓</span>
+                            <span style="color: var(--color-accent); font-size: 0.95rem; line-height: 1.3;">Acceso inmediato tras el pago</span>
+                        </div>
+                        <div style="display: flex; gap: 12px; align-items: flex-start;">
+                            <span style="color: white; background-color: var(--color-primary); border-radius: 50%; width: 22px; height: 22px; display: flex; align-items: center; justify-content: center; font-size: 0.75rem; flex-shrink: 0;">✓</span>
+                            <span style="color: var(--color-accent); font-size: 0.95rem; line-height: 1.3;">Disponible en celular, tablet o computadora</span>
+                        </div>
+                        <div style="display: flex; gap: 12px; align-items: flex-start;">
+                            <span style="color: white; background-color: var(--color-primary); border-radius: 50%; width: 22px; height: 22px; display: flex; align-items: center; justify-content: center; font-size: 0.75rem; flex-shrink: 0;">✓</span>
+                            <span style="color: var(--color-accent); font-size: 0.95rem; line-height: 1.3;">Aprende a tu ritmo, sin horarios</span>
+                        </div>
                     </div>
                 </div>
 
-                <div class="payment-methods">
-                    <img src="https://img.icons8.com/color/48/visa.png" alt="Visa">
-                    <img src="https://img.icons8.com/color/48/mastercard.png" alt="Mastercard">
-                    <img src="https://img.icons8.com/color/48/paypal.png" alt="PayPal">
-                    <img src="https://img.icons8.com/color/48/amex.png" alt="Amex">
+                <!-- Benefits Mobile Grid -->
+                <div class="pricing-benefits-mobile">
+                    <div class="benefit-icon-box">
+                        <div style="width: 45px; height: 45px; border: 1px solid #e0e0e0; border-radius: 50%; display: flex; align-items: center; justify-content: center; margin: 0 auto 10px auto; background-color: #fafafa;">
+                            <img src="https://img.icons8.com/ios-filled/50/2c3e50/iphone.png" width="22" height="22" alt="Mobile">
+                        </div>
+                        Acceso inmediato<br>tras el pago
+                    </div>
+                    <div class="benefit-icon-box" style="border-left: 1px solid #eee; border-right: 1px solid #eee; padding: 0 10px;">
+                        <div style="width: 45px; height: 45px; border: 1px solid #e0e0e0; border-radius: 50%; display: flex; align-items: center; justify-content: center; margin: 0 auto 10px auto; background-color: #fafafa;">
+                            <img src="https://img.icons8.com/ios-filled/50/2c3e50/mac-client.png" width="22" height="22" alt="Desktop">
+                        </div>
+                        Disponible en celular, tablet o computadora
+                    </div>
+                    <div class="benefit-icon-box">
+                        <div style="width: 45px; height: 45px; border: 1px solid #e0e0e0; border-radius: 50%; display: flex; align-items: center; justify-content: center; margin: 0 auto 10px auto; background-color: #fafafa;">
+                            <img src="https://img.icons8.com/ios-filled/50/2c3e50/clock--v1.png" width="22" height="22" alt="Clock">
+                        </div>
+                        Aprende a tu ritmo,<br>sin horarios
+                    </div>
                 </div>
-                <p style="font-size: 0.75rem; opacity: 0.6; margin-top: 10px;">(Visa • Mastercard • PayPal • Amex y más...)</p>
+
+                <!-- CTA -->
+                <div style="text-align: center; margin-top: 30px;">
+                    <a href="https://pay.hotmart.com/B105523460F?off=csqgjy3n&checkoutMode=10" style="display: block; background-color: #C2755D; color: white; font-weight: 700; font-size: 1.15rem; padding: 22px; border-radius: 12px; text-decoration: none; box-shadow: 0 4px 15px rgba(201, 122, 99, 0.3); transition: all 0.3s; margin-bottom: 15px;">
+                        🔒 ACCEDE AHORA CON 70% DE DESCUENTO <span style="margin-left: 8px; font-weight: 900;">›</span>
+                    </a>
+                    <div style="color: var(--color-primary); font-size: 0.9rem; font-weight: 600;">
+                        ⏱️ Oferta disponible hasta hoy, <span class="today-date"></span>.<br>
+                        El cupón expira en: <span class="countdown-sync">15:00</span>
+                    </div>
+                </div>
+
+                <!-- Security Badges -->
+                <div style="display: flex; flex-wrap: wrap; margin-top: 30px; padding-top: 20px; justify-content: center; gap: 20px;">
+                    <div style="background-color: var(--color-bg); padding: 15px 20px; border-radius: 10px; display: flex; align-items: center; gap: 15px; flex: 1; min-width: 250px; justify-content: center;">
+                        <img src="https://img.icons8.com/ios-glyphs/30/B8926A/shield.png" alt="Seguro" width="20" height="20" loading="lazy">
+                        <span style="font-size: 0.85rem; color: var(--color-accent); font-weight: 600;">Pago 100% seguro</span>
+                    </div>
+                    <div style="background-color: var(--color-bg); padding: 15px 20px; border-radius: 10px; display: flex; align-items: center; gap: 15px; flex: 1; min-width: 250px; justify-content: center;">
+                        <img src="https://img.icons8.com/ios-glyphs/30/B8926A/new-post.png" alt="Email" width="20" height="20" loading="lazy">
+                        <span style="font-size: 0.85rem; color: var(--color-accent); font-weight: 600;">Acceso enviado a tu email al instante</span>
+                    </div>
+                </div>
+
+                <!-- Guarantee Box -->
+                <div style="background-color: var(--color-bg); border-radius: 15px; padding: 30px; margin-top: 40px; text-align: center; position: relative;">
+                    <div style="background-color: var(--color-accent); color: white; width: 46px; height: 46px; border-radius: 50%; display: flex; align-items: center; justify-content: center; position: absolute; top: -23px; left: 50%; transform: translateX(-50%); box-shadow: var(--shadow-sm);">
+                        <img src="https://img.icons8.com/ios-filled/24/ffffff/shopping-cart.png" alt="Cart" width="20" height="20">
+                    </div>
+                    <h3 style="color: var(--color-accent); font-size: 1.4rem; margin-bottom: 15px; margin-top: 10px;">Garantía de 30 días</h3>
+                    <p style="font-size: 0.9rem; color: var(--color-accent); opacity: 0.8; margin-bottom: 25px; line-height: 1.5;">
+                        Prueba el contenido con tranquilidad.<br>
+                        Si no te convence, puedes solicitar el reembolso completo.
+                    </p>
+                    
+                    <!-- Payment Methods -->
+                    <div style="display: flex; justify-content: center; align-items: center; gap: 15px; flex-wrap: wrap;">
+                        <img src="https://img.icons8.com/color/48/visa.png" alt="Visa" width="36" height="22" loading="lazy">
+                        <img src="https://img.icons8.com/color/48/mastercard.png" alt="Mastercard" width="36" height="22" loading="lazy">
+                        <img src="https://img.icons8.com/color/48/paypal.png" alt="PayPal" width="36" height="22" loading="lazy">
+                        <img src="https://img.icons8.com/color/48/amex.png" alt="Amex" width="36" height="22" loading="lazy">
+                        <span style="font-size: 0.8rem; color: var(--color-accent); opacity: 0.7;">y más...</span>
+                    </div>
+                </div>
             </div>
         </div>
     </section>
@@ -707,123 +1199,136 @@
     </section>
 
     <!-- Final CTA -->
-    <section style="background-color: var(--color-accent); color: white; text-align: center; padding: 100px 0;">
-        <div class="container" style="max-width: 800px;">
-            <h2 style="font-size: 2.8rem; margin-bottom: 30px; font-family: var(--font-serif);">¿Y si esto es exactamente lo que estabas buscando?</h2>
+    <section style="background-color: var(--color-accent); color: white; padding: 100px 0; overflow: hidden; position: relative;">
+        <div class="container" style="max-width: 650px; text-align: center;">
+            <h2 style="font-size: 3.2rem; line-height: 1.15; color: white; margin-bottom: 40px; letter-spacing: -1px;">
+                ¿Y si esto es<br>
+                <span style="color: var(--color-primary);">exactamente</span><br>
+                lo que estabas<br>
+                <span class="cursive-text" style="font-family: 'Caveat', cursive; font-size: 4rem; color: var(--color-primary); font-weight: 600; margin-top: -10px; display: inline-block;">buscando?</span>
+            </h2>
             
-            <div style="font-size: 1.2rem; margin-bottom: 40px; line-height: 1.8; opacity: 0.9;">
-                <p>No necesitas experiencia.</p>
-                <p>No necesitas herramientas caras.</p>
-                <p>No necesitas hacerlo perfecto.</p>
-                <br>
-                <p style="font-weight: 700; font-size: 1.5rem; color: var(--color-primary);">Solo necesitas empezar.</p>
-                <br>
-                <p>Muchas personas pasan meses pensando en aprender algo nuevo… <br> y nunca dan el primer paso.</p>
-                <br>
-                <p>Hoy puedes hacerlo de forma simple, desde casa y a tu ritmo.</p>
+            <div style="background-color: rgba(255,255,255,0.03); border: 1px solid rgba(255,255,255,0.1); border-radius: 25px; padding: 40px; margin-bottom: 40px;">
+                <ul style="list-style: none; padding: 0; margin: 0 auto; max-width: 380px; text-align: left;">
+                    <li style="display: flex; align-items: center; gap: 15px; padding: 15px 0; border-bottom: 1px solid rgba(255,255,255,0.1);">
+                        <span style="background-color: var(--color-primary); color: white; width: 34px; height: 34px; border-radius: 50%; display: flex; align-items: center; justify-content: center; flex-shrink: 0; font-size: 1rem; font-weight: bold;">✓</span>
+                        <span style="font-size: 1.1rem; color: white; line-height: 1.4;">No necesitas <strong style="color: var(--color-primary);">experiencia</strong></span>
+                    </li>
+                    <li style="display: flex; align-items: center; gap: 15px; padding: 15px 0; border-bottom: 1px solid rgba(255,255,255,0.1);">
+                        <span style="background-color: var(--color-primary); color: white; width: 34px; height: 34px; border-radius: 50%; display: flex; align-items: center; justify-content: center; flex-shrink: 0; font-size: 1rem; font-weight: bold;">✓</span>
+                        <span style="font-size: 1.1rem; color: white; line-height: 1.4;">No necesitas <strong style="color: var(--color-primary);">herramientas caras</strong></span>
+                    </li>
+                    <li style="display: flex; align-items: center; gap: 15px; padding: 15px 0;">
+                        <span style="background-color: var(--color-primary); color: white; width: 34px; height: 34px; border-radius: 50%; display: flex; align-items: center; justify-content: center; flex-shrink: 0; font-size: 1rem; font-weight: bold;">✓</span>
+                        <span style="font-size: 1.1rem; color: white; line-height: 1.4;">No necesitas <strong style="color: var(--color-primary);">hacerlo perfecto</strong></span>
+                    </li>
+                </ul>
+                
+                <p style="font-family: 'Caveat', cursive; font-size: 3rem; color: white; font-weight: 600; margin-top: 35px; margin-bottom: 0;">
+                    Solo necesitas <span style="color: var(--color-primary);">empezar.</span>
+                </p>
             </div>
 
-            <a href="https://pay.hotmart.com/B105523460F?off=csqgjy3n&checkoutMode=10" class="btn btn-primary"
-                style="background-color: var(--color-white); color: var(--color-accent); padding: 25px 50px; font-size: 1.2rem;">👉 Quiero dar el primer paso</a>
+            <div style="font-size: 1.1rem; margin-bottom: 40px; line-height: 1.6; opacity: 0.9; max-width: 500px; margin-left: auto; margin-right: auto;">
+                <p>Muchas personas pasan meses pensando en aprender algo nuevo… y nunca dan el primer paso.</p>
+                <div style="height: 15px;"></div>
+                <p>Hoy puedes hacerlo de forma simple, <strong style="color: var(--color-primary);">desde casa</strong> y a tu ritmo.</p>
+            </div>
 
-            <div style="display: flex; justify-content: center; gap: 30px; margin-top: 40px; font-size: 0.9rem; opacity: 0.8;">
-                <span>🔒 Acceso inmediato</span>
-                <span>📩 Recíbelo en tu email</span>
-                <span>🛡️ 30 días de garantía</span>
+            <div style="text-align: center; max-width: 500px; margin-left: auto; margin-right: auto;">
+                <a href="https://pay.hotmart.com/B105523460F?off=csqgjy3n&checkoutMode=10" style="display: block; background-color: #C2755D; color: white; font-weight: 700; font-size: 1.15rem; padding: 22px; border-radius: 12px; text-decoration: none; box-shadow: 0 4px 15px rgba(201, 122, 99, 0.3); transition: all 0.3s; margin-bottom: 15px;">
+                    🔒 ACCEDE AHORA CON 70% DE DESCUENTO <span style="margin-left: 8px; font-weight: 900;">›</span>
+                </a>
+                <div style="color: var(--color-primary); font-size: 0.9rem; font-weight: 600;">
+                    ⏱️ Oferta disponible hasta hoy, <span class="today-date"></span>.<br>
+                    El cupón expira en: <span class="countdown-sync">15:00</span>
+                </div>
+            </div>
+
+            <div style="display: flex; justify-content: center; flex-wrap: wrap; gap: 25px; margin-top: 40px; font-size: 0.9rem; opacity: 0.7;">
+                <span style="display: flex; align-items: center; gap: 8px;"><img src="https://img.icons8.com/ios-glyphs/30/ffffff/shield.png" alt="Seguro" width="16" height="16"> Acceso inmediato</span>
+                <span style="display: flex; align-items: center; gap: 8px;"><img src="https://img.icons8.com/ios-glyphs/30/ffffff/new-post.png" alt="Email" width="16" height="16"> Recíbelo en tu email</span>
+                <span style="display: flex; align-items: center; gap: 8px;"><img src="https://img.icons8.com/ios-filled/24/ffffff/shopping-cart.png" alt="Garantía" width="16" height="16"> 30 días de garantía</span>
             </div>
         </div>
     </section>
 
-    <!-- Footer -->
-    <footer>
-        <div class="container">
-            <div class="footer-logo"
-                style="color: white; font-family: var(--font-serif); font-size: 1.5rem; margin-bottom: 20px;">BIBLIA DE
-                LA CERÁMICA</div>
-            <p>La arte de criar con las manos y vivir con el alma.</p>
-            <p style="font-size: 0.75rem; opacity: 0.5; margin-top: 40px;">
-                © 2026 Gremio de Artesanos Lentos. Todos los direitos reservados. <br>
-                Este sitio no forma parte de Facebook o Facebook Inc.
-            </p>
-        </div>
-    </footer>
 
     <script>
-        // Scarcity Countdown Logic
-        function startCountdown(duration, display) {
-            let timer = duration, minutes, seconds;
-            setInterval(function () {
-                minutes = parseInt(timer / 60, 10);
-                seconds = parseInt(timer % 60, 10);
+        // All non-critical JS runs after DOM is parsed (script is at bottom of body)
+        // Scarcity Countdown
+        (function() {
+            var timers = document.querySelectorAll('.countdown-sync');
+            var minTimers = document.querySelectorAll('.countdown-min');
+            var secTimers = document.querySelectorAll('.countdown-sec');
+            var topTimer = document.getElementById('countdown');
+            var dateSpans = document.querySelectorAll('.today-date');
+            
+            // Set today's date
+            var now = new Date();
+            var options = { day: 'numeric', month: 'long' };
+            var dateStr = now.toLocaleDateString('es-ES', options);
+            dateSpans.forEach(function(s) { s.textContent = dateStr; });
 
-                minutes = minutes < 10 ? "0" + minutes : minutes;
-                seconds = seconds < 10 ? "0" + seconds : seconds;
-
-                display.textContent = minutes + ":" + seconds;
-
-                if (--timer < 0) {
-                    timer = duration; // Reset or stop
-                }
+            var timer = 60 * 20;
+            setInterval(function() {
+                var m = (timer / 60) | 0, s = timer % 60;
+                var mStr = (m < 10 ? '0' : '') + m;
+                var sStr = (s < 10 ? '0' : '') + s;
+                var timeStr = mStr + ':' + sStr;
+                
+                if (topTimer) topTimer.textContent = timeStr;
+                timers.forEach(function(t) { t.textContent = timeStr; });
+                minTimers.forEach(function(t) { t.textContent = mStr; });
+                secTimers.forEach(function(t) { t.textContent = sStr; });
+                
+                if (--timer < 0) timer = 60 * 20;
             }, 1000);
-        }
-
-        document.addEventListener('DOMContentLoaded', function () {
-            let fifteenMinutes = 60 * 15;
-            let display = document.querySelector('#countdown');
-            if (display) startCountdown(fifteenMinutes, display);
-        });
-
-        // Purchase Notification Logic
-        const users = ["María G.", "Roberto F.", "Lucía M.", "Carlos S.", "Elena P.", "Javier R.", "Sofía V.", "Andrés T."];
-        const notification = document.getElementById('purchaseNotification');
-        const userSpan = document.getElementById('notificationUser');
-
-        function showNotification() {
-            const randomUser = users[Math.floor(Math.random() * users.length)];
-            userSpan.innerText = randomUser;
-            notification.classList.add('show');
-
-            setTimeout(() => {
-                notification.classList.remove('show');
-            }, 4000);
-        }
-
-        // Show first notification after 5 seconds
-        setTimeout(() => {
-            showNotification();
-            // Then show every 15-25 seconds
-            setInterval(showNotification, Math.random() * (25000 - 15000) + 15000);
-        }, 5000);
+        })();
 
         // FAQ Toggle
-        document.querySelectorAll('.faq-question').forEach(question => {
-            question.addEventListener('click', () => {
-                const answer = question.nextElementSibling;
-                const isOpen = answer.style.display === 'block';
-                document.querySelectorAll('.faq-answer').forEach(ans => ans.style.display = 'none');
-                document.querySelectorAll('.faq-question span').forEach(span => span.innerText = '+');
-                if (!isOpen) {
-                    answer.style.display = 'block';
-                    question.querySelector('span').innerText = '-';
-                }
-            });
-        });
-
-        // Smooth Scroll
-        document.querySelectorAll('a[href^="#"]').forEach(anchor => {
-            anchor.addEventListener('click', function (e) {
-                e.preventDefault();
-                document.querySelector(this.getAttribute('href')).scrollIntoView({ behavior: 'smooth' });
+        document.querySelectorAll('.faq-question').forEach(function(q) {
+            q.addEventListener('click', function() {
+                var ans = q.nextElementSibling;
+                var isOpen = ans.style.display === 'block';
+                document.querySelectorAll('.faq-answer').forEach(function(a) { a.style.display = 'none'; });
+                document.querySelectorAll('.faq-question span').forEach(function(s) { s.textContent = '+'; });
+                if (!isOpen) { ans.style.display = 'block'; q.querySelector('span').textContent = '-'; }
             });
         });
 
         // Inspiration Gallery Carousel
         function scrollInspiration(direction) {
-            const container = document.getElementById('inspirationGallery');
-            const scrollAmount = container.clientWidth * 0.8;
-            container.scrollBy({ left: direction * scrollAmount, behavior: 'smooth' });
+            var c = document.getElementById('inspirationGallery');
+            c.scrollBy({ left: direction * c.clientWidth * 0.8, behavior: 'smooth' });
         }
+
+        // Defer non-critical: purchase notification + smooth scroll
+        window.addEventListener('load', function() {
+            // Smooth Scroll
+            document.querySelectorAll('a[href^="#"]').forEach(function(a) {
+                a.addEventListener('click', function(e) {
+                    e.preventDefault();
+                    var target = document.querySelector(a.getAttribute('href'));
+                    if (target) target.scrollIntoView({ behavior: 'smooth' });
+                });
+            });
+
+            // Purchase Notification
+            var users = ['Mar\u00eda G.','Roberto F.','Luc\u00eda M.','Carlos S.','Elena P.','Javier R.','Sof\u00eda V.','Andr\u00e9s T.'];
+            var notif = document.getElementById('purchaseNotification');
+            var userSpan = document.getElementById('notificationUser');
+            if (!notif) return;
+            function showNotif() {
+                userSpan.textContent = users[Math.random() * users.length | 0];
+                notif.classList.add('show');
+                setTimeout(function() { notif.classList.remove('show'); }, 4000);
+            }
+            setTimeout(function() {
+                showNotif();
+                setInterval(showNotif, (Math.random() * 10000) + 15000);
+            }, 5000);
+        });
     </script>
 </body>
-
 </html>
