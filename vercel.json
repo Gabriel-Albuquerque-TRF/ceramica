@@ -2,7 +2,8 @@
   "cleanUrls": true,
   "rewrites": [
     { "source": "/", "destination": "/index.html" },
-    { "source": "/ebook", "destination": "/ebook.html" }
+    { "source": "/ebook", "destination": "/ebook.html" },
+    { "source": "/50-modelos-hoy", "destination": "/50-modelos-hoy.html" }
   ],
   "headers": [
     {
