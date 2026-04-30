@@ -345,6 +345,8 @@
                     box-shadow: 0 15px 35px rgba(0, 0, 0, 0.05);
                     max-width: 1000px;
                     margin: 0 auto;
+                    box-sizing: border-box;
+                    overflow: hidden;
                 }
 
                 .experiencia-grid-new {
@@ -374,9 +376,19 @@
                     font-size: 4rem;
                 }
 
+                .experiencia-box ul {
+                    max-width: 100%;
+                    box-sizing: border-box;
+                }
+
                 @media (max-width: 768px) {
                     .experiencia-box {
-                        padding: 40px 25px;
+                        padding: 30px 15px;
+                    }
+
+                    .experiencia-content-new, .experiencia-image-new {
+                        min-width: 100%;
+                        box-sizing: border-box;
                     }
 
                     .experiencia-title {
@@ -384,8 +396,9 @@
                     }
 
                     .experiencia-title .cursive-text {
-                        font-size: 3.2rem !important;
+                        font-size: 2.6rem !important;
                         margin-top: -5px !important;
+                        word-break: break-word;
                     }
                 }
             </style>
@@ -453,7 +466,7 @@
                         <picture>
                             <source srcset="assets/comp_traditional.webp" type="image/webp">
                             <img loading="lazy" decoding="async" src="assets/comp_traditional.png"
-                                alt="Cerámica Tradicional" style="width: 100%; height: 100%; object-fit: cover;">
+                                alt="Cerámica Tradicional" width="600" height="400" style="width: 100%; height: 100%; object-fit: cover;">
                         </picture>
                     </div>
                     <h4
@@ -505,7 +518,7 @@
                         style="width: 100%; height: 160px; margin: -40px -40px 25px -40px; border-radius: 30px 30px 0 0; overflow: hidden; width: calc(100% + 80px);">
                         <picture>
                             <source srcset="assets/comp_modern.webp" type="image/webp">
-                            <img loading="lazy" decoding="async" src="assets/comp_modern.png" alt="Cerámica Fría"
+                            <img loading="lazy" decoding="async" src="assets/comp_modern.png" alt="Cerámica Fría" width="600" height="400"
                                 style="width: 100%; height: 100%; object-fit: cover;">
                         </picture>
                     </div>
@@ -673,115 +686,7 @@
     </section>
 
     <!-- Detailed Modules -->
-    <!-- Story Carousel Section -->
-    <section class="stories-section">
-        <div class="container">
-            <h3 style="text-align: center; margin-bottom: 10px; color: var(--color-accent);">Nuestra Comunidad en Acción
-            </h3>
-            <p style="text-align: center; margin-bottom: 30px; opacity: 0.7; font-size: 0.9rem;">Resultados reales de
-                personas como tú</p>
 
-            <div class="stories-wrapper">
-                <div class="stories-container">
-                    <!-- Story 1 -->
-                    <div class="story-card">
-                        <div class="story-user">
-                            <div class="story-avatar">
-                                <picture>
-                                    <source srcset="assets/avatar_marta.webp" type="image/webp"><img
-                                        src="assets/avatar_marta.png" alt="Marta" width="34" height="34" loading="lazy"
-                                        decoding="async">
-                                </picture>
-                            </div>
-                            <span>@marta_art</span>
-                        </div>
-                        <picture>
-                            <source srcset="assets/story_client_1.webp" type="image/webp"><img
-                                src="assets/story_client_1.png" alt="Testimonial 1" width="200" height="350"
-                                loading="lazy" decoding="async">
-                        </picture>
-                        <div class="story-overlay"></div>
-                    </div>
-                    <!-- Story 2 -->
-                    <div class="story-card">
-                        <div class="story-user">
-                            <div class="story-avatar">
-                                <picture>
-                                    <source srcset="assets/avatar_ana.webp" type="image/webp"><img
-                                        src="assets/avatar_ana.png" alt="Ana" width="34" height="34" loading="lazy"
-                                        decoding="async">
-                                </picture>
-                            </div>
-                            <span>@ana_manos_obra</span>
-                        </div>
-                        <picture>
-                            <source srcset="assets/story_client_2.webp" type="image/webp"><img
-                                src="assets/story_client_2.png" alt="Testimonial 2" width="200" height="350"
-                                loading="lazy" decoding="async">
-                        </picture>
-                        <div class="story-overlay"></div>
-                    </div>
-                    <!-- Story 3 -->
-                    <div class="story-card">
-                        <div class="story-user">
-                            <div class="story-avatar">
-                                <picture>
-                                    <source srcset="assets/avatar_lucia.webp" type="image/webp"><img
-                                        src="assets/avatar_lucia.png" alt="Lucia" width="34" height="34" loading="lazy"
-                                        decoding="async">
-                                </picture>
-                            </div>
-                            <span>@lucia_crea</span>
-                        </div>
-                        <picture>
-                            <source srcset="assets/story_client_3.webp" type="image/webp"><img
-                                src="assets/story_client_3.png" alt="Testimonial 3" width="200" height="350"
-                                loading="lazy" decoding="async">
-                        </picture>
-                        <div class="story-overlay"></div>
-                    </div>
-                    <!-- Story 4 -->
-                    <div class="story-card">
-                        <div class="story-user">
-                            <div class="story-avatar">
-                                <picture>
-                                    <source srcset="assets/avatar_sofia.webp" type="image/webp"><img
-                                        src="assets/avatar_sofia.png" alt="Sofia" width="34" height="34" loading="lazy"
-                                        decoding="async">
-                                </picture>
-                            </div>
-                            <span>@sofia_deco</span>
-                        </div>
-                        <picture>
-                            <source srcset="assets/story_client_4.webp" type="image/webp"><img
-                                src="assets/story_client_4.png" alt="Testimonial 4" width="200" height="350"
-                                loading="lazy" decoding="async">
-                        </picture>
-                        <div class="story-overlay"></div>
-                    </div>
-                    <!-- Story 5 -->
-                    <div class="story-card">
-                        <div class="story-user">
-                            <div class="story-avatar">
-                                <picture>
-                                    <source srcset="assets/avatar_jorge.webp" type="image/webp"><img
-                                        src="assets/avatar_jorge.png" alt="Jorge" width="34" height="34" loading="lazy"
-                                        decoding="async">
-                                </picture>
-                            </div>
-                            <span>@jorge_ceramics</span>
-                        </div>
-                        <picture>
-                            <source srcset="assets/story_client_5.webp" type="image/webp"><img
-                                src="assets/story_client_5.png" alt="Testimonial 5" width="200" height="350"
-                                loading="lazy" decoding="async">
-                        </picture>
-                        <div class="story-overlay"></div>
-                    </div>
-                </div>
-                <span class="mobile-hint">⟵ Desliza para ver más ⟶</span>
-            </div>
-    </section>
 
     <section id="detalles" class="modules">
         <div class="container">
@@ -796,7 +701,7 @@
                     <div class="module-image">
                         <picture>
                             <source srcset="assets/module_1.webp" type="image/webp">
-                            <img src="assets/module_1.png" alt="Primeros Pasos" loading="lazy" decoding="async">
+                            <img src="assets/module_1.png" alt="Primeros Pasos" loading="lazy" decoding="async" width="400" height="300">
                         </picture>
                     </div>
                     <div class="module-content">
@@ -813,7 +718,7 @@
                     <div class="module-image">
                         <picture>
                             <source srcset="assets/module_2.webp" type="image/webp">
-                            <img src="assets/module_2.png" alt="Técnica Paso a Paso" loading="lazy" decoding="async">
+                            <img src="assets/module_2.png" alt="Técnica Paso a Paso" loading="lazy" decoding="async" width="400" height="300">
                         </picture>
                     </div>
                     <div class="module-content">
@@ -831,7 +736,7 @@
                     <div class="module-image">
                         <picture>
                             <source srcset="assets/module_3.webp" type="image/webp">
-                            <img src="assets/module_3.png" alt="Moldes y Creaciones" loading="lazy" decoding="async">
+                            <img src="assets/module_3.png" alt="Moldes y Creaciones" loading="lazy" decoding="async" width="400" height="300">
                         </picture>
                     </div>
                     <div class="module-content">
@@ -848,7 +753,7 @@
                     <div class="module-image">
                         <picture>
                             <source srcset="assets/module_4.webp" type="image/webp">
-                            <img src="assets/module_4.png" alt="Acabados Profesionales" loading="lazy" decoding="async">
+                            <img src="assets/module_4.png" alt="Acabados Profesionales" loading="lazy" decoding="async" width="400" height="300">
                         </picture>
                     </div>
                     <div class="module-content">
@@ -867,7 +772,7 @@
                     <div class="module-image">
                         <picture>
                             <source srcset="assets/module_5.webp" type="image/webp">
-                            <img src="assets/module_5.png" alt="Cómo Vender" loading="lazy" decoding="async">
+                            <img src="assets/module_5.png" alt="Cómo Vender" loading="lazy" decoding="async" width="400" height="300">
                         </picture>
                     </div>
                     <div class="module-content">
@@ -886,7 +791,7 @@
                     <div class="module-image">
                         <picture>
                             <source srcset="assets/module_6.webp" type="image/webp">
-                            <img src="assets/module_6.png" alt="Extras" loading="lazy" decoding="async">
+                            <img src="assets/module_6.png" alt="Extras" loading="lazy" decoding="async" width="400" height="300">
                         </picture>
                     </div>
                     <div class="module-content">
@@ -900,139 +805,6 @@
             </div>
         </div>
     </section>
-
-    <!-- Gift Section -->
-    <section id="regalos" class="gifts" style="padding: 80px 0; background-color: var(--color-white);">
-        <div class="container">
-            <style>
-                .regalos-box {
-                    background-color: #F8F5F0;
-                    border-radius: 30px;
-                    padding: 50px;
-                    box-shadow: 0 15px 35px rgba(0, 0, 0, 0.05);
-                    max-width: 1000px;
-                    margin: 0 auto;
-                }
-
-                .regalos-grid-new {
-                    display: flex;
-                    flex-wrap: wrap;
-                    align-items: center;
-                    gap: 40px;
-                }
-
-                .regalos-content-new {
-                    flex: 1;
-                    min-width: 300px;
-                    text-align: left;
-                }
-
-                .regalos-image-new {
-                    flex: 1;
-                    min-width: 300px;
-                    text-align: center;
-                }
-
-                .regalos-title {
-                    font-size: 2.8rem;
-                }
-
-                .regalos-title .cursive-text {
-                    font-size: 4rem;
-                }
-
-                /* For Desktop zigzag: image on left, content on right */
-                @media (min-width: 769px) {
-                    .regalos-grid-new {
-                        flex-direction: row-reverse;
-                    }
-                }
-
-                @media (max-width: 768px) {
-                    .regalos-box {
-                        padding: 40px 25px;
-                    }
-
-                    .regalos-title {
-                        font-size: 2.2rem !important;
-                    }
-
-                    .regalos-title .cursive-text {
-                        font-size: 3.2rem !important;
-                        margin-top: -5px !important;
-                    }
-                }
-            </style>
-            <div class="regalos-box">
-                <div class="regalos-grid-new">
-                    <div class="regalos-content-new">
-                        <span class="badge"
-                            style="display: inline-flex; align-items: center; gap: 8px; background-color: rgba(201, 122, 99, 0.1); color: var(--color-primary); padding: 8px 15px; border-radius: 20px; font-weight: 700; font-size: 0.85rem; border: 1px solid rgba(201, 122, 99, 0.2); margin-bottom: 20px;">
-                            El Arte de Regalar
-                        </span>
-
-                        <h2 class="regalos-title"
-                            style="line-height: 1.15; color: var(--color-accent); margin-bottom: 25px; letter-spacing: -1px;">
-                            Crea regalos únicos<br>
-                            hechos por ti<br>
-                            <span class="cursive-text"
-                                style="font-family: 'Caveat', cursive; color: var(--color-primary); font-weight: 600; display: inline-block; margin-top: 5px;">sin
-                                experiencia previa</span>
-                        </h2>
-
-                        <div style="font-size: 1.1rem; color: var(--color-text-light); line-height: 1.6;">
-                            <p style="margin-bottom: 15px;">En un mundo lleno de productos iguales, un regalo hecho a
-                                mano tiene un valor <strong
-                                    style="color: var(--color-primary); font-weight: 700;">completamente
-                                    diferente.</strong></p>
-
-                            <p style="margin-bottom: 15px;">Imagina entregar algo creado por ti: una pieza única,
-                                personalizada y con un significado <strong
-                                    style="color: var(--color-primary); font-weight: 700;">real.</strong></p>
-
-                            <p style="margin-bottom: 25px;">Con la cerámica fría, puedes crear desde pequeños detalles
-                                hasta objetos decorativos que se convierten en recuerdos especiales.</p>
-                        </div>
-
-                        <ul style="list-style: none; padding: 0; margin: 0; max-width: 420px; text-align: left;">
-                            <li
-                                style="display: flex; align-items: center; gap: 15px; padding: 12px 0; border-bottom: 1px solid rgba(201, 122, 99, 0.15);">
-                                <span
-                                    style="background-color: var(--color-primary); color: white; width: 28px; height: 28px; border-radius: 50%; display: flex; align-items: center; justify-content: center; flex-shrink: 0; font-size: 0.85rem; font-weight: bold;">✓</span>
-                                <span style="font-size: 1.05rem; color: var(--color-accent); line-height: 1.4;">Piezas
-                                    únicas hechas a mano</span>
-                            </li>
-                            <li
-                                style="display: flex; align-items: center; gap: 15px; padding: 12px 0; border-bottom: 1px solid rgba(201, 122, 99, 0.15);">
-                                <span
-                                    style="background-color: var(--color-primary); color: white; width: 28px; height: 28px; border-radius: 50%; display: flex; align-items: center; justify-content: center; flex-shrink: 0; font-size: 0.85rem; font-weight: bold;">✓</span>
-                                <span style="font-size: 1.05rem; color: var(--color-accent); line-height: 1.4;">Regalos
-                                    con <strong style="color: var(--color-primary);">significado real</strong></span>
-                            </li>
-                            <li style="display: flex; align-items: center; gap: 15px; padding: 12px 0;">
-                                <span
-                                    style="background-color: var(--color-primary); color: white; width: 28px; height: 28px; border-radius: 50%; display: flex; align-items: center; justify-content: center; flex-shrink: 0; font-size: 0.85rem; font-weight: bold;">✓</span>
-                                <span style="font-size: 1.05rem; color: var(--color-accent); line-height: 1.4;">Detalles
-                                    que realmente emocionan</span>
-                            </li>
-                        </ul>
-                    </div>
-                    <div class="regalos-image-new">
-                        <picture>
-                            <source srcset="assets/gifts_new.webp" type="image/webp">
-                            <img src="assets/gifts_new.png" alt="Regalos Personalizados" loading="lazy" decoding="async"
-                                style="width: 100%; max-width: 400px; height: auto; border-radius: 25px; box-shadow: var(--shadow-lg); object-fit: cover;">
-                        </picture>
-                    </div>
-                </div>
-            </div>
-        </div>
-    </section>
-    <div class="container">
-        <div
-            style="width: 100%; height: 1px; background: linear-gradient(to right, transparent, var(--color-clay-200), transparent); opacity: 0.6;">
-        </div>
-    </div>
 
     <!-- Bonus Section -->
     <section id="bonos" style="background-color: #2C3E50; padding: 80px 0;">
@@ -1182,6 +954,152 @@
 
         </div>
     </section>
+    <div class="container">
+        <div
+            style="width: 100%; height: 1px; background: linear-gradient(to right, transparent, var(--color-clay-200), transparent); opacity: 0.6;">
+        </div>
+    </div>
+
+    <!-- Gift Section -->
+    <section id="regalos" class="gifts" style="padding: 80px 0; background-color: var(--color-white);">
+        <div class="container">
+            <style>
+                .regalos-box {
+                    background-color: #F8F5F0;
+                    border-radius: 30px;
+                    padding: 50px;
+                    box-shadow: 0 15px 35px rgba(0, 0, 0, 0.05);
+                    max-width: 1000px;
+                    margin: 0 auto;
+                    box-sizing: border-box;
+                    overflow: hidden;
+                }
+
+                .regalos-grid-new {
+                    display: flex;
+                    flex-wrap: wrap;
+                    align-items: center;
+                    gap: 40px;
+                }
+
+                .regalos-content-new {
+                    flex: 1;
+                    min-width: 300px;
+                    text-align: left;
+                }
+
+                .regalos-image-new {
+                    flex: 1;
+                    min-width: 300px;
+                    text-align: center;
+                }
+
+                .regalos-title {
+                    font-size: 2.8rem;
+                }
+
+                .regalos-title .cursive-text {
+                    font-size: 4rem;
+                }
+
+                .regalos-box ul {
+                    max-width: 100%;
+                    box-sizing: border-box;
+                }
+
+                /* For Desktop zigzag: image on left, content on right */
+                @media (min-width: 769px) {
+                    .regalos-grid-new {
+                        flex-direction: row-reverse;
+                    }
+                }
+
+                @media (max-width: 768px) {
+                    .regalos-box {
+                        padding: 30px 15px;
+                    }
+
+                    .regalos-content-new, .regalos-image-new {
+                        min-width: 100%;
+                        box-sizing: border-box;
+                    }
+
+                    .regalos-title {
+                        font-size: 2.2rem !important;
+                    }
+
+                    .regalos-title .cursive-text {
+                        font-size: 2.6rem !important;
+                        margin-top: -5px !important;
+                        word-break: break-word;
+                    }
+                }
+            </style>
+            <div class="regalos-box">
+                <div class="regalos-grid-new">
+                    <div class="regalos-content-new">
+                        <span class="badge"
+                            style="display: inline-flex; align-items: center; gap: 8px; background-color: rgba(201, 122, 99, 0.1); color: var(--color-primary); padding: 8px 15px; border-radius: 20px; font-weight: 700; font-size: 0.85rem; border: 1px solid rgba(201, 122, 99, 0.2); margin-bottom: 20px;">
+                            El Arte de Regalar
+                        </span>
+
+                        <h2 class="regalos-title"
+                            style="line-height: 1.15; color: var(--color-accent); margin-bottom: 25px; letter-spacing: -1px;">
+                            Crea regalos únicos<br>
+                            hechos por ti<br>
+                            <span class="cursive-text"
+                                style="font-family: 'Caveat', cursive; color: var(--color-primary); font-weight: 600; display: inline-block; margin-top: 5px;">sin
+                                experiencia previa</span>
+                        </h2>
+
+                        <div style="font-size: 1.1rem; color: var(--color-text-light); line-height: 1.6;">
+                            <p style="margin-bottom: 15px;">En un mundo lleno de productos iguales, un regalo hecho a
+                                mano tiene un valor <strong
+                                    style="color: var(--color-primary); font-weight: 700;">completamente
+                                    diferente.</strong></p>
+
+                            <p style="margin-bottom: 15px;">Imagina entregar algo creado por ti: una pieza única,
+                                personalizada y con un significado <strong
+                                    style="color: var(--color-primary); font-weight: 700;">real.</strong></p>
+
+                            <p style="margin-bottom: 25px;">Con la cerámica fría, puedes crear desde pequeños detalles
+                                hasta objetos decorativos que se convierten en recuerdos especiales.</p>
+                        </div>
+
+                        <ul style="list-style: none; padding: 0; margin: 0; max-width: 420px; text-align: left;">
+                            <li
+                                style="display: flex; align-items: center; gap: 15px; padding: 12px 0; border-bottom: 1px solid rgba(201, 122, 99, 0.15);">
+                                <span
+                                    style="background-color: var(--color-primary); color: white; width: 28px; height: 28px; border-radius: 50%; display: flex; align-items: center; justify-content: center; flex-shrink: 0; font-size: 0.85rem; font-weight: bold;">✓</span>
+                                <span style="font-size: 1.05rem; color: var(--color-accent); line-height: 1.4;">Piezas
+                                    únicas hechas a mano</span>
+                            </li>
+                            <li
+                                style="display: flex; align-items: center; gap: 15px; padding: 12px 0; border-bottom: 1px solid rgba(201, 122, 99, 0.15);">
+                                <span
+                                    style="background-color: var(--color-primary); color: white; width: 28px; height: 28px; border-radius: 50%; display: flex; align-items: center; justify-content: center; flex-shrink: 0; font-size: 0.85rem; font-weight: bold;">✓</span>
+                                <span style="font-size: 1.05rem; color: var(--color-accent); line-height: 1.4;">Regalos
+                                    con <strong style="color: var(--color-primary);">significado real</strong></span>
+                            </li>
+                            <li style="display: flex; align-items: center; gap: 15px; padding: 12px 0;">
+                                <span
+                                    style="background-color: var(--color-primary); color: white; width: 28px; height: 28px; border-radius: 50%; display: flex; align-items: center; justify-content: center; flex-shrink: 0; font-size: 0.85rem; font-weight: bold;">✓</span>
+                                <span style="font-size: 1.05rem; color: var(--color-accent); line-height: 1.4;">Detalles
+                                    que realmente emocionan</span>
+                            </li>
+                        </ul>
+                    </div>
+                    <div class="regalos-image-new">
+                        <picture>
+                            <source srcset="assets/gifts_new.webp" type="image/webp">
+                            <img src="assets/gifts_new.png" alt="Regalos Personalizados" loading="lazy" decoding="async"
+                                style="width: 100%; max-width: 400px; height: auto; border-radius: 25px; box-shadow: var(--shadow-lg); object-fit: cover;">
+                        </picture>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </section>
 
     <!-- Gallery Section -->
     <section id="inspiracion" style="background: var(--color-white); padding: 80px 0; overflow: hidden;">
@@ -1218,7 +1136,7 @@
                     </h2>
                     <p
                         style="font-size: 1.1rem; color: var(--color-text-light); max-width: 600px; margin: 0 auto; line-height: 1.5;">
-                        Piezas reales hechas con cerámica fría por personas comunes…<br>
+                        Piezas reales hechas con cerámica fría por personas sin experiencia previa...<br>
                         <strong style="color: var(--color-primary); font-weight: 700;">como tú.</strong>
                     </p>
                 </div>
@@ -1226,6 +1144,101 @@
                 <div class="stories-wrapper" style="max-width: 800px; margin: 0 auto;">
                     <button class="story-nav prev" onclick="scrollInspiration(-1)">&#10094;</button>
                     <div class="stories-container" id="inspirationGallery" style="padding-bottom: 30px;">
+                        <!-- Story 1 -->
+                        <div class="story-card">
+                            <div class="story-user">
+                                <div class="story-avatar">
+                                    <picture>
+                                        <source srcset="assets/avatar_marta.webp" type="image/webp"><img
+                                            src="assets/avatar_marta.png" alt="Marta" width="34" height="34" loading="lazy"
+                                            decoding="async">
+                                    </picture>
+                                </div>
+                                <span>@marta_art</span>
+                            </div>
+                            <picture>
+                                <source srcset="assets/story_client_1.webp" type="image/webp"><img
+                                    src="assets/story_client_1.png" alt="Testimonial 1" width="200" height="350"
+                                    loading="lazy" decoding="async" style="height:100%;width:100%;object-fit:cover">
+                            </picture>
+                            <div class="story-overlay"></div>
+                        </div>
+                        <!-- Story 2 -->
+                        <div class="story-card">
+                            <div class="story-user">
+                                <div class="story-avatar">
+                                    <picture>
+                                        <source srcset="assets/avatar_ana.webp" type="image/webp"><img
+                                            src="assets/avatar_ana.png" alt="Ana" width="34" height="34" loading="lazy"
+                                            decoding="async">
+                                    </picture>
+                                </div>
+                                <span>@ana_manos_obra</span>
+                            </div>
+                            <picture>
+                                <source srcset="assets/story_client_2.webp" type="image/webp"><img
+                                    src="assets/story_client_2.png" alt="Testimonial 2" width="200" height="350"
+                                    loading="lazy" decoding="async" style="height:100%;width:100%;object-fit:cover">
+                            </picture>
+                            <div class="story-overlay"></div>
+                        </div>
+                        <!-- Story 3 -->
+                        <div class="story-card">
+                            <div class="story-user">
+                                <div class="story-avatar">
+                                    <picture>
+                                        <source srcset="assets/avatar_lucia.webp" type="image/webp"><img
+                                            src="assets/avatar_lucia.png" alt="Lucia" width="34" height="34" loading="lazy"
+                                            decoding="async">
+                                    </picture>
+                                </div>
+                                <span>@lucia_crea</span>
+                            </div>
+                            <picture>
+                                <source srcset="assets/story_client_3.webp" type="image/webp"><img
+                                    src="assets/story_client_3.png" alt="Testimonial 3" width="200" height="350"
+                                    loading="lazy" decoding="async" style="height:100%;width:100%;object-fit:cover">
+                            </picture>
+                            <div class="story-overlay"></div>
+                        </div>
+                        <!-- Story 4 -->
+                        <div class="story-card">
+                            <div class="story-user">
+                                <div class="story-avatar">
+                                    <picture>
+                                        <source srcset="assets/avatar_sofia.webp" type="image/webp"><img
+                                            src="assets/avatar_sofia.png" alt="Sofia" width="34" height="34" loading="lazy"
+                                            decoding="async">
+                                    </picture>
+                                </div>
+                                <span>@sofia_deco</span>
+                            </div>
+                            <picture>
+                                <source srcset="assets/story_client_4.webp" type="image/webp"><img
+                                    src="assets/story_client_4.png" alt="Testimonial 4" width="200" height="350"
+                                    loading="lazy" decoding="async" style="height:100%;width:100%;object-fit:cover">
+                            </picture>
+                            <div class="story-overlay"></div>
+                        </div>
+                        <!-- Story 5 -->
+                        <div class="story-card">
+                            <div class="story-user">
+                                <div class="story-avatar">
+                                    <picture>
+                                        <source srcset="assets/avatar_jorge.webp" type="image/webp"><img
+                                            src="assets/avatar_jorge.png" alt="Jorge" width="34" height="34" loading="lazy"
+                                            decoding="async">
+                                    </picture>
+                                </div>
+                                <span>@jorge_ceramics</span>
+                            </div>
+                            <picture>
+                                <source srcset="assets/story_client_5.webp" type="image/webp"><img
+                                    src="assets/story_client_5.png" alt="Testimonial 5" width="200" height="350"
+                                    loading="lazy" decoding="async" style="height:100%;width:100%;object-fit:cover">
+                            </picture>
+                            <div class="story-overlay"></div>
+                        </div>
                         <div class="story-card">
                             <picture>
                                 <source srcset="assets/gallery_1.webp" type="image/webp"><img src="assets/gallery_1.png"
@@ -1271,69 +1284,7 @@
         </div>
     </section>
 
-    <!-- Reviews Section -->
-    <section class="reviews-section" style="background-color: var(--color-bg); padding: 60px 0 20px;">
-        <div class="container">
-            <div style="display: flex; align-items: center; gap: 15px; margin-bottom: 40px; justify-content: center;">
-                <img loading="lazy" decoding="async" src="https://img.icons8.com/color/48/google-logo.png" alt="Google"
-                    style="height: 25px;">
-                <h3 style="font-size: 1.2rem; color: var(--color-accent);">Lo que dicen nuestros alumnos</h3>
-                <div style="color: #fbbc05; font-size: 1.2rem;">★★★★★</div>
-            </div>
-            <div class="benefits-grid" style="grid-template-columns: repeat(auto-fit, minmax(300px, 1fr)); gap: 20px;">
-                <!-- Review 1 -->
-                <div class="benefit-card" style="padding: 25px; border: 1px solid #e0e0e0; box-shadow: none;">
-                    <div style="display: flex; align-items: center; gap: 12px; margin-bottom: 15px;">
-                        <picture>
-                            <source srcset="assets/alumna_elena_review.webp" type="image/webp"><img
-                                src="assets/alumna_elena_review.png" alt="Elena" width="45" height="45"
-                                style="border-radius:50%;object-fit:cover" loading="lazy" decoding="async">
-                        </picture>
-                        <div>
-                            <div style="font-weight: 700; font-size: 0.9rem;">Elena</div>
-                            <div style="color: #fbbc05; font-size: 0.8rem;">★★★★★</div>
-                        </div>
-                    </div>
-                    <p style="font-size: 0.85rem; color: var(--color-text-light); font-style: italic;">“Pensé que sería
-                        complicado, pero empecé desde cero y en poco tiempo ya tenía mis primeras piezas. Me gustó
-                        porque es muy práctico.”</p>
-                </div>
-                <!-- Review 2 -->
-                <div class="benefit-card" style="padding: 25px; border: 1px solid #e0e0e0; box-shadow: none;">
-                    <div style="display: flex; align-items: center; gap: 12px; margin-bottom: 15px;">
-                        <picture>
-                            <source srcset="assets/alumno_marcos_review.webp" type="image/webp"><img
-                                src="assets/alumno_marcos_review.png" alt="Marcos" width="45" height="45"
-                                style="border-radius:50%;object-fit:cover" loading="lazy" decoding="async">
-                        </picture>
-                        <div>
-                            <div style="font-weight: 700; font-size: 0.9rem;">Marcos</div>
-                            <div style="color: #fbbc05; font-size: 0.8rem;">★★★★★</div>
-                        </div>
-                    </div>
-                    <p style="font-size: 0.85rem; color: var(--color-text-light); font-style: italic;">“No sabía nada de
-                        acabados y esa parte me ayudó bastante. Con cosas simples logré mejorar mucho el resultado.”</p>
-                </div>
-                <!-- Review 3 -->
-                <div class="benefit-card" style="padding: 25px; border: 1px solid #e0e0e0; box-shadow: none;">
-                    <div style="display: flex; align-items: center; gap: 12px; margin-bottom: 15px;">
-                        <picture>
-                            <source srcset="assets/alumna_sofia_review.webp" type="image/webp"><img
-                                src="assets/alumna_sofia_review.png" alt="Sofía" width="45" height="45"
-                                style="border-radius:50%;object-fit:cover" loading="lazy" decoding="async">
-                        </picture>
-                        <div>
-                            <div style="font-weight: 700; font-size: 0.9rem;">Sofía</div>
-                            <div style="color: #fbbc05; font-size: 0.8rem;">★★★★★</div>
-                        </div>
-                    </div>
-                    <p style="font-size: 0.85rem; color: var(--color-text-light); font-style: italic;">“Empecé solo por
-                        curiosidad y terminé vendiendo mis primeros aretes a conocidos. Está bueno para quien quiere
-                        empezar sin complicarse.”</p>
-                </div>
-            </div>
-        </div>
-    </section>
+
 
     <!-- Business Section -->
     <section id="negocio" style="background-color: var(--color-bg); padding: 80px 0; overflow: hidden;">
@@ -1472,6 +1423,8 @@
                     flex-direction: column;
                     gap: 25px;
                     border-bottom: none;
+                    padding-bottom: 0;
+                    margin-bottom: 30px;
                 }
 
                 .pricing-border-center {
@@ -1612,15 +1565,24 @@
 
                     <!-- Center: Price -->
                     <div class="pricing-col pricing-border-center">
-                        <div style="color: var(--color-accent); opacity: 0.8; font-size: 1.1rem; margin-bottom: 5px;">
-                            Precio regular: <span style="text-decoration: line-through;">$47</span></div>
+                        <div style="color: var(--color-accent); opacity: 0.9; font-size: 1.1rem; margin-bottom: 8px; font-weight: 600;">
+                            Aprovecha tu oferta única
+                        </div>
                         <div
-                            style="display: inline-block; background-color: rgba(201, 122, 99, 0.1); color: var(--color-primary); font-weight: 700; font-size: 0.8rem; padding: 5px 15px; border-radius: 15px; margin-bottom: 15px;">
-                            (70% DE DESCUENTO)</div>
+                            style="display: inline-block; background-color: var(--color-primary); color: white; font-weight: 800; font-size: 1.05rem; padding: 6px 15px; border-radius: 10px; margin-bottom: 15px; box-shadow: 0 4px 10px rgba(201, 122, 99, 0.3);">
+                            70% OFF
+                        </div>
+                        <div style="margin-bottom: 15px;">
+                            <div style="color: var(--color-accent); font-size: 1.05rem; margin-bottom: 5px; opacity: 0.8;">
+                                Precio regular: <span style="text-decoration: line-through;">$897 MXN</span>
+                            </div>
+                            <div style="color: var(--color-primary); font-size: 2.2rem; font-weight: 900; line-height: 1;">
+                                Hoy: $257 MXN
+                            </div>
+                        </div>
                         <div
-                            style="color: var(--color-accent); font-size: 1.8rem; display: flex; align-items: baseline; justify-content: center; gap: 10px;">
-                            Hoy: <span
-                                style="font-size: 4.5rem; font-weight: 800; line-height: 1; letter-spacing: -2px;">$14</span>
+                            style="color: var(--color-accent); font-size: 1.1rem; font-weight: 600; display: flex; align-items: center; justify-content: center; gap: 10px; opacity: 0.8;">
+                            Al hacer clic abajo ↓
                         </div>
                     </div>
 
@@ -1681,7 +1643,7 @@
 
                 <!-- CTA -->
                 <div style="text-align: center; margin-top: 30px;">
-                    <a href="https://pay.hotmart.com/B105523460F?off=csqgjy3n&checkoutMode=10"
+                    <a href="https://pay.hotmart.com/B105523460F?off=va82a34b&checkoutMode=10"
                         style="display: block; background-color: #C2755D; color: white; font-weight: 700; font-size: 1.15rem; padding: 22px; border-radius: 12px; text-decoration: none; box-shadow: 0 4px 15px rgba(201, 122, 99, 0.3); transition: all 0.3s; margin-bottom: 15px;">
                         🔒 ACCEDE AHORA CON 70% DE DESCUENTO <span style="margin-left: 8px; font-weight: 900;">›</span>
                     </a>
@@ -1693,20 +1655,19 @@
 
                 <!-- Security Badges -->
                 <div
-                    style="display: flex; flex-wrap: wrap; margin-top: 30px; padding-top: 20px; justify-content: center; gap: 20px;">
+                    style="display: flex; flex-wrap: wrap; margin-top: 30px; padding-top: 20px; justify-content: center; gap: 15px;">
                     <div
-                        style="background-color: var(--color-bg); padding: 15px 20px; border-radius: 10px; display: flex; align-items: center; gap: 15px; flex: 1; min-width: 250px; justify-content: center;">
+                        style="background-color: var(--color-bg); padding: 15px 10px; border-radius: 10px; display: flex; align-items: center; gap: 8px; flex: 1; min-width: 240px; justify-content: center; white-space: nowrap;">
                         <img decoding="async" src="https://img.icons8.com/ios-glyphs/30/B8926A/shield.png" alt="Seguro"
                             width="20" height="20" loading="lazy">
                         <span style="font-size: 0.85rem; color: var(--color-accent); font-weight: 600;">Pago 100%
                             seguro</span>
                     </div>
                     <div
-                        style="background-color: var(--color-bg); padding: 15px 20px; border-radius: 10px; display: flex; align-items: center; gap: 15px; flex: 1; min-width: 250px; justify-content: center;">
+                        style="background-color: var(--color-bg); padding: 15px 10px; border-radius: 10px; display: flex; align-items: center; gap: 8px; flex: 1; min-width: 240px; justify-content: center; white-space: nowrap;">
                         <img decoding="async" src="https://img.icons8.com/ios-glyphs/30/B8926A/new-post.png" alt="Email"
                             width="20" height="20" loading="lazy">
-                        <span style="font-size: 0.85rem; color: var(--color-accent); font-weight: 600;">Acceso enviado a
-                            tu email al instante</span>
+                        <span style="font-size: 0.8rem; color: var(--color-accent); font-weight: 600;">Acceso enviado a tu email al instante</span>
                     </div>
                 </div>
 
@@ -1827,7 +1788,7 @@
             </div>
 
             <div style="text-align: center; max-width: 500px; margin-left: auto; margin-right: auto;">
-                <a href="https://pay.hotmart.com/B105523460F?off=csqgjy3n&checkoutMode=10"
+                <a href="https://pay.hotmart.com/B105523460F?off=va82a34b&checkoutMode=10"
                     style="display: block; background-color: #C2755D; color: white; font-weight: 700; font-size: 1.15rem; padding: 22px; border-radius: 12px; text-decoration: none; box-shadow: 0 4px 15px rgba(201, 122, 99, 0.3); transition: all 0.3s; margin-bottom: 15px;">
                     🔒 ACCEDE AHORA CON 70% DE DESCUENTO <span style="margin-left: 8px; font-weight: 900;">›</span>
                 </a>
