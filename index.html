@@ -30,9 +30,16 @@
 
     <!-- GTM deferred to avoid render-blocking -->
     <script>
-        window.addEventListener('load', function () {
+        let gtmFired = false;
+        function loadGTM() {
+            if (gtmFired) return;
+            gtmFired = true;
             (function (w, d, s, l, i) { w[l] = w[l] || []; w[l].push({ 'gtm.start': new Date().getTime(), event: 'gtm.js' }); var f = d.getElementsByTagName(s)[0], j = d.createElement(s), dl = l != 'dataLayer' ? '&l=' + l : ''; j.async = true; j.src = 'https://www.googletagmanager.com/gtm.js?id=' + i + dl; f.parentNode.insertBefore(j, f); })(window, document, 'script', 'dataLayer', 'GTM-PDV4PF2D');
-        });
+        }
+        window.addEventListener('scroll', loadGTM, { once: true, passive: true });
+        window.addEventListener('touchstart', loadGTM, { once: true, passive: true });
+        window.addEventListener('mousemove', loadGTM, { once: true, passive: true });
+        setTimeout(loadGTM, 3500);
     </script>
 
     <style>
@@ -120,10 +127,7 @@
 
 <body>
 
-    <!-- Google Tag Manager (noscript) -->
-    <noscript><iframe src="https://www.googletagmanager.com/ns.html?id=GTM-PDV4PF2D" height="0" width="0"
-            style="display:none;visibility:hidden"></iframe></noscript>
-    <!-- End Google Tag Manager (noscript) -->
+
 
     <!-- Scarcity Timer Bar -->
     <div class="scarcity-bar">
