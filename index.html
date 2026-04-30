@@ -15,13 +15,13 @@
     <link rel="preconnect" href="https://fonts.googleapis.com">
     <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
 
-    <!-- Fonts: only needed weights, display=swap prevents FOIT -->
+    <!-- Fonts: only needed weights, display=optional prevents CLS -->
     <link rel="preload" as="style"
-        href="https://fonts.googleapis.com/css2?family=Caveat:wght@600;700&family=Inter:wght@400;500;600;700;800&display=swap"
+        href="https://fonts.googleapis.com/css2?family=Caveat:wght@600;700&family=Inter:wght@400;500;600;700;800&display=optional"
         onload="this.onload=null;this.rel='stylesheet'">
     <noscript>
         <link rel="stylesheet"
-            href="https://fonts.googleapis.com/css2?family=Caveat:wght@600;700&family=Inter:wght@400;500;600;700;800&display=swap">
+            href="https://fonts.googleapis.com/css2?family=Caveat:wght@600;700&family=Inter:wght@400;500;600;700;800&display=optional">
     </noscript>
 
     <!-- Main stylesheet -->
@@ -39,7 +39,7 @@
         window.addEventListener('scroll', loadGTM, { once: true, passive: true });
         window.addEventListener('touchstart', loadGTM, { once: true, passive: true });
         window.addEventListener('mousemove', loadGTM, { once: true, passive: true });
-        setTimeout(loadGTM, 3500);
+        setTimeout(loadGTM, 8500);
     </script>
 
     <style>
@@ -272,8 +272,8 @@
                 <div class="hero-image">
                     <img src="assets/hero_woman_new.webp" alt="Mujer feliz creando cerámica fría" width="600"
                         height="700"
-                        style="width: 100%; height: auto; border-radius: 20px; box-shadow: var(--shadow-lg); object-fit: cover; max-height: 700px;"
-                        loading="eager" decoding="sync" fetchpriority="high">
+                        style="width: 100%; height: auto; aspect-ratio: 600 / 700; border-radius: 20px; box-shadow: var(--shadow-lg); object-fit: cover; max-height: 700px;"
+                        loading="eager" decoding="async" fetchpriority="high">
                 </div>
             </div>
         </div>
