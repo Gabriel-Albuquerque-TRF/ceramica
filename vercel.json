@@ -3,7 +3,8 @@
   "rewrites": [
     { "source": "/", "destination": "/index.html" },
     { "source": "/ebook", "destination": "/ebook.html" },
-    { "source": "/50-modelos-hoy", "destination": "/50-modelos-hoy.html" }
+    { "source": "/50-modelos-hoy", "destination": "/50-modelos-hoy.html" },
+    { "source": "/vsl", "destination": "/vsl.html" }
   ],
   "headers": [
     {
