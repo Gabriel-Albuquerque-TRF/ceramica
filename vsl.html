@@ -5,7 +5,8 @@
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>La Biblia de la Cerámica Fría – Mira esto antes de continuar</title>
-    <meta name="description" content="Un mensaje especial para ti. Mira el video completo y descubre cómo transformar tu vida con la cerámica fría.">
+    <meta name="description"
+        content="Un mensaje especial para ti. Mira el video completo y descubre cómo transformar tu vida con la cerámica fría.">
     <meta name="robots" content="noindex, nofollow">
 
     <!-- Preconnect for fonts -->
@@ -37,19 +38,27 @@
 
     <style>
         /* ── Reset & Base ── */
-        *, *::before, *::after { box-sizing: border-box; margin: 0; padding: 0; }
-
-        :root {
-            --primary:      #C97A63;
-            --primary-dark: #a85e4a;
-            --accent:       #2C3E50;
-            --bg:           #FDFAF7;
-            --white:        #ffffff;
-            --text-light:   #7f8c8d;
-            --shadow-lg:    0 20px 60px rgba(0,0,0,0.12);
+        *,
+        *::before,
+        *::after {
+            box-sizing: border-box;
+            margin: 0;
+            padding: 0;
         }
 
-        html { scroll-behavior: smooth; }
+        :root {
+            --primary: #C97A63;
+            --primary-dark: #a85e4a;
+            --accent: #2C3E50;
+            --bg: #FDFAF7;
+            --white: #ffffff;
+            --text-light: #7f8c8d;
+            --shadow-lg: 0 20px 60px rgba(0, 0, 0, 0.12);
+        }
+
+        html {
+            scroll-behavior: smooth;
+        }
 
         body {
             font-family: 'Inter', system-ui, sans-serif;
@@ -79,25 +88,37 @@
             display: inline-flex;
             align-items: center;
             gap: 8px;
-            background: rgba(201,122,99,0.12);
+            background: rgba(201, 122, 99, 0.12);
             color: var(--primary);
             padding: 8px 18px;
             border-radius: 30px;
             font-size: 0.82rem;
             font-weight: 700;
             letter-spacing: 0.4px;
-            border: 1px solid rgba(201,122,99,0.25);
+            border: 1px solid rgba(201, 122, 99, 0.25);
         }
+
         .vsl-badge .dot {
-            width: 8px; height: 8px;
+            width: 8px;
+            height: 8px;
             background: var(--primary);
             border-radius: 50%;
             box-shadow: 0 0 8px var(--primary);
             animation: pulse-dot 1.8s ease-in-out infinite;
         }
+
         @keyframes pulse-dot {
-            0%, 100% { opacity: 1; transform: scale(1); }
-            50%       { opacity: 0.6; transform: scale(1.3); }
+
+            0%,
+            100% {
+                opacity: 1;
+                transform: scale(1);
+            }
+
+            50% {
+                opacity: 0.6;
+                transform: scale(1.3);
+            }
         }
 
         /* ── Headline ── */
@@ -108,9 +129,11 @@
             font-size: clamp(1.9rem, 6vw, 2.9rem);
             color: var(--accent);
         }
+
         .vsl-headline .highlight {
             color: var(--primary);
         }
+
         .vsl-headline .cursive {
             font-family: 'Caveat', cursive;
             font-size: clamp(2.6rem, 8.5vw, 4rem);
@@ -128,6 +151,7 @@
             line-height: 1.6;
             max-width: 620px;
         }
+
         .vsl-subheadline strong {
             color: var(--accent);
         }
@@ -140,13 +164,16 @@
             border-radius: 20px;
             overflow: hidden;
             box-shadow: var(--shadow-lg);
-            border: 3px solid rgba(201,122,99,0.2);
+            border: 3px solid rgba(201, 122, 99, 0.2);
             position: relative;
         }
+
         .vsl-video-ratio {
             position: relative;
-            padding-top: 177.78%; /* 9:16 vertical aspect ratio */
+            padding-top: 177.78%;
+            /* 9:16 vertical aspect ratio */
         }
+
         .vsl-video-ratio iframe {
             border: 0;
             position: absolute;
@@ -155,9 +182,12 @@
             height: 100%;
             width: 100%;
         }
+
         /* On small phones, let it fill the full width */
         @media (max-width: 440px) {
-            .vsl-video-wrapper { max-width: 100%; }
+            .vsl-video-wrapper {
+                max-width: 100%;
+            }
         }
 
         /* ── CTA Section ── */
@@ -198,7 +228,7 @@
         /* Locked state */
         #cta-btn.locked {
             background: #c9b8b2;
-            color: rgba(255,255,255,0.6);
+            color: rgba(255, 255, 255, 0.6);
             box-shadow: none;
             filter: grayscale(0.3);
         }
@@ -208,36 +238,58 @@
             background: linear-gradient(135deg, #27ae60 0%, #1e8449 100%);
             color: #fff;
             cursor: pointer;
-            box-shadow: 0 8px 30px rgba(39,174,96,0.45);
+            box-shadow: 0 8px 30px rgba(39, 174, 96, 0.45);
             animation: btn-appear 0.6s cubic-bezier(0.34, 1.56, 0.64, 1) both;
         }
+
         #cta-btn.unlocked:hover {
             transform: translateY(-3px) scale(1.015);
-            box-shadow: 0 14px 40px rgba(39,174,96,0.55);
+            box-shadow: 0 14px 40px rgba(39, 174, 96, 0.55);
         }
+
         #cta-btn.unlocked:active {
             transform: translateY(0) scale(0.99);
         }
+
         /* Shimmer on unlocked */
         #cta-btn.unlocked::after {
             content: '';
             position: absolute;
-            top: 0; left: -75%;
-            width: 50%; height: 100%;
-            background: linear-gradient(90deg, transparent, rgba(255,255,255,0.25), transparent);
+            top: 0;
+            left: -75%;
+            width: 50%;
+            height: 100%;
+            background: linear-gradient(90deg, transparent, rgba(255, 255, 255, 0.25), transparent);
             animation: shimmer 2.5s infinite 0.8s;
         }
+
         @keyframes shimmer {
-            0%   { left: -75%; }
-            100% { left: 125%; }
+            0% {
+                left: -75%;
+            }
+
+            100% {
+                left: 125%;
+            }
         }
+
         @keyframes btn-appear {
-            from { opacity: 0; transform: scale(0.85); }
-            to   { opacity: 1; transform: scale(1); }
+            from {
+                opacity: 0;
+                transform: scale(0.85);
+            }
+
+            to {
+                opacity: 1;
+                transform: scale(1);
+            }
         }
 
         /* Lock icon */
-        .btn-icon { font-size: 1.2rem; flex-shrink: 0; }
+        .btn-icon {
+            font-size: 1.2rem;
+            flex-shrink: 0;
+        }
 
 
 
@@ -250,13 +302,20 @@
             padding: 24px 20px;
             font-size: 0.75rem;
             color: #bbb;
-            border-top: 1px solid rgba(0,0,0,0.06);
+            border-top: 1px solid rgba(0, 0, 0, 0.06);
         }
 
         /* ── Responsive ── */
         @media (max-width: 600px) {
-            .vsl-page { padding: 32px 16px 60px; gap: 28px; }
-            #cta-btn { font-size: 1rem; padding: 18px 24px; }
+            .vsl-page {
+                padding: 32px 16px 60px;
+                gap: 28px;
+            }
+
+            #cta-btn {
+                font-size: 1rem;
+                padding: 18px 24px;
+            }
         }
     </style>
 </head>
@@ -290,8 +349,7 @@
             <div class="vsl-video-ratio">
                 <iframe
                     src="https://player.mediadelivery.net/embed/650863/8e367e45-9a37-48c0-b545-85ec1d1d3e8f?autoplay=true&loop=false&muted=false&preload=true&responsive=true"
-                    loading="lazy"
-                    allow="accelerometer;gyroscope;autoplay;encrypted-media;picture-in-picture;"
+                    loading="lazy" allow="accelerometer;gyroscope;autoplay;encrypted-media;picture-in-picture;"
                     allowfullscreen="true">
                 </iframe>
             </div>
@@ -323,10 +381,10 @@
     <script>
         // ── Config ──────────────────────────────────────────────────────────
         const UNLOCK_SECONDS = 88; // 1 min 28 sec
-        const CTA_HREF       = '/'; // ← swap for the real checkout URL
+        const CTA_HREF = '/'; // ← swap for the real checkout URL
 
         // ── Elements ─────────────────────────────────────────────────────────
-        const btn     = document.getElementById('cta-btn');
+        const btn = document.getElementById('cta-btn');
         const btnIcon = document.getElementById('btn-icon');
         const btnText = document.getElementById('btn-text');
 
@@ -360,5 +418,99 @@
         }, 1000);
     </script>
 
+    <script>
+        (function () {
+
+            // CONFIG
+            const COOKIE_NAME = "utm_tracking";
+            const COOKIE_DAYS = 7;
+            const HOTMART_DOMAINS = [
+                "pay.hotmart.com",
+                "payment.hotmart.com"
+            ];
+
+            // GET PARAMS FROM URL
+            function getUTMsFromURL() {
+                const params = new URLSearchParams(window.location.search);
+
+                return {
+                    utm_source: params.get("utm_source") || "",
+                    utm_medium: params.get("utm_medium") || "",
+                    utm_campaign: params.get("utm_campaign") || "",
+                    utm_term: params.get("utm_term") || "",
+                    utm_content: params.get("utm_content") || ""
+                };
+            }
+
+            // SAVE COOKIE
+            function setCookie(name, value, days) {
+                const expires = new Date(Date.now() + days * 86400000).toUTCString();
+                document.cookie = name + "=" + encodeURIComponent(JSON.stringify(value)) + "; expires=" + expires + "; path=/";
+            }
+
+            // READ COOKIE
+            function getCookie(name) {
+                const match = document.cookie.match(new RegExp('(^| )' + name + '=([^;]+)'));
+                if (match) {
+                    try {
+                        return JSON.parse(decodeURIComponent(match[2]));
+                    } catch (e) {
+                        return null;
+                    }
+                }
+                return null;
+            }
+
+            // BUILD SCK PARAM
+            function buildSCK(data) {
+                if (!data) return "";
+
+                const sck = [
+                    data.utm_source || "",
+                    data.utm_medium || "",
+                    data.utm_campaign || "",
+                    data.utm_term || "",
+                    data.utm_content || ""
+                ].join("|");
+
+                return sck.replace(/\|+$/, ""); // remove trailing |
+            }
+
+            // CHECK IF LINK IS HOTMART
+            function isHotmartLink(url) {
+                return HOTMART_DOMAINS.some(domain => url.includes(domain));
+            }
+
+            // MAIN LOGIC
+
+            const utmsFromURL = getUTMsFromURL();
+            let storedUTMs = getCookie(COOKIE_NAME);
+
+            // If URL has UTMs, overwrite cookie
+            if (utmsFromURL.utm_source || utmsFromURL.utm_campaign) {
+                setCookie(COOKIE_NAME, utmsFromURL, COOKIE_DAYS);
+                storedUTMs = utmsFromURL;
+            }
+
+            const sck = buildSCK(storedUTMs);
+
+            if (!sck) return;
+
+            // APPLY TO LINKS
+            document.querySelectorAll("a").forEach(link => {
+                if (link.href && isHotmartLink(link.href)) {
+
+                    if (!link.href.includes("sck=")) {
+                        const separator = link.href.includes("?") ? "&" : "?";
+                        link.href += separator + "sck=" + encodeURIComponent(sck);
+                    }
+
+                }
+            });
+
+        })();
+    </script>
+
 </body>
+
 </html>
