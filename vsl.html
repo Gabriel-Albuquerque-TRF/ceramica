@@ -420,7 +420,6 @@
 
     <script>
         (function () {
-
             // CONFIG
             const COOKIE_NAME = "utm_tracking";
             const COOKIE_DAYS = 7;
@@ -429,10 +428,9 @@
                 "payment.hotmart.com"
             ];
 
-            // GET PARAMS FROM URL
+            // 1. PEGA OS UTMS DA URL
             function getUTMsFromURL() {
                 const params = new URLSearchParams(window.location.search);
-
                 return {
                     utm_source: params.get("utm_source") || "",
                     utm_medium: params.get("utm_medium") || "",
@@ -442,13 +440,14 @@
                 };
             }
 
-            // SAVE COOKIE
+            // 2. SALVA O COOKIE NA RAIZ DO DOMÍNIO (Evita perda entre subdomínios)
             function setCookie(name, value, days) {
                 const expires = new Date(Date.now() + days * 86400000).toUTCString();
-                document.cookie = name + "=" + encodeURIComponent(JSON.stringify(value)) + "; expires=" + expires + "; path=/";
+                const rootDomain = window.location.hostname.replace('www.', '');
+                document.cookie = name + "=" + encodeURIComponent(JSON.stringify(value)) + "; expires=" + expires + "; path=/; domain=." + rootDomain;
             }
 
-            // READ COOKIE
+            // 3. LÊ O COOKIE
             function getCookie(name) {
                 const match = document.cookie.match(new RegExp('(^| )' + name + '=([^;]+)'));
                 if (match) {
@@ -461,10 +460,9 @@
                 return null;
             }
 
-            // BUILD SCK PARAM
+            // 4. MONTA O PARÂMETRO SCK PARA A HOTMART
             function buildSCK(data) {
                 if (!data) return "";
-
                 const sck = [
                     data.utm_source || "",
                     data.utm_medium || "",
@@ -472,41 +470,61 @@
                     data.utm_term || "",
                     data.utm_content || ""
                 ].join("|");
-
-                return sck.replace(/\|+$/, ""); // remove trailing |
+                return sck.replace(/\|+$/, "");
             }
 
-            // CHECK IF LINK IS HOTMART
-            function isHotmartLink(url) {
-                return HOTMART_DOMAINS.some(domain => url.includes(domain));
-            }
+            // 5. LÓGICA PRINCIPAL (Só roda após a página carregar os botões)
+            function processLinks() {
+                const utmsFromURL = getUTMsFromURL();
+                let storedUTMs = getCookie(COOKIE_NAME);
 
-            // MAIN LOGIC
-
-            const utmsFromURL = getUTMsFromURL();
-            let storedUTMs = getCookie(COOKIE_NAME);
-
-            // If URL has UTMs, overwrite cookie
-            if (utmsFromURL.utm_source || utmsFromURL.utm_campaign) {
-                setCookie(COOKIE_NAME, utmsFromURL, COOKIE_DAYS);
-                storedUTMs = utmsFromURL;
-            }
-
-            const sck = buildSCK(storedUTMs);
-
-            if (!sck) return;
-
-            // APPLY TO LINKS
-            document.querySelectorAll("a").forEach(link => {
-                if (link.href && isHotmartLink(link.href)) {
-
-                    if (!link.href.includes("sck=")) {
-                        const separator = link.href.includes("?") ? "&" : "?";
-                        link.href += separator + "sck=" + encodeURIComponent(sck);
-                    }
-
+                // Se a URL atual tem UTM, atualiza o Cookie
+                if (utmsFromURL.utm_source || utmsFromURL.utm_campaign) {
+                    setCookie(COOKIE_NAME, utmsFromURL, COOKIE_DAYS);
+                    storedUTMs = utmsFromURL;
                 }
-            });
+
+                if (!storedUTMs) return;
+
+                const sck = buildSCK(storedUTMs);
+
+                // Cria uma string de UTMs para passar para os links internos da VSL pra Index
+                const queryString = Object.keys(storedUTMs)
+                    .filter(key => storedUTMs[key] !== "")
+                    .map(key => key + "=" + encodeURIComponent(storedUTMs[key]))
+                    .join("&");
+
+                document.querySelectorAll("a").forEach(link => {
+                    const href = link.href;
+                    if (!href) return;
+
+                    // Cenario A: Link indo direto para a Hotmart (Checkout)
+                    if (HOTMART_DOMAINS.some(domain => href.includes(domain))) {
+                        if (!href.includes("sck=")) {
+                            const separator = href.includes("?") ? "&" : "?";
+                            link.href += separator + "sck=" + sck;
+                        }
+                    }
+                    // Cenario B: Link indo da VSL para a sua Index (Repassa as UTMs na URL)
+                    else if (href.includes(window.location.hostname) && !href.includes("utm_source") && queryString) {
+                        const separator = href.includes("?") ? "&" : "?";
+                        link.href += separator + queryString;
+                    }
+                });
+            }
+
+            // GARANTIA DE EXECUÇÃO: Só processa os links depois que o DOM existir
+            if (document.readyState === "loading") {
+                document.addEventListener("DOMContentLoaded", processLinks);
+            } else {
+                processLinks();
+            }
+
+            // Extra: Ouve cliques caso os botões sejam gerados dinamicamente (Popups/Elementor)
+            document.body.addEventListener('click', function (e) {
+                const link = e.target.closest('a');
+                if (link) processLinks();
+            }, { capture: true });
 
         })();
     </script>
