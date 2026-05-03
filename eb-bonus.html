@@ -1,0 +1,1048 @@
+<!DOCTYPE html>
+<html lang="es">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>Tus Bonos Incluidos – La Biblia de la Cerámica Fría</title>
+<meta name="description" content="Accede a tus 3 bonos exclusivos: guía para principiantes, lista de materiales e ideas para tus primeras piezas de cerámica fría.">
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+<link rel="preload" as="style" href="https://fonts.googleapis.com/css2?family=Caveat:wght@600;700&family=Inter:wght@400;500;600;700;800&display=optional" onload="this.onload=null;this.rel='stylesheet'">
+<noscript><link rel="stylesheet" href="https://fonts.googleapis.com/css2?family=Caveat:wght@600;700&family=Inter:wght@400;500;600;700;800&display=optional"></noscript>
+<style>
+:root{
+  --primary:#C97A63;--primary-dark:#A65F4C;--secondary:#B8926A;
+  --accent:#2C3E50;--bg:#FAF8F5;--white:#fff;
+  --text:#2C2824;--text-light:#5C4E3C;
+  --clay:#F0EBE1;--clay2:#E1D5C1;
+  --shadow-sm:0 4px 6px -1px rgba(0,0,0,.05);
+  --shadow-lg:0 20px 25px -5px rgba(0,0,0,.1),0 10px 10px -5px rgba(0,0,0,.04);
+  --radius:24px;--transition:all .3s cubic-bezier(.4,0,.2,1);
+}
+*{margin:0;padding:0;box-sizing:border-box;}
+body{background:var(--bg);color:var(--text);font-family:'Inter',sans-serif;line-height:1.6;overflow-x:hidden;}
+.container{max-width:860px;margin:0 auto;padding:0 24px;}
+
+/* HEADER */
+.page-header{background:linear-gradient(135deg,#2C3E50 0%,#3d5166 100%);padding:52px 24px 60px;text-align:center;position:relative;overflow:hidden;}
+.page-header::before{content:'';position:absolute;top:-40%;right:-10%;width:500px;height:500px;background:radial-gradient(circle,rgba(201,122,99,.15) 0%,transparent 70%);}
+.header-eyebrow{display:inline-flex;align-items:center;gap:8px;background:rgba(201,122,99,.18);border:1px solid rgba(201,122,99,.35);color:#f0b89a;padding:7px 18px;border-radius:30px;font-size:.75rem;font-weight:700;letter-spacing:2px;text-transform:uppercase;margin-bottom:20px;position:relative;z-index:1;}
+.header-dot{width:7px;height:7px;background:#f0b89a;border-radius:50%;box-shadow:0 0 8px #f0b89a;animation:blink 2s infinite;}
+@keyframes blink{0%,100%{opacity:1;}50%{opacity:.3;}}
+.page-header h1{font-size:clamp(1.8rem,5vw,2.6rem);font-weight:800;color:#fff;line-height:1.2;letter-spacing:-.02em;margin-bottom:12px;position:relative;z-index:1;}
+.page-header h1 .caveat{font-family:'Caveat',cursive;font-size:1.3em;font-weight:600;color:#f0b89a;display:block;line-height:1;margin-top:4px;}
+.page-header p{font-size:.98rem;color:rgba(255,255,255,.7);max-width:500px;margin:0 auto;position:relative;z-index:1;}
+.header-rule{width:50px;height:3px;background:linear-gradient(90deg,var(--primary),var(--secondary));border-radius:2px;margin:20px auto 0;position:relative;z-index:1;}
+
+/* BONUS NAV */
+.bonus-nav{display:flex;gap:12px;flex-wrap:wrap;justify-content:center;padding:28px 24px 0;}
+.bonus-nav-item{display:flex;align-items:center;gap:8px;padding:10px 22px;border-radius:50px;font-size:.82rem;font-weight:700;text-decoration:none;transition:var(--transition);border:2px solid transparent;}
+.bonus-nav-item.active{background:var(--primary);color:#fff;border-color:var(--primary);box-shadow:0 8px 20px rgba(201,122,99,.3);}
+.bonus-nav-item.locked{background:var(--white);color:var(--text-light);border-color:var(--clay2);cursor:default;opacity:.7;}
+
+/* MAIN LAYOUT */
+.bonuses-wrap{padding:40px 0 80px;}
+
+/* BONUS SECTION HEADER */
+.bonus-section-header{display:flex;align-items:center;gap:16px;margin-bottom:32px;}
+.bonus-num{width:52px;height:52px;border-radius:50%;background:var(--primary);color:#fff;font-size:1.3rem;font-weight:800;display:flex;align-items:center;justify-content:center;flex-shrink:0;box-shadow:0 8px 20px rgba(201,122,99,.3);}
+.bonus-section-header .meta{text-align:left;}
+.bonus-section-header .meta .eyebrow{font-size:.72rem;font-weight:700;letter-spacing:2px;text-transform:uppercase;color:var(--primary);margin-bottom:4px;}
+.bonus-section-header .meta h2{font-size:clamp(1.25rem,3vw,1.6rem);font-weight:800;color:var(--accent);line-height:1.2;letter-spacing:-.02em;}
+
+/* HERO IMAGE */
+.bonus-hero-img{width:100%;height:280px;object-fit:cover;border-radius:var(--radius);margin-bottom:36px;box-shadow:var(--shadow-lg);}
+
+/* CONTENT BLOCKS */
+.content-block{background:var(--white);border-radius:var(--radius);padding:36px;margin-bottom:24px;border:1px solid var(--clay);box-shadow:var(--shadow-sm);}
+.content-block h3{font-size:1.15rem;font-weight:800;color:var(--accent);margin-bottom:16px;display:flex;align-items:center;gap:10px;}
+.content-block h3 .icon{width:36px;height:36px;border-radius:50%;background:rgba(201,122,99,.12);display:flex;align-items:center;justify-content:center;font-size:1.1rem;flex-shrink:0;}
+.content-block p{font-size:.97rem;color:var(--text-light);line-height:1.7;margin-bottom:14px;}
+.content-block p:last-child{margin-bottom:0;}
+.content-block p strong{color:var(--text);font-weight:700;}
+
+/* CHECK LIST */
+.check-list{list-style:none;padding:0;margin:0;}
+.check-list li{position:relative;padding:10px 0 10px 34px;border-bottom:1px solid rgba(201,122,99,.1);font-size:.95rem;color:var(--text);line-height:1.6;}
+.check-list li:last-child{border-bottom:none;}
+.check-list li::before{content:'✓';background:var(--primary);color:#fff;width:22px;height:22px;border-radius:50%;font-size:.72rem;font-weight:700;position:absolute;left:0;top:11px;display:flex;align-items:center;justify-content:center;}
+
+/* ERROR CARDS */
+.errors-grid{display:grid;grid-template-columns:1fr 1fr;gap:16px;margin-top:4px;}
+.error-card{background:var(--bg);border-radius:16px;padding:20px;border:1px solid var(--clay2);position:relative;overflow:hidden;}
+.error-card::before{content:'';position:absolute;top:0;left:0;width:4px;height:100%;background:var(--primary);border-radius:4px 0 0 4px;}
+.error-num{font-size:.7rem;font-weight:800;color:var(--primary);letter-spacing:1.5px;text-transform:uppercase;margin-bottom:6px;}
+.error-card h4{font-size:.95rem;font-weight:700;color:var(--accent);margin-bottom:8px;line-height:1.3;}
+.error-card p{font-size:.85rem;color:var(--text-light);line-height:1.55;margin:0;}
+.error-card .fix{margin-top:10px;padding:8px 12px;background:rgba(201,122,99,.08);border-radius:8px;font-size:.82rem;color:var(--primary-dark);font-weight:600;}
+.error-card .fix span{font-weight:400;color:var(--text-light);}
+
+/* STEPS */
+.steps-list{list-style:none;padding:0;margin:0;counter-reset:step;}
+.steps-list li{display:grid;grid-template-columns:48px 1fr;gap:16px;padding:16px 0;border-bottom:1px dashed var(--clay2);align-items:start;}
+.steps-list li:last-child{border-bottom:none;}
+.step-num{counter-increment:step;width:48px;height:48px;background:linear-gradient(135deg,var(--primary),var(--secondary));color:#fff;border-radius:50%;display:flex;align-items:center;justify-content:center;font-size:1.1rem;font-weight:800;flex-shrink:0;box-shadow:0 4px 12px rgba(201,122,99,.3);}
+.step-body h4{font-size:.97rem;font-weight:700;color:var(--accent);margin-bottom:5px;}
+.step-body p{font-size:.88rem;color:var(--text-light);line-height:1.55;margin:0;}
+.step-body .tip{margin-top:8px;font-size:.82rem;background:rgba(201,122,99,.08);border-radius:8px;padding:7px 11px;color:var(--primary-dark);}
+
+/* HIGHLIGHT BOX */
+.highlight-box{background:linear-gradient(135deg,var(--accent) 0%,#3d5166 100%);border-radius:20px;padding:30px 32px;color:#fff;margin-bottom:24px;}
+.highlight-box h3{font-size:1.05rem;font-weight:700;color:#f0b89a;margin-bottom:10px;}
+.highlight-box p{font-size:.93rem;color:rgba(255,255,255,.8);line-height:1.65;margin:0;}
+.highlight-box .caveat-quote{font-family:'Caveat',cursive;font-size:1.6rem;font-weight:600;color:#fff;display:block;margin-top:14px;line-height:1.3;}
+
+/* LOCKED BONUSES */
+.locked-section{background:var(--white);border-radius:var(--radius);padding:36px;margin-bottom:24px;border:1px solid var(--clay);position:relative;overflow:hidden;opacity:.65;}
+.locked-section::after{content:'🔒 Próximamente';position:absolute;top:18px;right:20px;background:var(--clay2);color:var(--text-light);font-size:.72rem;font-weight:700;letter-spacing:1px;padding:5px 12px;border-radius:20px;}
+.locked-section h3{font-size:1.1rem;font-weight:700;color:var(--accent);}
+.locked-section p{font-size:.9rem;color:var(--text-light);margin-top:8px;}
+
+/* MATERIAL CARDS */
+.mat-grid{display:grid;grid-template-columns:1fr 1fr;gap:16px;margin-top:4px;}
+.mat-card{background:var(--bg);border-radius:16px;padding:20px 20px 20px 24px;border:1px solid var(--clay2);position:relative;overflow:hidden;}
+.mat-card::before{content:'';position:absolute;top:0;left:0;width:4px;height:100%;background:linear-gradient(180deg,var(--primary),var(--secondary));border-radius:4px 0 0 4px;}
+.mat-icon{font-size:1.6rem;margin-bottom:8px;display:block;}
+.mat-name{font-size:.95rem;font-weight:800;color:var(--accent);margin-bottom:4px;}
+.mat-qty{display:inline-block;background:rgba(201,122,99,.12);color:var(--primary-dark);font-size:.72rem;font-weight:700;padding:2px 10px;border-radius:10px;margin-bottom:8px;letter-spacing:.5px;}
+.mat-desc{font-size:.85rem;color:var(--text-light);line-height:1.55;margin:0 0 8px;}
+.mat-alt{font-size:.8rem;background:rgba(184,146,106,.1);border-radius:8px;padding:6px 10px;color:#7a5c30;}
+.mat-alt strong{color:var(--secondary);}
+
+/* SECTION DIVIDER */
+.section-divider{display:flex;align-items:center;gap:12px;margin:32px 0 20px;}
+.section-divider span{font-size:.72rem;font-weight:800;letter-spacing:2px;text-transform:uppercase;color:var(--primary);white-space:nowrap;}
+.section-divider::before,.section-divider::after{content:'';flex:1;height:1px;background:var(--clay2);}
+
+/* BUDGET TABLE */
+.budget-table{width:100%;border-collapse:collapse;margin-top:8px;font-size:.88rem;}
+.budget-table th{text-align:left;font-size:.72rem;font-weight:700;letter-spacing:1.5px;text-transform:uppercase;color:var(--primary);padding:8px 12px;border-bottom:2px solid var(--clay2);}
+.budget-table td{padding:11px 12px;border-bottom:1px solid var(--clay);color:var(--text-light);vertical-align:top;}
+.budget-table tr:last-child td{border-bottom:none;}
+.budget-table td:first-child{font-weight:600;color:var(--text);}
+.budget-table .total-row td{border-top:2px solid var(--clay2);font-weight:700;color:var(--accent);padding-top:14px;}
+.badge-range{display:inline-block;background:rgba(201,122,99,.1);color:var(--primary-dark);font-size:.78rem;font-weight:700;padding:2px 9px;border-radius:10px;}
+
+/* CAUTION BOX */
+.caution-box{background:#fff8f0;border:1px solid #f0c49a;border-radius:16px;padding:20px 24px;margin-top:4px;}
+.caution-box h4{font-size:.9rem;font-weight:700;color:#a65f00;margin-bottom:10px;display:flex;align-items:center;gap:8px;}
+.caution-list{list-style:none;padding:0;margin:0;}
+.caution-list li{position:relative;padding:7px 0 7px 30px;border-bottom:1px solid rgba(240,196,154,.4);font-size:.87rem;color:#7a5000;line-height:1.55;}
+.caution-list li:last-child{border-bottom:none;}
+.caution-list li::before{content:'✕';background:#e07b00;color:#fff;width:20px;height:20px;border-radius:50%;font-size:.65rem;font-weight:700;position:absolute;left:0;top:9px;display:flex;align-items:center;justify-content:center;}
+
+/* IDEA CARDS */
+.ideas-grid{display:grid;grid-template-columns:1fr 1fr;gap:18px;margin-top:16px;}
+.idea-card{background:var(--bg);border-radius:18px;padding:20px;border:1px solid var(--clay2);transition:var(--transition);}
+.idea-card:hover{border-color:var(--primary);transform:translateY(-3px);box-shadow:var(--shadow-lg);}
+.idea-header{display:flex;align-items:flex-start;gap:12px;margin-bottom:14px;}
+.idea-emoji{font-size:2rem;flex-shrink:0;line-height:1;}
+.idea-title{font-size:.95rem;font-weight:800;color:var(--accent);line-height:1.3;margin-bottom:6px;}
+.idea-badges{display:flex;gap:6px;flex-wrap:wrap;}
+.idea-badge{font-size:.68rem;font-weight:700;padding:2px 9px;border-radius:8px;}
+.badge-easy{background:#e8f5e9;color:#2e7d32;}
+.badge-med{background:#fff3e0;color:#e65100;}
+.badge-time{background:rgba(201,122,99,.1);color:var(--primary-dark);}
+.idea-steps{list-style:none;padding:0;margin:0 0 12px;counter-reset:istep;}
+.idea-steps li{position:relative;padding:5px 0 5px 22px;border-bottom:1px dashed var(--clay);font-size:.82rem;color:var(--text-light);line-height:1.45;}
+.idea-steps li:last-child{border-bottom:none;}
+.idea-steps li::before{counter-increment:istep;content:counter(istep);position:absolute;left:0;top:6px;width:16px;height:16px;background:var(--primary);color:#fff;border-radius:50%;font-size:.6rem;font-weight:700;display:flex;align-items:center;justify-content:center;}
+.idea-mats{display:flex;flex-wrap:wrap;gap:4px;}
+.mat-pill{font-size:.7rem;background:var(--clay);color:var(--text-light);padding:2px 8px;border-radius:6px;}
+.cat-header{margin:36px 0 4px;display:flex;align-items:center;gap:12px;}
+.cat-header span{font-size:.72rem;font-weight:800;letter-spacing:2px;text-transform:uppercase;color:var(--primary);white-space:nowrap;}
+.cat-header::before,.cat-header::after{content:'';flex:1;height:1px;background:var(--clay2);}
+
+@media(max-width:640px){.ideas-grid{grid-template-columns:1fr;}.mat-grid{grid-template-columns:1fr;}.budget-table{font-size:.82rem;}.budget-table th,.budget-table td{padding:8px 8px;}}
+
+/* FOOTER */
+.page-footer{padding:32px 24px;text-align:center;background:#1a1816;color:#78716c;font-size:.82rem;}
+.page-footer a{color:var(--primary);text-decoration:none;}
+
+/* RESPONSIVE */
+@media(max-width:640px){
+  .errors-grid{grid-template-columns:1fr;}
+  .content-block{padding:24px 20px;}
+  .bonus-section-header{flex-direction:column;align-items:flex-start;}
+  .bonus-num{width:44px;height:44px;font-size:1.1rem;}
+  .bonus-hero-img{height:200px;}
+  .steps-list li{grid-template-columns:40px 1fr;}
+  .step-num{width:40px;height:40px;font-size:1rem;}
+  .highlight-box{padding:22px 20px;}
+}
+</style>
+</head>
+<body>
+
+<!-- BACK NAV BAR -->
+<div style="background:rgba(255,255,255,0.92);backdrop-filter:blur(8px);border-bottom:1px solid #e1d5c1;padding:14px 24px;position:sticky;top:0;z-index:100;">
+  <a href="/ebook" style="display:inline-flex;align-items:center;gap:8px;color:#5c4e3c;text-decoration:none;font-size:.72rem;font-weight:700;letter-spacing:.2em;text-transform:uppercase;transition:color .2s;">
+    <svg xmlns="http://www.w3.org/2000/svg" width="14" height="14" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5" stroke-linecap="round" stroke-linejoin="round"><path d="M15 18l-6-6 6-6"/></svg>
+    Volver al Ebook
+  </a>
+</div>
+
+<header class="page-header">
+  <div class="header-eyebrow"><span class="header-dot"></span>Material exclusivo</div>
+  <h1>Tus bonos incluidos<span class="caveat">listos para usar</span></h1>
+  <p>Materiales de apoyo para que arranques con seguridad y crees tus primeras piezas sin errores.</p>
+  <div class="header-rule"></div>
+</header>
+
+<nav class="bonus-nav">
+  <a href="#bono-1" class="bonus-nav-item active">🧠 Bono 1 — Guía Principiantes</a>
+  <a href="#bono-2" class="bonus-nav-item">🧰 Bono 2 — Materiales</a>
+  <a href="#bono-3" class="bonus-nav-item">✨ Bono 3 — Ideas de Piezas</a>
+</nav>
+
+<main>
+<div class="bonuses-wrap">
+<div class="container">
+
+  <!-- ══════════════════════════════════
+       BONO 1 — GUÍA PARA PRINCIPIANTES
+  ══════════════════════════════════ -->
+  <section id="bono-1">
+
+    <div class="bonus-section-header">
+      <div class="bonus-num">1</div>
+      <div class="meta">
+        <div class="eyebrow">🧠 Bono #1</div>
+        <h2>Guía para principiantes: empieza desde cero sin errores</h2>
+      </div>
+    </div>
+
+    <img class="bonus-hero-img" src="assets/bonus_1_guia.webp"
+         alt="Guía para principiantes de cerámica fría"
+         width="860" height="280" loading="eager" decoding="async">
+
+    <!-- INTRO -->
+    <div class="content-block">
+      <h3><span class="icon">👋</span>¿Para quién es esta guía?</h3>
+      <p>Esta guía está pensada para alguien que <strong>nunca trabajó con cerámica fría</strong> y quiere empezar de la manera correcta — sin malgastar materiales, sin frustrarse y sin perder horas buscando información contradictoria en internet.</p>
+      <p>No importa si nunca hiciste nada artesanal. Aquí vas a encontrar exactamente lo que necesitás saber antes de tocar la masa por primera vez, para que tu primera sesión sea una experiencia positiva, no un desastre.</p>
+    </div>
+
+    <!-- QUÉ ES -->
+    <div class="content-block">
+      <h3><span class="icon">🏺</span>¿Qué es la cerámica fría?</h3>
+      <p>La cerámica fría — también llamada porcelana fría — es un material moldeable a base de pegamento y almidón de maíz que, al secarse al aire, adquiere una textura similar a la porcelana real. <strong>No necesita horno.</strong></p>
+      <p>Sus ventajas principales para principiantes son:</p>
+      <ul class="check-list">
+        <li>Se trabaja a temperatura ambiente, sin riesgo de quemaduras ni equipos especiales</li>
+        <li>Los errores se corrigen fácilmente mientras la masa está fresca</li>
+        <li>El costo de los materiales es muy bajo comparado con otras técnicas artesanales</li>
+        <li>Se puede usar en la mesa del comedor — sin taller, sin caos</li>
+        <li>Al secarse, el resultado tiene un acabado translúcido y elegante</li>
+      </ul>
+    </div>
+
+    <!-- ERRORES FRECUENTES -->
+    <div class="content-block">
+      <h3><span class="icon">⚠️</span>Los 6 errores más frecuentes al empezar</h3>
+      <p>La mayoría de los principiantes comete los mismos errores. Conocerlos antes de empezar te ahorra materiales, tiempo y frustraciones.</p>
+      <div class="errors-grid">
+
+        <div class="error-card">
+          <div class="error-num">Error 01</div>
+          <h4>Trabajar la masa con las manos sucias o húmedas</h4>
+          <p>La humedad en exceso ablanda la masa demasiado y hace que pierda su textura. La suciedad crea manchas difíciles de eliminar una vez seca.</p>
+          <div class="fix">✅ Solución: <span>Lávate las manos, sécalas bien y usa una pequeña cantidad de maicena en las palmas antes de amasar.</span></div>
+        </div>
+
+        <div class="error-card">
+          <div class="error-num">Error 02</div>
+          <h4>Dejar la masa expuesta al aire entre sesiones</h4>
+          <p>La cerámica fría se seca al contacto con el aire. Si la dejás sin cubrir aunque sea 10 minutos, empieza a cuartearse.</p>
+          <div class="fix">✅ Solución: <span>Guardá siempre la masa en una bolsa zip o film transparente, apretando bien para eliminar el aire.</span></div>
+        </div>
+
+        <div class="error-card">
+          <div class="error-num">Error 03</div>
+          <h4>Empezar con proyectos muy complejos</h4>
+          <p>Querer hacer una figura detallada en la primera sesión genera frustración. La habilidad de modelado se desarrolla con práctica progresiva.</p>
+          <div class="fix">✅ Solución: <span>Empieza con formas simples: esferas, discos y tiras. El control de la masa llega naturalmente en pocas sesiones.</span></div>
+        </div>
+
+        <div class="error-card">
+          <div class="error-num">Error 04</div>
+          <h4>Usar demasiada cantidad de masa a la vez</h4>
+          <p>Trabajar con un trozo grande hace que parte de la masa se seque antes de terminar la pieza.</p>
+          <div class="fix">✅ Solución: <span>Corta solo la cantidad que necesitás para esa parte específica de la pieza. El resto, cubierto.</span></div>
+        </div>
+
+        <div class="error-card">
+          <div class="error-num">Error 05</div>
+          <h4>Intentar pegar partes antes de que sequen</h4>
+          <p>Unir dos piezas húmedas sin la técnica correcta genera uniones débiles que se separan al secarse.</p>
+          <div class="fix">✅ Solución: <span>Usa una gotita de pegamento blanco o barbotina (masa diluida en agua) para unir piezas. Presioná suave y dejá secar sin mover.</span></div>
+        </div>
+
+        <div class="error-card">
+          <div class="error-num">Error 06</div>
+          <h4>Apurar el secado con calor directo</h4>
+          <p>Secar la pieza con secador de pelo o al sol intenso genera grietas, burbujas y deformaciones.</p>
+          <div class="fix">✅ Solución: <span>El secado natural a temperatura ambiente es el mejor. Un lugar con buena ventilación y sin humedad excesiva es suficiente.</span></div>
+        </div>
+
+      </div>
+    </div>
+
+    <!-- TU PRIMERA SESIÓN -->
+    <div class="content-block">
+      <h3><span class="icon">🗓️</span>Tu primera sesión: paso a paso</h3>
+      <p>Seguí este orden en tu primera sesión y vas a terminar con una pieza real en la mano y ganas de hacer más.</p>
+      <ol class="steps-list">
+
+        <li>
+          <div class="step-num">1</div>
+          <div class="step-body">
+            <h4>Preparar el espacio de trabajo</h4>
+            <p>Cubrí la mesa con un mantel de plástico o papel manteca. Tené a mano: la masa, un vaso con agua, un palito de madera o espátula, y film transparente para cubrir lo que no estés usando.</p>
+            <div class="tip">💡 No necesitás herramientas especiales para empezar — tus manos son la principal herramienta.</div>
+          </div>
+        </li>
+
+        <li>
+          <div class="step-num">2</div>
+          <div class="step-body">
+            <h4>Acondicionar la masa</h4>
+            <p>Corta un trozo del tamaño de una pelota de ping pong. Amasala entre las palmas durante 1-2 minutos hasta que esté suave, elástica y sin grietas en la superficie. Si se agrieta, humedecé ligeramente las manos y seguí amasando.</p>
+          </div>
+        </li>
+
+        <li>
+          <div class="step-num">3</div>
+          <div class="step-body">
+            <h4>Hacer tu primera forma básica</h4>
+            <p>Para tu debut, lo ideal es una esfera perfecta: hacé rodar la masa entre las palmas con presión pareja y movimientos circulares. El objetivo no es que quede perfecta — es que empieces a sentir cómo responde el material.</p>
+            <div class="tip">💡 Una esfera bien hecha es la base de pendientes, perlas y muchas piezas decorativas.</div>
+          </div>
+        </li>
+
+        <li>
+          <div class="step-num">4</div>
+          <div class="step-body">
+            <h4>Crear un disco plano (base de muchas piezas)</h4>
+            <p>Tomá otro trozo, formá una esfera y luego aplanala con la palma de la mano sobre la superficie lisa. Pasá el palito de madera como si fuera un rodillo para lograr un grosor parejo de unos 3-4 mm. De este disco básico podés cortar con cortantes, un cuchillito o incluso a mano.</p>
+          </div>
+        </li>
+
+        <li>
+          <div class="step-num">5</div>
+          <div class="step-body">
+            <h4>Alisar la superficie</h4>
+            <p>Humedecé ligeramente la yema de un dedo y pasalo suavemente sobre la superficie de la pieza. Esto elimina marcas y da un acabado más limpio. No uses demasiada agua — solo una ligera humedad.</p>
+          </div>
+        </li>
+
+        <li>
+          <div class="step-num">6</div>
+          <div class="step-body">
+            <h4>Dejar secar sin tocar</h4>
+            <p>Colocá tus piezas sobre papel manteca o una rejilla. No las apiles ni pongas nada encima. El tiempo de secado varía: piezas finas (2-4 mm) tardan entre 24 y 48 horas. Piezas más gruesas pueden tardar hasta 72 horas.</p>
+            <div class="tip">💡 Girá la pieza a las 12 horas para que seque parejo por todos lados.</div>
+          </div>
+        </li>
+
+        <li>
+          <div class="step-num">7</div>
+          <div class="step-body">
+            <h4>Lija y terminá la pieza</h4>
+            <p>Cuando la pieza esté completamente seca, lijá con papel de lija fino (grano 400) para eliminar imperfecciones. Después podés pintar, barnizar o dejarla en su color natural translúcido — las tres opciones quedan muy bien.</p>
+          </div>
+        </li>
+
+      </ol>
+    </div>
+
+    <!-- PREPARAR EL ESPACIO -->
+    <div class="content-block">
+      <h3><span class="icon">🏡</span>Cómo organizar tu espacio de trabajo</h3>
+      <p>No necesitás un taller. Cualquier mesa plana y limpia funciona. Lo importante es la organización:</p>
+      <ul class="check-list">
+        <li><strong>Superficie protegida:</strong> papel manteca, mantel de plástico o una tabla de cortar limpia</li>
+        <li><strong>Luz suficiente:</strong> trabajar con buena iluminación te ayuda a ver imperfecciones en la superficie</li>
+        <li><strong>Vaso con agua:</strong> solo para humedecer los dedos ligeramente cuando sea necesario</li>
+        <li><strong>Film transparente o bolsa zip:</strong> para cubrir la masa que no estés usando</li>
+        <li><strong>Papel de cocina:</strong> para limpiarte las manos sin manchar nada</li>
+        <li><strong>Una rejilla o papel manteca:</strong> donde dejar secar las piezas sin que se peguen</li>
+      </ul>
+      <p style="margin-top:16px;">Lo que <strong>no necesitás</strong> para empezar: herramientas especiales, moldes, pinturas, barnices. Primero aprendé a manejar la masa. Todo lo demás viene después.</p>
+    </div>
+
+    <!-- FRASE MOTIVACIONAL -->
+    <div class="highlight-box">
+      <h3>Una cosa a recordar</h3>
+      <p>Tu primera pieza probablemente no va a ser perfecta — y está bien. La cerámica fría es una habilidad que se construye poco a poco. Lo importante en las primeras sesiones no es el resultado: es aprender a sentir el material, entender cómo se comporta y disfrutar el proceso.</p>
+      <span class="caveat-quote">"La perfección llega con la práctica.<br>El disfrute empieza desde el primer día."</span>
+    </div>
+
+    <!-- RESUMEN -->
+    <div class="content-block">
+      <h3><span class="icon">📋</span>Resumen rápido: lo que viste en este bono</h3>
+      <ul class="check-list">
+        <li>Qué es la cerámica fría y por qué es ideal para principiantes</li>
+        <li>Los 6 errores más comunes y cómo evitarlos antes de empezar</li>
+        <li>Tu primera sesión paso a paso, desde preparar la masa hasta el secado</li>
+        <li>Cómo organizar tu espacio de trabajo sin invertir en equipos</li>
+        <li>La mentalidad correcta para disfrutar el proceso desde el inicio</li>
+      </ul>
+    </div>
+
+  </section>
+
+  <!-- ══════════════════════════════════
+       BONO 2 — LISTA DE MATERIALES
+  ══════════════════════════════════ -->
+  <section id="bono-2" style="margin-top:64px;">
+
+    <div class="bonus-section-header">
+      <div class="bonus-num">2</div>
+      <div class="meta">
+        <div class="eyebrow">🧰 Bono #2</div>
+        <h2>Lista de materiales básicos y cómo usarlos</h2>
+      </div>
+    </div>
+
+    <img class="bonus-hero-img" src="assets/bonus_2_materiales.webp"
+         alt="Materiales básicos para cerámica fría"
+         width="860" height="280" loading="lazy" decoding="async">
+
+    <!-- INTRO -->
+    <div class="content-block">
+      <h3><span class="icon">🎯</span>¿Qué vas a encontrar aquí?</h3>
+      <p>Esta lista está pensada para que <strong>no gastes de más ni de menos</strong>. Muchos principiantes compran demasiado al empezar — herramientas que no usan, materiales de acabado que todavía no necesitan — y después se frustran.</p>
+      <p>Acá vas a encontrar exactamente lo esencial, con las cantidades recomendadas para tus primeras sesiones, alternativas económicas y consejos sobre cómo usar cada cosa.</p>
+    </div>
+
+    <!-- MATERIALES PRINCIPALES -->
+    <div class="content-block">
+      <h3><span class="icon">🧱</span>Materiales principales</h3>
+      <p>Estos son los ingredientes y materiales base que vas a necesitar sí o sí para trabajar con cerámica fría.</p>
+
+      <div class="section-divider"><span>Para preparar o comprar la masa</span></div>
+      <div class="mat-grid">
+
+        <div class="mat-card">
+          <span class="mat-icon">🪣</span>
+          <div class="mat-name">Cerámica fría / Porcelana fría</div>
+          <span class="mat-qty">250 g para empezar</span>
+          <p class="mat-desc">El material base. Podés comprarla lista para usar (más práctico para principiantes) o prepararla en casa con maicena y pegamento blanco. La versión comprada es más uniforme y fácil de manejar al inicio.</p>
+          <div class="mat-alt"><strong>Alternativa económica:</strong> Hacerla casera cuesta hasta un 70% menos. La receta básica: 1 taza de maicena + 1 taza de pegamento blanco PVA + 1 cucharada de glicerina + unas gotas de vinagre blanco.</div>
+        </div>
+
+        <div class="mat-card">
+          <span class="mat-icon">🌽</span>
+          <div class="mat-name">Maicena (Almidón de maíz)</div>
+          <span class="mat-qty">200 g</span>
+          <p class="mat-desc">Imprescindible incluso si comprás la masa lista. Se usa para espolvorear las manos y la superficie de trabajo, evitar que la masa se pegue y ajustar la textura si queda muy blanda.</p>
+          <div class="mat-alt"><strong>Marca:</strong> Cualquier marca de supermercado funciona igual. No hace falta comprar una especial.</div>
+        </div>
+
+        <div class="mat-card">
+          <span class="mat-icon">🔗</span>
+          <div class="mat-name">Pegamento blanco PVA</div>
+          <span class="mat-qty">250 ml</span>
+          <p class="mat-desc">Sirve tanto para preparar la masa casera como para unir partes de una pieza entre sí. También se puede diluir en agua para crear "barbotina" (pegamento de agarre extra fuerte entre piezas).</p>
+          <div class="mat-alt"><strong>Marcas:</strong> Elmer's, UHU, o cualquier pegamento escolar blanco no tóxico. Evitá los pegamentos industriales fuertes.</div>
+        </div>
+
+        <div class="mat-card">
+          <span class="mat-icon">💧</span>
+          <div class="mat-name">Glicerina</div>
+          <span class="mat-qty">50 ml</span>
+          <p class="mat-desc">Le da elasticidad y suavidad a la masa, evitando que se quiebre al modelar. Si no la usás, la masa queda más rígida y difícil de trabajar en piezas delgadas.</p>
+          <div class="mat-alt"><strong>Dónde conseguirla:</strong> Farmacias, tiendas de manualidades o en línea. Es muy barata — un frasquito pequeño dura meses.</div>
+        </div>
+
+        <div class="mat-card">
+          <span class="mat-icon">🫒</span>
+          <div class="mat-name">Aceite de bebé o vaselina</div>
+          <span class="mat-qty">1 frasco pequeño</span>
+          <p class="mat-desc">Se aplica en pequeñas cantidades sobre las manos o los moldes para evitar que la masa se adhiera. También ayuda a suavizar la superficie de las piezas mientras están frescas.</p>
+          <div class="mat-alt"><strong>Alternativa:</strong> Aceite de coco o cualquier aceite vegetal neutro funcionan igual de bien.</div>
+        </div>
+
+        <div class="mat-card">
+          <span class="mat-icon">🧴</span>
+          <div class="mat-name">Crema de manos (sin perfume fuerte)</div>
+          <span class="mat-qty">1 tubo pequeño</span>
+          <p class="mat-desc">Aplicada en las palmas antes de amasar, evita que la masa se pegue a la piel y permite un modelado más fluido. También hidrata las manos durante las sesiones largas.</p>
+          <div class="mat-alt"><strong>Tip:</strong> Una crema neutra y económica es suficiente. No necesitás ninguna marca especial.</div>
+        </div>
+
+      </div>
+    </div>
+
+    <!-- HERRAMIENTAS -->
+    <div class="content-block">
+      <h3><span class="icon">🔧</span>Herramientas básicas</h3>
+      <p>Estas son las herramientas mínimas para trabajar bien. La mayoría ya la tenés en casa o son muy económicas.</p>
+
+      <div class="section-divider"><span>Herramientas de modelado</span></div>
+      <div class="mat-grid">
+
+        <div class="mat-card">
+          <span class="mat-icon">🎋</span>
+          <div class="mat-name">Palito de madera o brocheta</div>
+          <span class="mat-qty">3-4 unidades</span>
+          <p class="mat-desc">Sirve como rodillo pequeño para aplanar la masa, para hacer agujeros en piezas de joyería, para texturizar superficies y para mover piezas delicadas sin dejar marcas de dedos.</p>
+          <div class="mat-alt"><strong>Dónde conseguir:</strong> Cualquier supermercado (sección cocina). Las brochetas de bambú para asado son perfectas.</div>
+        </div>
+
+        <div class="mat-card">
+          <span class="mat-icon">🔪</span>
+          <div class="mat-name">Cuchillo de plástico o espátula</div>
+          <span class="mat-qty">1 unidad</span>
+          <p class="mat-desc">Para cortar la masa, separar piezas de la superficie y dar formas rectas. No hace falta que sea afilado — los bordes lisos son suficientes para cerámica fría.</p>
+          <div class="mat-alt"><strong>Alternativa:</strong> Un cortador de pizza, una tarjeta vieja o incluso un hilo de nylon cumplen la misma función.</div>
+        </div>
+
+        <div class="mat-card">
+          <span class="mat-icon">📏</span>
+          <div class="mat-name">Rodillo pequeño</div>
+          <span class="mat-qty">1 unidad</span>
+          <p class="mat-desc">Para estirar la masa a un grosor parejo antes de cortar formas. Muy útil para pendientes, bases de bandejas y piezas planas. Un grosor uniforme evita que la pieza se deforme al secar.</p>
+          <div class="mat-alt"><strong>Alternativa casera:</strong> Una botella de vidrio lisa o un vaso cilíndrico funcionan perfectamente como rodillo.</div>
+        </div>
+
+        <div class="mat-card">
+          <span class="mat-icon">⭐</span>
+          <div class="mat-name">Cortantes de formas básicas</div>
+          <span class="mat-qty">Set de 5-10 piezas</span>
+          <p class="mat-desc">Círculos, estrellas, hojas y flores son las formas más usadas. Permiten hacer piezas uniformes y repetibles — ideal para joyería y adornos decorativos.</p>
+          <div class="mat-alt"><strong>Alternativa:</strong> Tapas de bolígrafos, vasos, moldes de cocina o cartón recortado a mano. No son perfectos, pero funcionan para empezar.</div>
+        </div>
+
+      </div>
+
+      <div class="section-divider"><span>Para el acabado</span></div>
+      <div class="mat-grid">
+
+        <div class="mat-card">
+          <span class="mat-icon">🪵</span>
+          <div class="mat-name">Papel de lija fino</div>
+          <span class="mat-qty">Grano 400 y 600</span>
+          <p class="mat-desc">Se usa cuando la pieza está completamente seca para eliminar imperfecciones, marcas de dedos y bordes irregulares. El grano 400 para el trabajo inicial y el 600 para el pulido final.</p>
+          <div class="mat-alt"><strong>Dónde conseguir:</strong> Ferreterías o tiendas de construcción. Un par de hojas alcanzan para muchas piezas.</div>
+        </div>
+
+        <div class="mat-card">
+          <span class="mat-icon">🎨</span>
+          <div class="mat-name">Pinturas acrílicas básicas</div>
+          <span class="mat-qty">Blanco, negro, y 2-3 colores base</span>
+          <p class="mat-desc">Para pintar las piezas una vez secas. Con blanco, negro y los tres colores primarios podés mezclar prácticamente cualquier tono. No hace falta comprar una paleta entera al principio.</p>
+          <div class="mat-alt"><strong>Marcas accesibles:</strong> Amsterdam, Pebeo o cualquier acrílico escolar de buena calidad. Evitá los muy económicos — cubren mal y se agrietan.</div>
+        </div>
+
+        <div class="mat-card">
+          <span class="mat-icon">✨</span>
+          <div class="mat-name">Barniz acrílico transparente</div>
+          <span class="mat-qty">1 frasco pequeño (100-200 ml)</span>
+          <p class="mat-desc">El toque final que protege la pieza y le da el acabado brillante o mate. Sin barniz, la pintura puede rayarse y la masa perder firmeza con la humedad ambiental.</p>
+          <div class="mat-alt"><strong>Tipos:</strong> Brillante para un look elegante y porcelana. Mate para un acabado artesanal más cálido. Podés combinar los dos aplicando uno encima del otro.</div>
+        </div>
+
+        <div class="mat-card">
+          <span class="mat-icon">🖌️</span>
+          <div class="mat-name">Pinceles (2-3 tamaños)</div>
+          <span class="mat-qty">Fino, mediano y plano</span>
+          <p class="mat-desc">Un pincel fino para detalles, uno mediano para zonas más grandes y uno plano para aplicar barniz de manera uniforme. No hace falta invertir en pinceles profesionales al principio.</p>
+          <div class="mat-alt"><strong>Tip:</strong> Lavá los pinceles inmediatamente después de usar con agua tibia. Si los dejás secar con acrílico, quedan inutilizables.</div>
+        </div>
+
+      </div>
+    </div>
+
+    <!-- PRESUPUESTO -->
+    <div class="content-block">
+      <h3><span class="icon">💰</span>Presupuesto estimado para empezar</h3>
+      <p>Estos son valores de referencia orientativos. Los precios varían según país y tienda, pero te dan una idea de la inversión inicial.</p>
+      <table class="budget-table">
+        <thead>
+          <tr>
+            <th>Material / Herramienta</th>
+            <th>Cant.</th>
+            <th>Precio estimado</th>
+          </tr>
+        </thead>
+        <tbody>
+          <tr><td>Cerámica fría lista (o ingredientes para hacerla)</td><td>250 g</td><td><span class="badge-range">$3 – $8</span></td></tr>
+          <tr><td>Maicena</td><td>200 g</td><td><span class="badge-range">$1 – $2</span></td></tr>
+          <tr><td>Pegamento blanco PVA</td><td>250 ml</td><td><span class="badge-range">$2 – $5</span></td></tr>
+          <tr><td>Glicerina</td><td>50 ml</td><td><span class="badge-range">$1 – $3</span></td></tr>
+          <tr><td>Aceite de bebé o vaselina</td><td>1 frasco</td><td><span class="badge-range">$2 – $4</span></td></tr>
+          <tr><td>Palitos de madera / brochetas</td><td>Pack x10</td><td><span class="badge-range">$1 – $2</span></td></tr>
+          <tr><td>Cortantes básicos (set)</td><td>5-10 piezas</td><td><span class="badge-range">$3 – $8</span></td></tr>
+          <tr><td>Papel de lija (granos 400 y 600)</td><td>4 hojas</td><td><span class="badge-range">$1 – $2</span></td></tr>
+          <tr><td>Pinturas acrílicas básicas</td><td>5-6 colores</td><td><span class="badge-range">$5 – $12</span></td></tr>
+          <tr><td>Barniz acrílico transparente</td><td>100 ml</td><td><span class="badge-range">$3 – $6</span></td></tr>
+          <tr><td>Pinceles (set básico)</td><td>3 pinceles</td><td><span class="badge-range">$3 – $7</span></td></tr>
+          <tr class="total-row">
+            <td colspan="2">💡 Total estimado para empezar</td>
+            <td><span class="badge-range">$25 – $59</span></td>
+          </tr>
+        </tbody>
+      </table>
+      <p style="margin-top:16px;font-size:.85rem;">Muchos de estos materiales los usás para decenas de piezas. El costo por pieza individual termina siendo muy bajo una vez que ya tenés los básicos.</p>
+    </div>
+
+    <!-- QUÉ NO COMPRAR -->
+    <div class="content-block">
+      <h3><span class="icon">🚫</span>Qué NO comprar cuando empezás</h3>
+      <p>Tanto como saber qué necesitás, es importante saber qué <strong>no vale la pena comprar todavía</strong>. Estas son las compras más comunes que hacen los principiantes y terminan sin usar:</p>
+      <div class="caution-box">
+        <h4>⚠️ Evitá estas compras hasta tener más práctica</h4>
+        <ul class="caution-list">
+          <li><strong>Kits completos de herramientas profesionales:</strong> incluyen decenas de piezas que no vas a usar en meses. Empezá con 3-4 herramientas básicas.</li>
+          <li><strong>Moldes de silicona caros:</strong> al principio vas a aprender más modelando a mano libre. Los moldes son útiles cuando ya dominás la masa.</li>
+          <li><strong>Pinturas metálicas o especiales (dorado, plata, efecto mármol):</strong> son para piezas avanzadas. Dominá primero los colores sólidos.</li>
+          <li><strong>Masa en grandes cantidades:</strong> comprá poco al principio. La masa tiene fecha de vencimiento y puede secarse si no la almacenás bien.</li>
+          <li><strong>Libros técnicos avanzados:</strong> con La Biblia de la Cerámica Fría y estos bonos tenés todo lo necesario para tus primeros meses.</li>
+          <li><strong>Pistola de calor o secador especial:</strong> el secado natural es mejor. No necesitás ningún aparato para acelerar el proceso.</li>
+        </ul>
+      </div>
+    </div>
+
+    <!-- DÓNDE CONSEGUIR -->
+    <div class="content-block">
+      <h3><span class="icon">🛒</span>Dónde conseguir los materiales</h3>
+      <ul class="check-list">
+        <li><strong>Tiendas de manualidades y arte:</strong> el mejor lugar para masa lista, cortantes y pinturas acrílicas. Podés ver y tocar antes de comprar.</li>
+        <li><strong>Supermercados:</strong> maicena, glicerina, pegamento blanco, palitos de madera y papel de lija. Todo a precios muy accesibles.</li>
+        <li><strong>Farmacias:</strong> glicerina, aceite de bebé y vaselina. Generalmente más barato que en tiendas de arte.</li>
+        <li><strong>Ferreterías:</strong> papel de lija en distintos granos. Comprá hojas sueltas, no packs grandes.</li>
+        <li><strong>Tiendas online (Amazon, Mercado Libre, AliExpress):</strong> ideales para cortantes en set y pinceles. Revisá las reseñas antes de comprar.</li>
+        <li><strong>Grupos de Facebook y WhatsApp de cerámica fría:</strong> muchas artesanas venden materiales en menor cantidad y precio. También comparten dónde consiguen los mejores precios locales.</li>
+      </ul>
+    </div>
+
+    <!-- HIGHLIGHT -->
+    <div class="highlight-box">
+      <h3>El secreto de las artesanas experimentadas</h3>
+      <p>No compres todo de una vez. Empezá con lo mínimo: masa (o los ingredientes para hacerla), maicena, pegamento y un palito de madera. Con eso ya podés hacer tus primeras piezas. El resto lo vas sumando a medida que avanzás y sabés exactamente qué necesitás.</p>
+      <span class="caveat-quote">"Menos materiales, más foco.<br>Más foco, más aprendizaje."</span>
+    </div>
+
+    <!-- RESUMEN -->
+    <div class="content-block">
+      <h3><span class="icon">📋</span>Resumen: tu lista de compras para empezar</h3>
+      <ul class="check-list">
+        <li>Cerámica fría lista o ingredientes para prepararla (maicena + PVA + glicerina)</li>
+        <li>Maicena extra para trabajar la masa</li>
+        <li>Pegamento blanco PVA</li>
+        <li>Aceite de bebé o vaselina</li>
+        <li>Palitos de madera / brochetas de bambú</li>
+        <li>Cortantes básicos (círculos, flores, hojas)</li>
+        <li>Papel de lija grano 400 y 600</li>
+        <li>Pinturas acrílicas básicas (5-6 colores)</li>
+        <li>Barniz acrílico transparente</li>
+        <li>2-3 pinceles de tamaños distintos</li>
+      </ul>
+    </div>
+
+  </section>
+
+  <!-- ══════════════════════════════════
+       BONO 3 — IDEAS DE PIEZAS
+  ══════════════════════════════════ -->
+  <section id="bono-3" style="margin-top:64px;">
+
+    <div class="bonus-section-header">
+      <div class="bonus-num">3</div>
+      <div class="meta">
+        <div class="eyebrow">✨ Bono #3</div>
+        <h2>Ideas de piezas fáciles para tus primeras creaciones</h2>
+      </div>
+    </div>
+
+    <img class="bonus-hero-img" src="assets/modelo_01_pendientes_hojas.webp"
+         alt="Ideas de piezas fáciles de cerámica fría"
+         width="860" height="280" loading="lazy" decoding="async">
+
+    <!-- INTRO -->
+    <div class="content-block">
+      <h3><span class="icon">🎯</span>¿Cómo usar estas ideas?</h3>
+      <p>Esta selección tiene un único objetivo: que <strong>hagas tu primera pieza terminada</strong> — algo que puedas sostener, regalar o usar — sin frustrarte en el intento.</p>
+      <p>Cada idea incluye pasos simples, los materiales que necesitás y el tiempo estimado. Están ordenadas de más fácil a un poco más elaborado. Empezá por el principio y avanzá a tu ritmo.</p>
+      <ul class="check-list">
+        <li>No necesitás herramientas especiales para ninguna de las 12 ideas</li>
+        <li>Todas se pueden hacer en la mesa de tu casa</li>
+        <li>Los tiempos no incluyen el secado — ese proceso es pasivo, no requiere tu atención</li>
+        <li>Si una idea te queda imperfecta la primera vez, ¡eso es normal y esperado!</li>
+      </ul>
+    </div>
+
+    <!-- CATEGORÍA 1: JOYERÍA -->
+    <div class="content-block">
+      <h3><span class="icon">💍</span>Categoría 1: Joyería fácil</h3>
+      <p>Piezas pequeñas que se trabajan rápido, consumen poca masa y dan resultados muy vistosos. Ideales para empezar.</p>
+      <div class="ideas-grid">
+
+        <div class="idea-card">
+          <div class="idea-header">
+            <span class="idea-emoji">⭕</span>
+            <div>
+              <div class="idea-title">Pendientes círculo liso</div>
+              <div class="idea-badges">
+                <span class="idea-badge badge-easy">⭐ Muy fácil</span>
+                <span class="idea-badge badge-time">⏱ 30 min</span>
+              </div>
+            </div>
+          </div>
+          <ol class="idea-steps">
+            <li>Estira la masa a 3 mm de grosor con el rodillo.</li>
+            <li>Corta 2 círculos del mismo tamaño con un cortante o tapa de bolígrafo.</li>
+            <li>Haz un agujero en la parte superior con un palito y deja secar 24 h.</li>
+            <li>Lija, pinta del color que quieras y barniza. Coloca el gancho de aro.</li>
+          </ol>
+          <div class="idea-mats">
+            <span class="mat-pill">Masa blanca</span>
+            <span class="mat-pill">Cortante circular</span>
+            <span class="mat-pill">Ganchos de aro</span>
+            <span class="mat-pill">Pintura acrílica</span>
+          </div>
+        </div>
+
+        <div class="idea-card">
+          <div class="idea-header">
+            <span class="idea-emoji">🍃</span>
+            <div>
+              <div class="idea-title">Pendientes de hoja natural</div>
+              <div class="idea-badges">
+                <span class="idea-badge badge-easy">⭐ Muy fácil</span>
+                <span class="idea-badge badge-time">⏱ 45 min</span>
+              </div>
+            </div>
+          </div>
+          <ol class="idea-steps">
+            <li>Recoge una hoja pequeña y real (tipo laurel, eucalipto o similar).</li>
+            <li>Estira la masa, apoya la hoja encima y pásale el rodillo suavemente para imprimir la textura.</li>
+            <li>Recorta la forma siguiendo el contorno de la hoja. Haz el agujero y deja secar.</li>
+            <li>Retira la hoja seca, lija los bordes y aplica pintura dorada o verde. Barniza y monta el gancho.</li>
+          </ol>
+          <div class="idea-mats">
+            <span class="mat-pill">Masa blanca</span>
+            <span class="mat-pill">Hoja natural</span>
+            <span class="mat-pill">Ganchos de aro</span>
+            <span class="mat-pill">Pintura dorada</span>
+          </div>
+        </div>
+
+        <div class="idea-card">
+          <div class="idea-header">
+            <span class="idea-emoji">🌙</span>
+            <div>
+              <div class="idea-title">Colgante luna</div>
+              <div class="idea-badges">
+                <span class="idea-badge badge-easy">⭐ Muy fácil</span>
+                <span class="idea-badge badge-time">⏱ 40 min</span>
+              </div>
+            </div>
+          </div>
+          <ol class="idea-steps">
+            <li>Estira la masa a 4 mm. Corta un círculo grande y uno más pequeño que se superponga a un lado.</li>
+            <li>Retira el círculo pequeño: quedará la forma de luna creciente.</li>
+            <li>Haz el agujero para la cadena y deja secar 24 h.</li>
+            <li>Pinta en blanco nacarado o dorado y barniza con acabado brillante.</li>
+          </ol>
+          <div class="idea-mats">
+            <span class="mat-pill">Masa blanca</span>
+            <span class="mat-pill">2 cortantes circulares</span>
+            <span class="mat-pill">Cadena fina</span>
+            <span class="mat-pill">Pintura nacarada</span>
+          </div>
+        </div>
+
+        <div class="idea-card">
+          <div class="idea-header">
+            <span class="idea-emoji">📿</span>
+            <div>
+              <div class="idea-title">Pulsera de cuentas</div>
+              <div class="idea-badges">
+                <span class="idea-badge badge-easy">⭐ Muy fácil</span>
+                <span class="idea-badge badge-time">⏱ 45 min</span>
+              </div>
+            </div>
+          </div>
+          <ol class="idea-steps">
+            <li>Forma entre 12 y 15 esferas del mismo tamaño rodando masa entre las palmas.</li>
+            <li>Ensartalas con un palito de bambú mientras están frescas para hacer el agujero central.</li>
+            <li>Deja secar las cuentas sobre el palito para que no se aplanen. 24 h.</li>
+            <li>Pinta y barniza cada cuenta, luego ensártalas en hilo elástico o cordón.</li>
+          </ol>
+          <div class="idea-mats">
+            <span class="mat-pill">Masa blanca</span>
+            <span class="mat-pill">Palito de bambú</span>
+            <span class="mat-pill">Hilo elástico</span>
+            <span class="mat-pill">Pintura acrílica</span>
+          </div>
+        </div>
+
+      </div>
+    </div>
+
+    <!-- CATEGORÍA 2: PARA EL HOGAR -->
+    <div class="content-block">
+      <h3><span class="icon">🏡</span>Categoría 2: Para el hogar</h3>
+      <p>Piezas decorativas y funcionales para tu casa. Un poco más grandes, pero igual de accesibles para principiantes.</p>
+      <div class="ideas-grid">
+
+        <div class="idea-card">
+          <div class="idea-header">
+            <span class="idea-emoji">🗂️</span>
+            <div>
+              <div class="idea-title">Bandeja pequeña para joyas</div>
+              <div class="idea-badges">
+                <span class="idea-badge badge-med">⭐⭐ Fácil</span>
+                <span class="idea-badge badge-time">⏱ 1 h + secado</span>
+              </div>
+            </div>
+          </div>
+          <ol class="idea-steps">
+            <li>Estira la masa a 5 mm sobre papel manteca. Corta un rectángulo o círculo de unos 10 cm.</li>
+            <li>Apoya la pieza sobre un bol pequeño boca abajo para darle forma cóncava mientras seca.</li>
+            <li>Opcional: presiona una hoja o textil sobre la masa antes de darle forma para crear textura.</li>
+            <li>Deja secar 48 h, lija los bordes, pinta y barniza con acabado brillante.</li>
+          </ol>
+          <div class="idea-mats">
+            <span class="mat-pill">Masa blanca (100 g)</span>
+            <span class="mat-pill">Bol pequeño</span>
+            <span class="mat-pill">Papel manteca</span>
+            <span class="mat-pill">Pintura dorada</span>
+          </div>
+        </div>
+
+        <div class="idea-card">
+          <div class="idea-header">
+            <span class="idea-emoji">☕</span>
+            <div>
+              <div class="idea-title">Posavaso decorativo</div>
+              <div class="idea-badges">
+                <span class="idea-badge badge-easy">⭐ Muy fácil</span>
+                <span class="idea-badge badge-time">⏱ 45 min</span>
+              </div>
+            </div>
+          </div>
+          <ol class="idea-steps">
+            <li>Estira la masa a 6-7 mm (más grueso que los pendientes, para mayor firmeza).</li>
+            <li>Corta un círculo de unos 9 cm con un plato pequeño como guía.</li>
+            <li>Texturiza la superficie presionando una tela de arpillera o red antes del secado.</li>
+            <li>Seca 48 h, lija bordes, barniza con barniz resistente al calor moderado.</li>
+          </ol>
+          <div class="idea-mats">
+            <span class="mat-pill">Masa blanca (80 g)</span>
+            <span class="mat-pill">Plato como guía</span>
+            <span class="mat-pill">Tela de textura</span>
+            <span class="mat-pill">Barniz resistente</span>
+          </div>
+        </div>
+
+        <div class="idea-card">
+          <div class="idea-header">
+            <span class="idea-emoji">🌵</span>
+            <div>
+              <div class="idea-title">Macetero miniatura</div>
+              <div class="idea-badges">
+                <span class="idea-badge badge-med">⭐⭐ Fácil</span>
+                <span class="idea-badge badge-time">⏱ 1.5 h + secado</span>
+              </div>
+            </div>
+          </div>
+          <ol class="idea-steps">
+            <li>Forma un cilindro hueco modelando la masa desde adentro con el pulgar (técnica "pellizco").</li>
+            <li>Alisa las paredes por dentro y por fuera con los dedos humedecidos.</li>
+            <li>Forma una base plana separada y pégala con pegamento PVA diluido. Deja secar boca abajo.</li>
+            <li>Seca 72 h completo, lija y pinta. Usalo solo con plantas en maceta con tierra seca.</li>
+          </ol>
+          <div class="idea-mats">
+            <span class="mat-pill">Masa blanca (120 g)</span>
+            <span class="mat-pill">Pegamento PVA</span>
+            <span class="mat-pill">Pintura acrílica</span>
+            <span class="mat-pill">Barniz mate</span>
+          </div>
+        </div>
+
+        <div class="idea-card">
+          <div class="idea-header">
+            <span class="idea-emoji">🧲</span>
+            <div>
+              <div class="idea-title">Imán decorativo</div>
+              <div class="idea-badges">
+                <span class="idea-badge badge-easy">⭐ Muy fácil</span>
+                <span class="idea-badge badge-time">⏱ 30 min</span>
+              </div>
+            </div>
+          </div>
+          <ol class="idea-steps">
+            <li>Estira la masa a 4 mm. Corta la forma que quieras: corazón, flor, estrella, inicial.</li>
+            <li>Presiona texturas con lo que tengas a mano: botón, tela, lápiz, palito.</li>
+            <li>Deja secar completamente 24-36 h.</li>
+            <li>Pinta, barniza y pega un imán pequeño en la parte trasera con pegamento fuerte.</li>
+          </ol>
+          <div class="idea-mats">
+            <span class="mat-pill">Masa blanca</span>
+            <span class="mat-pill">Cortante de forma</span>
+            <span class="mat-pill">Imán pequeño</span>
+            <span class="mat-pill">Pintura acrílica</span>
+          </div>
+        </div>
+
+      </div>
+    </div>
+
+    <!-- CATEGORÍA 3: REGALOS -->
+    <div class="content-block">
+      <h3><span class="icon">🎁</span>Categoría 3: Regalos únicos</h3>
+      <p>Piezas con un propósito especial. Personalizables y muy fáciles de hacer. Perfectas para regalar desde tu primera semana.</p>
+      <div class="ideas-grid">
+
+        <div class="idea-card">
+          <div class="idea-header">
+            <span class="idea-emoji">📖</span>
+            <div>
+              <div class="idea-title">Marcador de libros</div>
+              <div class="idea-badges">
+                <span class="idea-badge badge-easy">⭐ Muy fácil</span>
+                <span class="idea-badge badge-time">⏱ 30 min</span>
+              </div>
+            </div>
+          </div>
+          <ol class="idea-steps">
+            <li>Estira la masa a 3 mm. Corta una tira de 4 × 12 cm.</li>
+            <li>Decora la superficie con texturas, letras o formas simples presionadas con palito.</li>
+            <li>Haz un agujero en el extremo superior y deja secar plano sobre papel manteca.</li>
+            <li>Pinta, barniza y pasa un cordón o hilo decorativo por el agujero.</li>
+          </ol>
+          <div class="idea-mats">
+            <span class="mat-pill">Masa blanca</span>
+            <span class="mat-pill">Palito o sello</span>
+            <span class="mat-pill">Cordón decorativo</span>
+            <span class="mat-pill">Barniz brillante</span>
+          </div>
+        </div>
+
+        <div class="idea-card">
+          <div class="idea-header">
+            <span class="idea-emoji">🔑</span>
+            <div>
+              <div class="idea-title">Llavero con inicial</div>
+              <div class="idea-badges">
+                <span class="idea-badge badge-med">⭐⭐ Fácil</span>
+                <span class="idea-badge badge-time">⏱ 1 h</span>
+              </div>
+            </div>
+          </div>
+          <ol class="idea-steps">
+            <li>Estira la masa a 5 mm. Corta una forma base: círculo, corazón o rectángulo.</li>
+            <li>Graba una letra con un palito, letra de molde recortada o sello de letras.</li>
+            <li>Haz el agujero para la argolla y deja secar 36 h.</li>
+            <li>Pinta, barniza y coloca argolla metálica + anillo portallaves.</li>
+          </ol>
+          <div class="idea-mats">
+            <span class="mat-pill">Masa blanca</span>
+            <span class="mat-pill">Palito/sello letras</span>
+            <span class="mat-pill">Argolla metálica</span>
+            <span class="mat-pill">Anillo portallaves</span>
+          </div>
+        </div>
+
+        <div class="idea-card">
+          <div class="idea-header">
+            <span class="idea-emoji">🌿</span>
+            <div>
+              <div class="idea-title">Etiquetas para plantas</div>
+              <div class="idea-badges">
+                <span class="idea-badge badge-easy">⭐ Muy fácil</span>
+                <span class="idea-badge badge-time">⏱ 30 min</span>
+              </div>
+            </div>
+          </div>
+          <ol class="idea-steps">
+            <li>Estira la masa a 3 mm. Corta rectángulos pequeños de 3 × 7 cm.</li>
+            <li>Inserta un palito de bambú en el extremo inferior antes del secado.</li>
+            <li>Deja secar completamente en posición vertical (apoyadas en el borde de un vaso).</li>
+            <li>Escribe el nombre de la planta con marcador permanente o pintura fina. Barniza.</li>
+          </ol>
+          <div class="idea-mats">
+            <span class="mat-pill">Masa blanca</span>
+            <span class="mat-pill">Palitos de bambú</span>
+            <span class="mat-pill">Marcador permanente</span>
+            <span class="mat-pill">Barniz transparente</span>
+          </div>
+        </div>
+
+        <div class="idea-card">
+          <div class="idea-header">
+            <span class="idea-emoji">✉️</span>
+            <div>
+              <div class="idea-title">Tarjeta decorativa 3D</div>
+              <div class="idea-badges">
+                <span class="idea-badge badge-med">⭐⭐ Fácil</span>
+                <span class="idea-badge badge-time">⏱ 1 h</span>
+              </div>
+            </div>
+          </div>
+          <ol class="idea-steps">
+            <li>Haz elementos pequeños: flores, hojas, corazones, estrellas con cortantes mini.</li>
+            <li>Deja secar cada pieza por separado 24 h.</li>
+            <li>Pinta cada elemento con colores vivos y barniza.</li>
+            <li>Pega los elementos sobre una tarjeta de cartón con pegamento fuerte. Podés escribir un mensaje detrás.</li>
+          </ol>
+          <div class="idea-mats">
+            <span class="mat-pill">Masa blanca</span>
+            <span class="mat-pill">Cortantes mini</span>
+            <span class="mat-pill">Cartón o cartulina</span>
+            <span class="mat-pill">Pinturas vivas</span>
+          </div>
+        </div>
+
+      </div>
+    </div>
+
+    <!-- TIPS -->
+    <div class="content-block">
+      <h3><span class="icon">💡</span>Consejos para que te salga bien desde el inicio</h3>
+      <ul class="check-list">
+        <li><strong>Empezá siempre por las piezas de joyería:</strong> son pequeñas, consumen poca masa y se secan rápido. El margen de error es menor.</li>
+        <li><strong>Hacé dos de cada pieza:</strong> si una sale mal, tenés la otra como respaldo. Con el tiempo ambas van a salir bien.</li>
+        <li><strong>No compares tu primera pieza con fotos de artesanas con años de experiencia:</strong> eso genera frustración innecesaria.</li>
+        <li><strong>Fotografía cada pieza terminada:</strong> vas a querer ver tu evolución en pocas semanas — y va a sorprenderte.</li>
+        <li><strong>Si una pieza se quiebra al secar,</strong> es señal de que la masa estaba muy seca o el modelado muy fino. Guardá el trozo para reutilizarlo humectándolo levemente.</li>
+        <li><strong>El barniz es siempre el último paso</strong> — nunca barnices sobre pintura húmeda, esperá al menos 1 hora.</li>
+      </ul>
+    </div>
+
+    <!-- HIGHLIGHT -->
+    <div class="highlight-box">
+      <h3>La pieza perfecta no existe en el primer intento</h3>
+      <p>Cada artesana experimentada que ves online empezó exactamente donde vos estás ahora. La diferencia no es el talento — es la cantidad de piezas que hicieron. Cada pieza que terminás, aunque sea imperfecta, te enseña algo que ningún tutorial puede enseñarte.</p>
+      <span class="caveat-quote">"La práctica no busca la perfección.<br>La construye, pieza a pieza."</span>
+    </div>
+
+    <!-- RESUMEN -->
+    <div class="content-block">
+      <h3><span class="icon">📋</span>Tus próximos pasos</h3>
+      <ul class="check-list">
+        <li>Elegí una sola idea de la Categoría 1 para tu primera sesión</li>
+        <li>Prepará los materiales del Bono 2 antes de empezar</li>
+        <li>Seguí los pasos del Bono 1 para acondicionar la masa correctamente</li>
+        <li>Hacé la pieza sin apuro — el proceso es parte de la experiencia</li>
+        <li>Fotografía el resultado y guardalo: es el punto de partida de tu progreso</li>
+        <li>Cuando termines la primera, volvé aquí y elegí la siguiente</li>
+      </ul>
+    </div>
+
+  </section>
+
+</div>
+</div>
+</main>
+
+<footer class="page-footer">
+  <p>© 2025 La Biblia de la Cerámica Fría — <a href="/">Volver a la página principal</a></p>
+</footer>
+
+</body>
+</html>
